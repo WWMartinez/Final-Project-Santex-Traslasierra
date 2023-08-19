@@ -1,0 +1,25 @@
+ /* Carousel altura */
+ .c-item {
+    height: 500px;
+  }
+  
+  /* Carousel IMG */
+  .c-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+  
+  /* Texto Principal de la Historia de Mina Clavero */
+  .history-text {
+      padding: 50px;
+      font-size: 32px;
+  }
+  
+  /* Texto Secundario de la Historia de Mina Clavero */
+  .text-important {
+      font-size: 18px;
+      line-height: 1.6;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
