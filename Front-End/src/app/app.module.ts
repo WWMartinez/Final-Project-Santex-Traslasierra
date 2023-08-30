@@ -19,6 +19,9 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { LoginEncComponent } from './components/login-enc/login-enc.component';
+import { SignInEncComponent } from './components/sign-in-enc/sign-in-enc.component';
+import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     HomeComponent,
     FooterComponent,
     EncuestaComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    LoginEncComponent,
+    SignInEncComponent,
+    EncuestaCrudComponent
   ],
   imports: [
     BrowserModule,

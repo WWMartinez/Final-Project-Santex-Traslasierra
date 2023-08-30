@@ -1,7 +1,9 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import routesAdmin from '../routes/admin';
+import routesEncuestador from '../routes/encuestador'
 import { Admin } from '../models/admin';
+import { Encuestador } from './encuestador';
 
 class Server {
     private app: Application;
@@ -24,6 +26,7 @@ class Server {
 
     routes() {
         this.app.use('/api/admins', routesAdmin);
+        this.app.use('/api/encuestadores', routesEncuestador);
     }
 
     middlewares() {
@@ -37,6 +40,7 @@ class Server {
     async dbConnect() {
         try {
             await Admin.sync();
+                    Encuestador.sync();
         } catch (error) {
             console.log('No se pudo conectar a la base de datos', error);
         }

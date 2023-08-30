@@ -7,14 +7,18 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
+import { LoginEncComponent } from './components/login-enc/login-enc.component';
+import { SignInEncComponent } from './components/sign-in-enc/sign-in-enc.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginComponent },
-  { path: 'signIn', component: SignInComponent },
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'loginAdm', component: LoginComponent },
+  { path: 'loginEnc', component: LoginEncComponent },
+  { path: 'signInAdm', component: SignInComponent },
+  { path: 'signInEnc', component: SignInEncComponent },
   { path: 'encuesta', component: EncuestaComponent },
+  { path: 'dashboard', component: DashboardComponent},
   // Esto siempre último
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];

@@ -23,4 +23,5 @@ export class AdminService {
    login(admin: Admin): Observable<string> {
     return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/login`, admin);
    }
+   
 }

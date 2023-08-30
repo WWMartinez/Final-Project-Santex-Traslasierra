@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div *ngIf="!loading" class="body">
-        <img class="logo" src="../../../assets/imgs/login.png" alt="img login">
+        <img class="logo" src="../../../assets/imgs/la-satisfaccion-del-cliente.png" alt="img login">
         <h3 class="mb-2">Login</h3>
         <div class="form-floating mb-3 mt-3">
             <input type="text" [(ngModel)]="username" autocomplete="false" class="form-control" placeholder="Ingrese usuario">
@@ -13,7 +13,7 @@
         <div class="d-grid gap-2">
             <button type="button" class="btn btn-primary btn-lg" (click)="login()">Aceptar</button>
         </div>
-        <p class="mt-3">No tienes cuenta? <a routerLink="/signInAdm">Registrar</a></p>
+        <p class="mt-3">No tienes cuenta? <a routerLink="/signInEnc">Registrar</a></p>
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
 </div>

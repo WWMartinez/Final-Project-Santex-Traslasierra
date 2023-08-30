@@ -15,7 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const admin_1 = __importDefault(require("../routes/admin"));
+const encuestador_1 = __importDefault(require("../routes/encuestador"));
 const admin_2 = require("../models/admin");
+const encuestador_2 = require("./encuestador");
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -32,6 +34,7 @@ class Server {
     }
     routes() {
         this.app.use('/api/admins', admin_1.default);
+        this.app.use('/api/encuestadores', encuestador_1.default);
     }
     middlewares() {
         // Parseo Body
@@ -43,6 +46,7 @@ class Server {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 yield admin_2.Admin.sync();
+                encuestador_2.Encuestador.sync();
             }
             catch (error) {
                 console.log('No se pudo conectar a la base de datos', error);
