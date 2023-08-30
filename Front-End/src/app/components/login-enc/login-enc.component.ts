@@ -42,7 +42,7 @@ export class LoginEncComponent implements OnInit {
   this._encuestadorService.login(encuestador).subscribe({
     next: (token) => {
       localStorage.setItem('token', token);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/encuestas']);
     },
     error: (e: HttpErrorResponse) => {
       this._errorService.msjError(e);
