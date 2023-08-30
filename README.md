@@ -10,8 +10,9 @@ Dentro del archivo package.json estan los scripts "dev": "nodemon dist/index.js"
 
 (Importante) - Antes debes crear la base de datos app-mina
 
+(Importante para desplegar la App) {
 Ejecutando los comandos npm run dev (Va a ejecutar el proyecto)
-                        npm run typescript (Que va a visualizar los cambios generados) 
+                        npm run typescript (Que va a visualizar los cambios generados)  
 
 
 
