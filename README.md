@@ -7,12 +7,11 @@ npx tsc --watch
 
 Dentro del archivo package.json estan los scripts "dev": "nodemon dist/index.js" y "typescript": "tsc --watch"
 
+
+(Importante) - Antes debes crear la base de datos app-mina
+
 Ejecutando los comandos npm run dev (Va a ejecutar el proyecto)
                         npm run typescript (Que va a visualizar los cambios generados) 
-
-
-
--- Es importante tener en cuenta que el formulario puede estar formado por respuestas de tipo String 
 
 
 
