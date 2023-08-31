@@ -1,24 +1,17 @@
 # Final-Project-Santex-Traslasierra
 
-npx nodemon dist/index.js 
--
-(genera el servidor de desarrollo, que se actualiza cuando se genera cambios)
-
-npx tsc --watch 
--
-(Cada vez que se haga un cambio en un archivo TS este comando lo esta viendo y va a volver a generar la carpeta dist y nodemon a su vez va estar viendo esos cambios y nos va a mostrar el resultado)
-
 Dentro del archivo package.json estan los scripts: 
 -
 "dev": "nodemon dist/index.js" 
-.
-"typescript": "tsc --watch"
+-
+(genera el servidor de desarrollo, que se actualiza cuando se genera cambios)
 
+"typescript": "tsc --watch"
+-
+(Cada vez que se haga un cambio en un archivo TS este comando lo esta viendo y va a volver a generar la carpeta dist y nodemon a su vez va estar viendo esos cambios y nos va a mostrar el resultado)
 
 (Importante) - Antes debes crear la base de datos app-mina
 -
-
-
 
 (Importante para desplegar la App)
 -
@@ -34,7 +27,7 @@ Dentro del archivo package.json estan los scripts:
 
 
 Proyecto Final Santex Education With Purposes.
-
+-
 Documentación de la Aplicación Web Mina Clavero
 Resumen
 Este documento detalla el proceso de desarrollo de la Aplicación Web Mina Clavero, una plataforma informativa diseñada para tres tipos de roles: Usuario, Encuestador y Administrador. 
