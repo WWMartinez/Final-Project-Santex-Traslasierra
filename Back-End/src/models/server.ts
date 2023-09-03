@@ -11,7 +11,7 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.port = process.env.PORT || '3001';
+        this.port = process.env.PORT || '3308';
         this.listen();
         this.middlewares();
         this.routes();
@@ -48,4 +48,3 @@ class Server {
 }
 
 export default Server;
-
