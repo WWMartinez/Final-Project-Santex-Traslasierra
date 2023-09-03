@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
-import { Encuestador } from '../models/encuestador';
 import jwt from 'jsonwebtoken';
+import { Encuestador } from '../models/encuestador';
 
 export const newEncuestador = async (req: Request, res: Response) => {
 

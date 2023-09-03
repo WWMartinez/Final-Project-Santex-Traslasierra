@@ -1,23 +1,33 @@
 # Final-Project-Santex-Traslasierra
-npx nodemon dist/index.js 
+
+Dentro del archivo package.json estan los scripts: 
+-
+"dev": "nodemon dist/index.js" 
+-
 (genera el servidor de desarrollo, que se actualiza cuando se genera cambios)
 
-npx tsc --watch 
-(Cada vez que se haga un cambio en un archivo TS este comando lo esta viendo y va a volver a general la carpeta dist y nodemon a su vez va estar viendo esos cambios y nos va a mostrar el resultado)
-
-Dentro del archivo package.json estan los scripts "dev": "nodemon dist/index.js" y "typescript": "tsc --watch"
-
+"typescript": "tsc --watch"
+-
+(Cada vez que se haga un cambio en un archivo TS este comando lo esta viendo y va a volver a generar la carpeta dist y nodemon a su vez va estar viendo esos cambios y nos va a mostrar el resultado)
 
 (Importante) - Antes debes crear la base de datos app-mina
+-
 
 (Importante para desplegar la App)
-Ejecutando los comandos npm run dev (Va a ejecutar el proyecto)
-                        npm run typescript (Que va a visualizar los cambios generados)  
+-
+1) Primero ejecuten en la carpeta Front-End y Back-End el comando (npm i) para instalar todas las dependencias necesarias.
 
+2) En la carpeta Back-End npm run typescript (Que va a visualizar los cambios generados)
+
+3) En la carpeta Back-End hay una carpeta llamaba BD que dentro trae una archivo conection.TS, ahi dentro deben colocar el nombre de usuario que tienen en MySQL (por dafault: root), el nombre de la base de datos (que debe ser creada con anterioridad) y la misma contraseña con la que abren el MySQL Workbench...   
+
+4) En la carpeta Back-End Ejecutando el comando npm run dev (Va a ejecutar el proyecto)
+                          
+5) En la carpeta Front-End ejecutando el comando ng serve (Van a ejecutar la App)
 
 
 Proyecto Final Santex Education With Purposes.
-
+-
 Documentación de la Aplicación Web Mina Clavero
 Resumen
 Este documento detalla el proceso de desarrollo de la Aplicación Web Mina Clavero, una plataforma informativa diseñada para tres tipos de roles: Usuario, Encuestador y Administrador. 
@@ -82,9 +92,3 @@ Con la base sólida implementada, los siguientes pasos incluirán:
 
 Ampliar las funcionalidades existentes.
 Implementar mejoras adicionales para enriquecer la experiencia del usuario.
-
-Conclusión
--
-La Aplicación Web Mina Clavero ofrece una experiencia interactiva y personalizada a través de sus diferentes roles. La atención a la claridad, usabilidad y diseño estético garantiza una plataforma atractiva y funcional para sus usuarios.
-
-Esta documentación proporciona una visión general del desarrollo de la aplicación y sirve como referencia para futuras iteraciones y mejoras.

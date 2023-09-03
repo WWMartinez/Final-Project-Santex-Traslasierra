@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 // Modulos
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr'
 
 // Componentes de la App
@@ -22,6 +23,8 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { LoginEncComponent } from './components/login-enc/login-enc.component';
 import { SignInEncComponent } from './components/sign-in-enc/sign-in-enc.component';
 import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.component';
+import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
+import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.
     SpinnerComponent,
     LoginEncComponent,
     SignInEncComponent,
-    EncuestaCrudComponent
+    EncuestaCrudComponent,
+    EncuestaCrudAddEditComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,7 @@ import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
-import { Admin } from '../models/admin';
 import jwt from 'jsonwebtoken';
+import { Admin } from '../models/admin';
 
 export const newAdmin = async (req: Request, res: Response) => {
 

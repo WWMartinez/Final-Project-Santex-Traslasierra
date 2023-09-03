@@ -50,7 +50,7 @@ export class SignInEncComponent implements OnInit {
       next: (v) => {
         this.loading = false;
         this.toastr.success(`El usuario ${this.username} fue registrado con exito`, 'Encuestador registrado');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/loginEnc']);
       },
       error: (e: HttpErrorResponse) => {
         this.loading = false;

@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
       next: (v) => {
         this.loading = false;
         this.toastr.success(`El usuario ${this.username} fue registrado con exito`, 'Admin registrado');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/loginAdm']);
       },
       error: (e: HttpErrorResponse) => {
         this.loading = false;

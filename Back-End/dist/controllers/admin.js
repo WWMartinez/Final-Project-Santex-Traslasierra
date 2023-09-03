@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.loginAdmin = exports.newAdmin = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const admin_1 = require("../models/admin");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const admin_1 = require("../models/admin");
 const newAdmin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, password } = req.body;
     // Validamos si el Admin ya existe en la base de datos

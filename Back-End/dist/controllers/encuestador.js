@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.loginEncuestador = exports.newEncuestador = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const encuestador_1 = require("../models/encuestador");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const encuestador_1 = require("../models/encuestador");
 const newEncuestador = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, password } = req.body;
     // Validamos si el Encuestador ya existe en la base de datos
