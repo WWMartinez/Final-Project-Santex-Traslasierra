@@ -63,14 +63,14 @@ export class EncuestaCrudAddEditComponent implements OnInit {
       this._preguntaService.updatePregunta(this.id, pregunta).subscribe(() => {
         this.toastr.info('La pregunta fue actualizada con exito!', 'Pregunta Actualizada');
         //this.loading = false;
-        this.router.navigate(['/encuestaCRUD']);
+        this.router.navigate(['/encrud']);
       })
     } else {
       // Es agregar
       this._preguntaService.savePregunta(pregunta).subscribe(() => {
         this.toastr.success('La pregunta fue creada con exito!', 'Pregunta Creada');
         //this.loading = false;
-        this.router.navigate(['/encuestaCRUD']);
+        this.router.navigate(['/encrud']);
       })
     }
   }

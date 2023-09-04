@@ -43,7 +43,7 @@ export class LoginEncComponent implements OnInit {
     next: (token) => {
       // Mala practica que el nombre sea token, que sea distinto
       localStorage.setItem('token', token);
-      this.router.navigate(['/encuestaCRUD']);
+      this.router.navigate(['/encrud']);
     },
     error: (e: HttpErrorResponse) => {
       this._errorService.msjError(e);

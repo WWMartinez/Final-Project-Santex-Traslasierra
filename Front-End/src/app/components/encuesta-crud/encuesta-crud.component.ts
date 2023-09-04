@@ -10,7 +10,7 @@ import { PreguntaService } from 'src/app/services/pregunta.service';
 })
 export class EncuestaCrudComponent implements OnInit {
   listPreguntas: Pregunta[] = []
-  loading: boolean = false;
+  //loading: boolean = false;
 
   constructor(private _preguntaService: PreguntaService, private toastr: ToastrService) {  }
 

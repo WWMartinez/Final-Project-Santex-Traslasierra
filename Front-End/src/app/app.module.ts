@@ -25,6 +25,7 @@ import { SignInEncComponent } from './components/sign-in-enc/sign-in-enc.compone
 import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.component';
 import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
 import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
+import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProgressBarComponent } from './shared/progress-bar/progress-bar.compone
     SignInEncComponent,
     EncuestaCrudComponent,
     EncuestaCrudAddEditComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
