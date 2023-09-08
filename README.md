@@ -92,9 +92,3 @@ Con la base sólida implementada, los siguientes pasos incluirán:
 
 Ampliar las funcionalidades existentes.
 Implementar mejoras adicionales para enriquecer la experiencia del usuario.
-
-Conclusión
--
-La Aplicación Web Mina Clavero ofrece una experiencia interactiva y personalizada a través de sus diferentes roles. La atención a la claridad, usabilidad y diseño estético garantiza una plataforma atractiva y funcional para sus usuarios.
-
-Esta documentación proporciona una visión general del desarrollo de la aplicación y sirve como referencia para futuras iteraciones y mejoras.

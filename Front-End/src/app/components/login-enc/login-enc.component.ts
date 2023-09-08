@@ -41,8 +41,9 @@ export class LoginEncComponent implements OnInit {
   this.loading = true;
   this._encuestadorService.login(encuestador).subscribe({
     next: (token) => {
+      // Mala practica que el nombre sea token, que sea distinto
       localStorage.setItem('token', token);
-      this.router.navigate(['/encuestas']);
+      this.router.navigate(['/encrud']);
     },
     error: (e: HttpErrorResponse) => {
       this._errorService.msjError(e);

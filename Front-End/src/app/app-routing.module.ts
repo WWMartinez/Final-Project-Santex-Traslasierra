@@ -9,6 +9,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
 import { LoginEncComponent } from './components/login-enc/login-enc.component';
 import { SignInEncComponent } from './components/sign-in-enc/sign-in-enc.component';
+import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.component';
+import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +19,10 @@ const routes: Routes = [
   { path: 'loginEnc', component: LoginEncComponent },
   { path: 'signInAdm', component: SignInComponent },
   { path: 'signInEnc', component: SignInEncComponent },
-  { path: 'encuesta', component: EncuestaComponent },
+  { path: 'formulario', component: EncuestaComponent },
+  { path: 'encrud', component: EncuestaCrudComponent },
+  { path: 'add', component: EncuestaCrudAddEditComponent },
+  { path: 'edit/:id', component: EncuestaCrudAddEditComponent },
   { path: 'dashboard', component: DashboardComponent},
   // Esto siempre último
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
