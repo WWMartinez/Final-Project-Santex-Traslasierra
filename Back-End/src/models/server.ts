@@ -18,26 +18,27 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT || '3308';
+    }
+
+    async start() {
         this.listen();
         this.middlewares();
         this.routes();
-        this.dbConnect();
-    }
+    };
 
     listen() {
-        this.app.listen(this.port, () => {
+        this.app.listen(this.port, async () => {
+            await this.dbConnect();
             console.log(`Server running on port ${this.port}`);
         });
     }
 
     routes() {
-
         this.app.get('/', (req: Request, res: Response) => {
             res.json({
                 msg: 'API WORKING'
             })
         })
-
         this.app.use('/api/admins', routesAdmin);
         this.app.use('/api/encuestadores', routesEncuestador);
         this.app.use('/api/preguntas', routesPregunta);
@@ -46,7 +47,6 @@ class Server {
     middlewares() {
         // Parseo Body
         this.app.use(express.json());
-
         // CORS
         this.app.use(cors());
     }
@@ -54,14 +54,14 @@ class Server {
     async dbConnect() {
         try {
             await sequelize.authenticate();
-                    Admin.sync();
-                        Encuestador.sync();
-                            Pregunta.sync();
-                            console.log("Conectada a la Base de Datos con Exito!")
+            Admin.sync();
+            Encuestador.sync();
+            Pregunta.sync();
+            console.log("Conectada a la Base de Datos con Exito!")
         } catch (error) {
             console.log('No se pudo conectar a la base de datos', error);
         }
     }
-}
+};
 
 export default Server;
