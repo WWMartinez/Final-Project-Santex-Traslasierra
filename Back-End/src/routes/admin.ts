@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { newAdmin, loginAdmin } from "../controllers/admin";
+const { Router } = require("express");
+const { newAdmin, loginAdmin } = require("../controllers/index.controller");
 
 const router = Router();
 
