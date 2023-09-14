@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { deletePregunta, getPregunta, getPreguntas, postPregunta, updatePregunta } from '../controllers/preguntas';
+import { deletePregunta, getPregunta, getPreguntas, postPregunta, updatePregunta } from '../controllers/preguntas.controller';
 
 const router = Router();
 

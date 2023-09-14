@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Pregunta } from '../models/pregunta';
+import { Pregunta } from '../models/pregunta.model';
 
 export const getPreguntas = async (req: Request, res: Response) => {
     const listPreguntas = await Pregunta.findAll();

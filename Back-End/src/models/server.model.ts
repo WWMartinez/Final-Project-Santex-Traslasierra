@@ -1,13 +1,13 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 // Rutas
-import routesAdmin from '../routes/admin';
-import routesEncuestador from '../routes/encuestador';
-import routesPregunta from '../routes/pregunta';
+import routesAdmin from '../routes/admin.route';
+import routesEncuestador from '../routes/encuestador.route';
+import routesPregunta from '../routes/pregunta.route';
 // Modelos
 import { Admin } from './admin.model';
-import { Encuestador } from '../models/encuestador';
-import { Pregunta } from '../models/pregunta';
+import { Encuestador } from './encuestador.model';
+import { Pregunta } from './pregunta.model';
 // BD
 const sequelize = require('../db/connection');
 
