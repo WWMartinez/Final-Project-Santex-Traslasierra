@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-const sequelize = require('../db/connection');
+const sequelize = require('../config/connection');
 
 export const Pregunta = sequelize.define('preguntas', {
     id: {

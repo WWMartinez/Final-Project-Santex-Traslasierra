@@ -1,19 +1,24 @@
 import { DataTypes } from 'sequelize';
 const sequelize = require('../config/connection');
 
-export const Encuestador = sequelize.define('encuestador', {
+export const InfoCard = sequelize.define('infoCard', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    username: {
+    image: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false
     },
-    password: {
+    titulo: {
         type: DataTypes.STRING,
         allowNull: false
-    }
-}, )
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+}, );
+
+export default InfoCard;

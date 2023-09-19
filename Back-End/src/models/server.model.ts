@@ -9,7 +9,7 @@ import { Admin } from './admin.model';
 import { Encuestador } from './encuestador.model';
 import { Pregunta } from './pregunta.model';
 // BD
-const sequelize = require('../db/connection');
+const sequelize = require('../config/connection');
 
 class Server {
     private app: Application;
