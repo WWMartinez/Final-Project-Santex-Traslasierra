@@ -1,14 +1,12 @@
-import { Request, Response } from 'express';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import { Encuestador } from '../models/encuestador.model';
+const bcrypt = require('bcrypt');
+const jwt  = require('jsonwebtoken');
+const { encuestadorModel } = require('../models');
 
-export const newEncuestador = async (req: Request, res: Response) => {
-
+const newEncuestador = async (req, res) => {
     const { username, password } = req.body;
 
     // Validamos si el Encuestador ya existe en la base de datos
-    const encuestador = await Encuestador.findOne({ where: { username: username } });
+    const encuestador = await encuestadorModel.findOne({ where: { username } });
 
     if (encuestador) {
         return res.status(400).json({
@@ -20,7 +18,7 @@ export const newEncuestador = async (req: Request, res: Response) => {
 
     try {
         // Guardamos el Encuestador en la base de datos
-        await Encuestador.create({
+        await encuestadorModel.create({
             username: username,
             password: hashedPassword
         })
@@ -35,12 +33,12 @@ export const newEncuestador = async (req: Request, res: Response) => {
     }
 }
 
-export const loginEncuestador = async (req: Request, res: Response) => {
+const loginEncuestador = async (req, res) => {
     
     const { username, password } = req.body;
 
     // Validamos si el Encuestador existe en la base de datos
-    const encuestador: any = await Encuestador.findOne({ where: { username: username } });
+    const encuestador = await encuestadorModel.findOne({ where: { username } });
 
     if (!encuestador) {
         return res.status(400).json({
@@ -59,7 +57,12 @@ export const loginEncuestador = async (req: Request, res: Response) => {
     // Generamos Token
     const token = jwt.sign({
         username: username,
-    }, process.env.TOKEN_SECRET || 'contraseña123');
+    }, process.env.SECRET_KEY || 'contraseña123');
 
     res.json(token);
-}
+};
+
+module.exports = {
+    newEncuestador,
+    loginEncuestador
+};

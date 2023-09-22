@@ -1,15 +1,14 @@
-import { Request, Response } from 'express';
-import { Pregunta } from '../models/pregunta.model';
+const { preguntaModel } = require('../models');
 
-export const getPreguntas = async (req: Request, res: Response) => {
-    const listPreguntas = await Pregunta.findAll();
+const getPreguntas = async (req, res) => {
+    const listPreguntas = await preguntaModel.findAll();
 
     res.json(listPreguntas);
 }
 
-export const getPregunta = async (req: Request, res: Response) => {
+const getPregunta = async (req, res) => {
     const { id } = req.params;
-    const pregunta = await Pregunta.findByPk(id);
+    const pregunta = await preguntaModel.findByPk(id);
 
     if (pregunta) {
         res.json(pregunta);
@@ -20,9 +19,9 @@ export const getPregunta = async (req: Request, res: Response) => {
     }
 }
 
-export const deletePregunta = async (req: Request, res: Response) => {
+const deletePregunta = async (req, res) => {
     const { id } = req.params;
-    const pregunta = await Pregunta.findByPk(id);
+    const pregunta = await preguntaModel.findByPk(id);
 
     if (!pregunta) {
         res.status(404).json({
@@ -36,11 +35,11 @@ export const deletePregunta = async (req: Request, res: Response) => {
     }
 }
 
-export const postPregunta = async (req: Request, res: Response) => {
+const postPregunta = async (req, res) => {
     const { body } = req;
 
     try {
-        await Pregunta.create(body);
+        await preguntaModel.create(body);
 
         res.json({
             msg: 'La pregunta fue agregada con exito!'
@@ -53,12 +52,12 @@ export const postPregunta = async (req: Request, res: Response) => {
     }
 }
 
-export const updatePregunta = async (req: Request, res: Response) => {
+const updatePregunta = async (req, res) => {
     const { body } = req;
     const { id } = req.params;
 
     try {
-        const pregunta = await Pregunta.findByPk(id);
+        const pregunta = await preguntaModel.findByPk(id);
 
         if (pregunta) {
             await pregunta.update(body);
@@ -76,4 +75,12 @@ export const updatePregunta = async (req: Request, res: Response) => {
             msg: 'Ocurrio un error, reinicie el Server'
         })
     }
-}
+};
+
+module.exports = {
+    getPregunta,
+    getPreguntas,
+    postPregunta,
+    updatePregunta,
+    deletePregunta
+};

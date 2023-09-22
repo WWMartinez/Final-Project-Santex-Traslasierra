@@ -1,7 +1,7 @@
-import { Router } from 'express';
-import { deletePregunta, getPregunta, getPreguntas, postPregunta, updatePregunta } from '../controllers/preguntas.controller';
-
+const { Router } =require('express');
 const router = Router();
+const { deletePregunta, getPregunta, getPreguntas, postPregunta, updatePregunta } = require('../controllers/preguntas.controller');
+
 
 router.get('/', getPreguntas);
 router.get('/:id', getPregunta);
@@ -9,4 +9,4 @@ router.delete('/:id', deletePregunta);
 router.post('/', postPregunta);
 router.put('/:id', updatePregunta);
 
-export default router;
+module.exports = router;

@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
-const validateToken = (req: any, res: any, next: any) => {
+const validateToken = (req, res, next) => {
   const headerToken = req.headers['authorization']
 
   if (headerToken != undefined && headerToken.startsWith('Bearer ')) {
@@ -22,4 +22,4 @@ const validateToken = (req: any, res: any, next: any) => {
   };
 };
 
-export default validateToken;
+module.exports = validateToken;

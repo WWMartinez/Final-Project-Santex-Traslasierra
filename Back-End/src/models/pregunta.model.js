@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize';
+const { DataTypes }  = require('sequelize');
 const sequelize = require('../config/connection');
 
-export const Pregunta = sequelize.define('preguntas', {
+const Pregunta = sequelize.define('pregunta', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,6 +16,6 @@ export const Pregunta = sequelize.define('preguntas', {
     question: {
         type: DataTypes.STRING
     }
-}, );
+});
 
-export default Pregunta;
+module.exports = Pregunta;

@@ -1,7 +1,7 @@
 const passport = require("passport");
 
-export const authIsAdmin = (req: any, res: any, next: any) => {
-  return passport.authenticate("jwt",{ session: false, }, (err: any, user: any) => {
+const authIsAdmin = (req, res, next) => {
+  return passport.authenticate("jwt",{ session: false, }, (err, user) => {
       if (err) {
         console.log(err);
         return next(err);
@@ -13,4 +13,8 @@ export const authIsAdmin = (req: any, res: any, next: any) => {
       res.status(401).json({ error: "Not Admin, not auth" });
     }
   )(req, res, next);
+};
+
+module.exports = {
+  authIsAdmin,
 };

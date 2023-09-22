@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize';
-const sequelize = require('../config/connection');
+const { DataTypes } =require('sequelize');
+const sequelize =require('../config/connection');
 
-export const Admin = sequelize.define('admin', {
+const Admin = sequelize.define('admin', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,4 +16,6 @@ export const Admin = sequelize.define('admin', {
         type: DataTypes.STRING,
         allowNull: false
     }
-}, )
+});
+
+module.exports = Admin;

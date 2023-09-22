@@ -1,8 +1,8 @@
-const { Admin } = require("../models/admin.model");
+const { adminModel } =require("../models");
 
-export const validateUser = async (username: string) => {
+const validateUser = async (username) => {
   try {
-    const user = await Admin.findOne({ where: { username: username }, });
+    const user = await adminModel.findOne({ where: { username: username }, });
     if (user) {
       return user;
     } else {
@@ -38,3 +38,4 @@ export const validateUser = async (username: string) => {
 //   }
 // };
 
+module.exports = { validateUser };

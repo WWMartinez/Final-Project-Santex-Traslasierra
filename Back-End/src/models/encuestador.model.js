@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize';
-const sequelize = require('../config/connection');
+const { DataTypes }  = require('sequelize');
+const sequelize  = require('../config/connection');
 
-export const Encuestador = sequelize.define('encuestador', {
+const Encuestador = sequelize.define('encuestador', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,4 +16,6 @@ export const Encuestador = sequelize.define('encuestador', {
         type: DataTypes.STRING,
         allowNull: false
     }
-}, )
+});
+
+module.exports = Encuestador;

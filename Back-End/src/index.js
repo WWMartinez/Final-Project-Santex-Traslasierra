@@ -1,6 +1,5 @@
 const dotenv = require('dotenv');
-const Server = require("./models/server");
-
+const Server = require("./models/server.model");
 // Configuración dotenv
 dotenv.config();
 
