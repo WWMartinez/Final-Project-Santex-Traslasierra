@@ -1,4 +1,3 @@
-
 const server = require('./server');
 const DB_PORT = process.env.DB_PORT || 3308;
 const { initializeDB } = require('./config');
