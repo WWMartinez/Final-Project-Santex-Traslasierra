@@ -1,3 +1,5 @@
+const { Op } = require("sequelize");
+const { infoCardModel } = require('../models');
 const InfoCardModel = require('../models/infoCard.model');
 
 // CREATE INFOCARD
@@ -24,14 +26,54 @@ const getIdInfoCard = async (id) => {
   }
 };
 
+// UPDATE INFO CARD BY ID
+const putInfoCard = async (infoCardId, infoCardOptions) => {
+  try {
+    await getIdInfoCard(infoCardId);
+    const [numRowsUpdated] = await InfoCardModel.update(infoCardOptions, {
+      where: { id: infoCardId },
+    });
+    console.log(`${numRowsUpdated} rows updated on DB`);
+    return InfoCardModel.findByPk(infoCardId);
+  } catch (error) {
+    throw error;
+  }
+};
 
+// DELETE INFOCARD
+const deleteInfoCard = async (infoCardId) => {
+  try {
+    return infoCardModel.destroy({ where: { id: infoCardId } });
+  } catch (error) {
+    throw error;
+  }
+};
+
+// GET INFOCARDs BY ID
+const getIdInfoCards = async (criteria) => {
+  try {
+    let options = { include: [{ all: true }] };
+    if (criteria) {
+      options = { ...options, where: { [Op.or]: criteria } };
+    }
+    const infoCards = await infoCardModel.findAll(options);
+
+    if (infoCards) {
+      return infoCards;
+    } else {
+      throw new Error(
+        "No infoCards were found with these criteria"
+      );
+    }
+  } catch (error) {
+    throw error;
+  }
+};
 
 module.exports = {
   createInfoCard,
   getIdInfoCard,
-
+  putInfoCard,
+  deleteInfoCard,
+  getIdInfoCards
 };
-
-
-
-
