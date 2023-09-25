@@ -49,8 +49,8 @@ const deleteInfoCard = async (infoCardId) => {
   }
 };
 
-// GET INFOCARDs BY ID
-const getIdInfoCards = async (criteria) => {
+// GET INFOCARDs
+const findInfoCards = async (criteria) => {
   try {
     let options = { include: [{ all: true }] };
     if (criteria) {
@@ -61,9 +61,7 @@ const getIdInfoCards = async (criteria) => {
     if (infoCards) {
       return infoCards;
     } else {
-      throw new Error(
-        "No infoCards were found with these criteria"
-      );
+      return {};
     }
   } catch (error) {
     throw error;
@@ -75,5 +73,5 @@ module.exports = {
   getIdInfoCard,
   putInfoCard,
   deleteInfoCard,
-  getIdInfoCards
+  findInfoCards
 };

@@ -16,8 +16,8 @@ const deleteInfoCard = async (id) => {
   return await infoCardProvider.deleteInfoCard(id);
 };
 
-const getIdInfoCards = async (options) => {
-  return await infoCardProvider.getIdInfoCards(options);
+const findInfoCards = async (options) => {
+  return await infoCardProvider.findInfoCards(options);
 };
 
 module.exports = { 
@@ -25,5 +25,5 @@ module.exports = {
   getIdInfoCard,
   putInfoCard,
   deleteInfoCard,
-  getIdInfoCards
+  findInfoCards
 };

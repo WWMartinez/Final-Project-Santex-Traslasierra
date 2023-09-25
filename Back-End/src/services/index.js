@@ -1,5 +1,5 @@
-const { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, getIdInfoCards } = require('./infoCard.ser');
+const { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards } = require('./infoCard.ser');
 
 module.exports = {
-  infoCardService: { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, getIdInfoCards }
+  infoCardService: { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards }
 };
