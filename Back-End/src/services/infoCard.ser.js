@@ -4,4 +4,13 @@ const createInfoCard = async (infoCard) => {
   return await infoCardProvider.createInfoCard(infoCard);
 };
 
-module.exports = { createInfoCard };
+const getIdInfoCard = async (id) => {
+  return await infoCardProvider.getIdInfoCard(id);
+};
+
+
+
+module.exports = { 
+  createInfoCard,
+  getIdInfoCard
+};

@@ -17,4 +17,18 @@ const createInfoCard = async (req, res ) => {
   }
 };
 
-module.exports = { createInfoCard };
+// GET INFOCARD BY ID
+const getIdInfoCard = async (req, res) => {
+  const infoCardId = req.params.infoCardId;
+  try {
+    const infoCard = await userService.getIdInfoCard(infoCardId);
+    res.status(200).json(infoCard);
+  } catch (error) {
+    res.status(500).json({ message: "An error occurred", error: error.message });
+  }
+};
+
+
+
+
+module.exports = { createInfoCard, getIdInfoCard };

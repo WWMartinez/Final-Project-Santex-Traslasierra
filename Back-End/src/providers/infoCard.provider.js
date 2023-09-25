@@ -1,4 +1,4 @@
-const { InfoCardModel } = require('../models/infoCard.model');
+const InfoCardModel = require('../models/infoCard.model');
 
 const createInfoCard = async (infoCardOptions) => {
   try {
@@ -8,10 +8,26 @@ const createInfoCard = async (infoCardOptions) => {
     throw error;
   }
 };
-console.log(createInfoCard);
+
+// GET INFO CARD BY ID
+const getIdInfoCard = async (id) => {
+  try {
+    const indoCard = await InfoCardModel.findByPk(id, { include: [{ all: true }] });
+    if (indoCard) {
+      return indoCard;
+    } else {
+      throw error ("InfoCard not found");
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+
 
 module.exports = {
   createInfoCard,
+  getIdInfoCard,
 
 };
 
