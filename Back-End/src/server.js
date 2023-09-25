@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors');
 // MIDDLEWARES
-const { validateToken } = require("./middleware");
+const { validateToken, mdwLogging, authCheck } = require("./middleware");
 // ROUTES
 const { adminRoute, encuestadorRoute, preguntaRoute, infoCardRoute } = require("./routes");
 
