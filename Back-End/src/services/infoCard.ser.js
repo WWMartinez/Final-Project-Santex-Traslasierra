@@ -9,7 +9,6 @@ const getIdInfoCard = async (id) => {
 };
 
 
-
 module.exports = { 
   createInfoCard,
   getIdInfoCard

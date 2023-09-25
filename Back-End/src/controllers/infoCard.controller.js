@@ -21,10 +21,10 @@ const createInfoCard = async (req, res ) => {
 const getIdInfoCard = async (req, res) => {
   const infoCardId = req.params.infoCardId;
   try {
-    const infoCard = await userService.getIdInfoCard(infoCardId);
+    const infoCard = await infoCardService.getIdInfoCard(infoCardId);
     res.status(200).json(infoCard);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred", error: error.message });
+    res.status(500).json({ message: "An error occurred finding InfoCard by ID", error: error.message });
   }
 };
 
