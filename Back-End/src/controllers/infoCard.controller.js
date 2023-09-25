@@ -1,7 +1,6 @@
 const { infoCardService } = require("../services");
 const cloudinary = require("../utils/cloudinary");
 
-
 const createInfoCard = async (req, res ) => {
   const { title, image, description, category, order } = req.body
   try {
@@ -30,6 +29,7 @@ const getIdInfoCard = async (req, res) => {
 };
 
 // GET INFOCARDs
+// TODO: Agregar validaciones: Title y Description son campos obligatorios. Description deberia tener un 100 caracteres max, etc etc
 const findInfoCards = async (req, res) => {
   const { title, category, order } = req.query;
   try {
