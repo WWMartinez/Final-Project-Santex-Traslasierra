@@ -26,7 +26,7 @@ import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.
 import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
 import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
-
+import { InfoCardsComponent } from './components/info-cards/info-cards.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,8 @@ import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
     EncuestaCrudComponent,
     EncuestaCrudAddEditComponent,
     ProgressBarComponent,
-    BarChartComponent
+    BarChartComponent,
+    InfoCardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +57,7 @@ import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-    }),
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
