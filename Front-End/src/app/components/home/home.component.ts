@@ -1,26 +1,24 @@
 import { Component } from '@angular/core';
-import { InfoCardsComponent } from '../info-cards/info-cards.component';
 import { HttpClient } from '@angular/common/http';
 import { InfoCard } from 'src/app/interfaces/infoCard';
- 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  // definimos el array infoCards importando InfoCard interface
   infoCards: InfoCard[] = [];
 
-  constructor (private httpClient: HttpClient) {
-
-  }
+  constructor (private httpClient: HttpClient) {}
   
-  // ngOnInit(){
-  //   this.httpClient.get('localhost:3308/info-cards').subscribe(data => {
-  //     this.infoCards = data;
-  //   });
-  // }
+  // get al Back(route), obtenemos un res.data y guardamos la variable data infoCards(array)
+  ngOnInit(): void{
+    this.httpClient.get<InfoCard[]>('http://localhost:3308/infocard').subscribe(data => {
+      this.infoCards = data;
+    });
+  }
+
 
 
 }

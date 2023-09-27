@@ -1,9 +1,10 @@
-<div class="col-lg-4 mb-4">
+ <!-- ngIf="infoCard !== null (infoCard no es null, elemento HTML al que aplica *ngIf se renderizara. Si infoCard = null,elemento HTML no renderiza) -->
+<div class="col-lg-4 mb-4" *ngIf="infoCard !== null">
   <div class="card w-80">
-    <img src="../../../assets/imgs/Informacion.jpeg" alt="Info-turismo" class="card-img-top card-image">
+    <img [src]="infoCard.image" alt="Info-turismo" class="card-img-top card-image">
       <div class="card-body">
-        <h5 class="card-title">Información Turística</h5>
-        <p class="card-text">Sus principales atractivos incluyen hermosas playas de arena dorada a lo largo del río, ideales para disfrutar del sol y las aguas cristalinas. Además, el lugar es conocido por sus cascadas, senderos de trekking y la posibilidad de practicar actividades de aventura como el rappel y el tirolesa. La arquitectura de estilo serrano y la calidez de su gente completan la experiencia, haciendo de Mina Clavero un destino perfecto para relajarse y conectarse con la naturaleza.</p>
+        <h5 class="card-title">{{ infoCard.title }}</h5>
+        <p class="card-text">{{ infoCard.description }}</p>
     </div>
   </div>
 </div>
