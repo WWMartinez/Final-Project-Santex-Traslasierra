@@ -43,7 +43,7 @@ const findInfoCards = async (req, res) => {
     } else {
       infoCards = await infoCardService.findInfoCards();
     }
-    res.status(200).json(keys);
+    res.status(200).json(infoCards);
   } catch (error) {
     res.status(500).json({ message: "An error occurred", error: error.message });
   }
