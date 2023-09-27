@@ -35,7 +35,7 @@ const findInfoCards = async (req, res) => {
   try {
     let infoCards;
     if (Object.keys(req.query).length !== 0) {
-      infoCards = await userService.findInfoCards({
+      infoCards = await infoCardService.findInfoCards({
         ...(title && { title }),
         ...(category && { category }),
         ...(order && { order }),
