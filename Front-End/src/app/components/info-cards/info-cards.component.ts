@@ -12,10 +12,7 @@ export class InfoCardsComponent {
   // esta funcion Input la llamamos desde htmlTag(donde queremos renderizar el componente(home))= title={{infoCard.title}}"
   @Input() infoCard: InfoCard | null = null;
 
-  constructor (private httpClient: HttpClient) {}
-
   ngOnInit():void {
-
   };
 
 }
