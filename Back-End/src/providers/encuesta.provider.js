@@ -49,7 +49,7 @@ const deleteEncuesta = async (encuestaId) => {
   }
 };
 
-// GET encuestas
+// GET encuestaS
 const findEncuestas = async (criteria) => {
   try {
     let options = { include: [{ all: true }] };
