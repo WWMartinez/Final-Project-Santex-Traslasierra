@@ -4,8 +4,8 @@ const { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCard
 
 router.post('/', createInfoCard);
 router.get('/:infoCardId', getIdInfoCard);
+router.get('/', findInfoCards);
 router.put('/:infoCardId', putInfoCard);
 router.delete('/:infoCardId', deleteInfoCard);
-router.get('/', findInfoCards);
 
 module.exports = router;

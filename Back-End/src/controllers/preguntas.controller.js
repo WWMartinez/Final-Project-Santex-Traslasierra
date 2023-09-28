@@ -1,4 +1,4 @@
-const { preguntaModel } = require('../models');
+const preguntaModel = require('../models/pregunta.model');
 
 const getPreguntas = async (req, res) => {
     const listPreguntas = await preguntaModel.findAll();

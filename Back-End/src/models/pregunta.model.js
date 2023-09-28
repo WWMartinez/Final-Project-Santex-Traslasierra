@@ -9,17 +9,25 @@ const Pregunta = sequelize.define('pregunta', {
         autoIncrement: true
     },
     type: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    description: {
-        type: DataTypes.STRING
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     question: {
-        type: DataTypes.STRING
-    }
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    visible: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
+    },
 });
 // TODO esto? o crear una nueva tabla PreguntaEncuesta?
 
+// Associations DB table
 const preguntaEncuestaColumn = "encuestaId";
 Pregunta.belongsTo(Encuesta, {
   foreignKey: preguntaEncuestaColumn,
@@ -27,5 +35,7 @@ Pregunta.belongsTo(Encuesta, {
 });
 
 Encuesta.hasMany(Pregunta, { foreignKey: preguntaEncuestaColumn });
+
+
 
 module.exports = Pregunta;

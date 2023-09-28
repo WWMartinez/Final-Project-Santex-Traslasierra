@@ -11,16 +11,8 @@ const Encuesta = sequelize.define('encuesta', {
       type: DataTypes.STRING,
       allowNull: false
   },
-  description: {
-      type: DataTypes.STRING,
-      allowNull: false
-  },
-  category: {
-      type: DataTypes.STRING,
-      allowNull: false
-  },
-  order: {
-    type: DataTypes.INTEGER,
+  visible: {
+    type: DataTypes.BOOLEAN,
     allowNull: false
   },
 });

@@ -1,5 +1,4 @@
 const { Op } = require("sequelize");
-const { infoCardModel } = require('../models');
 const InfoCardModel = require('../models/infoCard.model');
 
 // CREATE INFOCARD

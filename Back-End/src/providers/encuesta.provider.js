@@ -1,5 +1,4 @@
 const { Op } = require("sequelize");
-const { EncuestaModel } = require('../models');
 const EncuestaModel = require('../models/encuesta.model');
 
 // CREATE encuesta
