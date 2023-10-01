@@ -16,6 +16,7 @@ export class HomeComponent {
   ngOnInit(): void{
     this.httpClient.get<InfoCard[]>('http://localhost:3308/infocard').subscribe(data => {
       this.infoCards = data;
+      console.log(data);
     });
   }
 

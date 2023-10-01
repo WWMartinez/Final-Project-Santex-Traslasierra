@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { InfoCard } from 'src/app/interfaces/infoCard';
 @Component({
