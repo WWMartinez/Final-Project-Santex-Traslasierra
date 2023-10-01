@@ -1,7 +1,6 @@
-const { Op } = require("sequelize");
 const RespuestaModel = require('../models/respuesta.model');
 
-// CREATE INFOCARD
+// CREATE RESPUESTA
 const createRespuesta = async (respuestaOptions) => {
   try {
     const newRespuesta = await RespuestaModel.create(respuestaOptions);
@@ -11,7 +10,7 @@ const createRespuesta = async (respuestaOptions) => {
   }
 };
 
-// GET INFO CARD BY ID
+// GET RESPUESTA BY ID
 const getIdRespuesta = async (id) => {
   try {
     const respuesta = await RespuestaModel.findByPk(id, { include: [{ all: true }] });
@@ -25,26 +24,17 @@ const getIdRespuesta = async (id) => {
   }
 };
 
-// GET INFOCARDs
-const findRespuestas = async (criteria) => {
+// GET ALL RESPUESTAs
+const findRespuestas = async (options) => {
   try {
-    let options = { include: [{ all: true }] };
-    if (criteria) {
-      options = { ...options, where: { [Op.or]: criteria } };
-    }
-    const respuestas = await respuestaModel.findAll(options);
-
-    if (respuestas) {
-      return respuestas;
-    } else {
-      return {};
-    }
+    const respuestas = await RespuestaModel.findAll(options);
+    return respuestas;
   } catch (error) {
     throw error;
   }
 };
 
-// UPDATE INFO CARD BY ID
+// UPDATE RESPUESTA BY ID
 const putRespuesta = async (respuestaId, respuestaOptions) => {
   try {
     await getIdRespuesta(respuestaId);
@@ -58,7 +48,7 @@ const putRespuesta = async (respuestaId, respuestaOptions) => {
   }
 };
 
-// DELETE INFOCARD
+// DELETE RESPUESTA
 const deleteRespuesta = async (respuestaId) => {
   try {
     return respuestaModel.destroy({ where: { id: respuestaId } });

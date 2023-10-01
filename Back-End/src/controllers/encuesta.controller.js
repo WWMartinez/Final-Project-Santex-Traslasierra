@@ -16,7 +16,7 @@ const createEncuesta = async (req, res ) => {
   }
 };
 
-// GET encuesta BY ID
+// GET ENCUESTA BY ID
 const getIdEncuesta = async (req, res) => {
   const encuestaId = req.params.encuestaId;
   try {
@@ -27,28 +27,18 @@ const getIdEncuesta = async (req, res) => {
   }
 };
 
-// GET encuestas
+// GET ALL ENCUESTAs
 // TODO: Agregar validaciones: Title y Description son campos obligatorios. Description deberia tener un 100 caracteres max, etc etc
-const findEncuestas = async (req, res) => {
-  const { title, category, order } = req.query;
+const findEncuestas = async (_req, res) => {
   try {
-    let encuestas;
-    if (Object.keys(req.query).length !== 0) {
-      encuestas = await encuestaService.findEncuestas({
-        ...(title && { title }),
-        ...(category && { category }),
-        ...(order && { order }),
-      }); // Esto sólo va a agregar los campos si vinieron en la query
-    } else {
-      encuestas = await encuestaService.findEncuestas();
-    }
-    res.status(200).json(encuestas);
+    const encuestas = await encuestaService.findEncuestas();
+    res.status(200).json({ message: "Encuestas found: ", encuestas });
   } catch (error) {
     res.status(500).json({ message: "An error occurred", error: error.message });
   }
 };
 
-// UPDATE INFO CARD BY ID
+// UPDATE ENCUESTA BY ID
 const putEncuesta = async (req, res) => {
   const encuestaId = req.params.encuestaId;
   const { title, description, category, order } = req.body;
@@ -65,7 +55,7 @@ const putEncuesta = async (req, res) => {
   }
 };
 
-// DELETE encuesta
+// DELETE ENCUESTA
 const deleteEncuesta = async (req, res) => {
   const encuestaId = req.params.encuestaId;
   try {

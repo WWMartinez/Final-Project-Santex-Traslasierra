@@ -1,4 +1,3 @@
-const { Op } = require("sequelize");
 const InfoCardModel = require('../models/infoCard.model');
 
 // CREATE INFOCARD
@@ -11,7 +10,7 @@ const createInfoCard = async (infoCardOptions) => {
   }
 };
 
-// GET INFO CARD BY ID
+// GET INFOCARD BY ID
 const getIdInfoCard = async (id) => {
   try {
     const infoCard = await InfoCardModel.findByPk(id, { include: [{ all: true }] });
@@ -25,7 +24,29 @@ const getIdInfoCard = async (id) => {
   }
 };
 
-// UPDATE INFO CARD BY ID
+// GET ALL INFOCARDs
+// const findInfoCards = async (infoCardList) => {
+//   try {
+//     const infoCards = await InfoCardModel.findAll(infoCardList);
+//     console.log(JSON.stringify(infoCards));
+//     return infoCards;
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+// GET ALL INFOCARDs
+const findInfoCards = async (options) => {
+  try {
+    const infoCards = await InfoCardModel.findAll(options);
+    // console.log(infoCards);
+    return infoCards;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// UPDATE INFOCARD BY ID
 const putInfoCard = async (infoCardId, infoCardOptions) => {
   try {
     await getIdInfoCard(infoCardId);
@@ -48,29 +69,11 @@ const deleteInfoCard = async (infoCardId) => {
   }
 };
 
-// GET INFOCARDs
-const findInfoCards = async (criteria) => {
-  try {
-    let options = { include: [{ all: true }] };
-    if (criteria) {
-      options = { ...options, where: { [Op.or]: criteria } };
-    }
-    const infoCards = await infoCardModel.findAll(options);
-
-    if (infoCards) {
-      return infoCards;
-    } else {
-      return {};
-    }
-  } catch (error) {
-    throw error;
-  }
-};
 
 module.exports = {
   createInfoCard,
   getIdInfoCard,
+  findInfoCards,
   putInfoCard,
   deleteInfoCard,
-  findInfoCards
 };

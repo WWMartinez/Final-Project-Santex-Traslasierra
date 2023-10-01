@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize =require('../config/configDB');
-const Pregunta = require('./pregunta.model');
+// const Pregunta = require('./pregunta.model');
 
-const Respuesta = sequelize.define('respuesta', {
+const Respuesta = sequelize.define('Respuesta', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -19,13 +19,15 @@ const Respuesta = sequelize.define('respuesta', {
   },
 });
 
-const respuestaPreguntaColumn = "preguntaId";
-// Associations DB
-Respuesta.belongsTo(Pregunta, {
-  foreignKey: respuestaPreguntaColumn,
-  onDelete: "CASCADE",
-});
 
-Pregunta.hasMany(Respuesta, { foreignKey: respuestaPreguntaColumn });
+// Associations DB
+
+
+// const respuestaPreguntaColumn = "preguntaId";
+// Respuesta.belongsTo(Pregunta, {
+//   foreignKey: respuestaPreguntaColumn,
+//   onDelete: "CASCADE",
+// });
+// Pregunta.hasMany(Respuesta, { foreignKey: respuestaPreguntaColumn });
 
 module.exports = Respuesta;

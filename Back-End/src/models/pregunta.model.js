@@ -1,8 +1,8 @@
 const { DataTypes }  = require('sequelize');
 const sequelize = require('../config/configDB');
-const Encuesta = require('./encuesta.model');
+// const Respuesta = require('./respuesta.model');
 
-const Pregunta = sequelize.define('pregunta', {
+const Pregunta = sequelize.define('Pregunta', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,20 +22,26 @@ const Pregunta = sequelize.define('pregunta', {
     },
     visible: {
         type: DataTypes.BOOLEAN,
-        allowNull: false
+        allowNull: false,
+        defaultValue: false,
     },
 });
 // TODO esto? o crear una nueva tabla PreguntaEncuesta?
 
 // Associations DB table
-const preguntaEncuestaColumn = "encuestaId";
-Pregunta.belongsTo(Encuesta, {
-  foreignKey: preguntaEncuestaColumn,
-  onDelete: "CASCADE",
-});
+Pregunta.associations = (models) => {
+    Pregunta.hasMany(models.Respuesta, {
+        onDelete: 'CASCADE',
 
-Encuesta.hasMany(Pregunta, { foreignKey: preguntaEncuestaColumn });
+    })
+};
+// CASCADE: if Pregunta deleted then Respuesta deleted too.
 
-
-
+// const preguntaEncuestaColumn = "encuestaId";
+// Pregunta.belongsTo(Encuesta, {
+//   foreignKey: preguntaEncuestaColumn,
+//   onDelete: "CASCADE",
+// });
+// Encuesta.hasMany(Pregunta, { foreignKey: preguntaEncuestaColumn });
+  
 module.exports = Pregunta;

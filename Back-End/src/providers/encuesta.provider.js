@@ -1,7 +1,6 @@
-const { Op } = require("sequelize");
 const EncuestaModel = require('../models/encuesta.model');
 
-// CREATE encuesta
+// CREATE ENCUESTA
 const createEncuesta = async (encuestaOptions) => {
   try {
     const newEncuesta = await EncuestaModel.create(encuestaOptions);
@@ -11,7 +10,7 @@ const createEncuesta = async (encuestaOptions) => {
   }
 };
 
-// GET INFO CARD BY ID
+// GET ENCUESTA BY ID
 const getIdEncuesta = async (id) => {
   try {
     const encuesta = await EncuestaModel.findByPk(id, { include: [{ all: true }] });
@@ -25,7 +24,17 @@ const getIdEncuesta = async (id) => {
   }
 };
 
-// UPDATE INFO CARD BY ID
+// GET ALL ENCUESTAs
+const findEncuestas = async (options) => {
+  try {
+    const encuestas = await EncuestaModel.findAll(options);
+    return encuestas;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// UPDATE ENCUESTA BY ID
 const putEncuesta = async (encuestaId, encuestaOptions) => {
   try {
     await getIdEncuesta(encuestaId);
@@ -39,7 +48,7 @@ const putEncuesta = async (encuestaId, encuestaOptions) => {
   }
 };
 
-// DELETE encuesta
+// DELETE ENCUESTA
 const deleteEncuesta = async (encuestaId) => {
   try {
     return EncuestaModel.destroy({ where: { id: encuestaId } });
@@ -48,29 +57,10 @@ const deleteEncuesta = async (encuestaId) => {
   }
 };
 
-// GET encuestaS
-const findEncuestas = async (criteria) => {
-  try {
-    let options = { include: [{ all: true }] };
-    if (criteria) {
-      options = { ...options, where: { [Op.or]: criteria } };
-    }
-    const encuestas = await EncuestaModel.findAll(options);
-
-    if (encuestas) {
-      return encuestas;
-    } else {
-      return {};
-    }
-  } catch (error) {
-    throw error;
-  }
-};
-
 module.exports = {
   createEncuesta,
   getIdEncuesta,
+  findEncuestas,
   putEncuesta,
-  deleteEncuesta,
-  findEncuestas
+  deleteEncuesta
 };
