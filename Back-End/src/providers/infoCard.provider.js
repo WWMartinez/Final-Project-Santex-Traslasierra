@@ -25,20 +25,10 @@ const getIdInfoCard = async (id) => {
 };
 
 // GET ALL INFOCARDs
-// const findInfoCards = async (infoCardList) => {
-//   try {
-//     const infoCards = await InfoCardModel.findAll(infoCardList);
-//     console.log(JSON.stringify(infoCards));
-//     return infoCards;
-//   } catch (error) {
-//     throw error;
-//   }
-// };
-
-// GET ALL INFOCARDs
 const findInfoCards = async (options) => {
   try {
     const infoCards = await InfoCardModel.findAll(options);
+    // const infoCardsArray = Array.isArray(infoCards) ? infoCards : [infoCards];
     // console.log(infoCards);
     return infoCards;
   } catch (error) {
@@ -68,7 +58,6 @@ const deleteInfoCard = async (infoCardId) => {
     throw error;
   }
 };
-
 
 module.exports = {
   createInfoCard,

@@ -1,6 +1,7 @@
 const { infoCardService } = require("../services");
 const cloudinary = require("../utils/cloudinary");
 
+// TODO: Agregar permisos para cada accion. 
 // CREATE INFOCARD
 const createInfoCard = async (req, res ) => {
   const { title, image, description, category, order } = req.body
@@ -30,11 +31,11 @@ const getIdInfoCard = async (req, res) => {
 };
 
 // GET ALL INFOCARDs
-// TODO: Agregar validaciones: Title y Description son campos obligatorios. Description deberia tener un 100 caracteres max, etc etc
 const findInfoCards = async (_req, res) => {
   try {
     const infoCards = await infoCardService.findInfoCards();
-    res.status(200).json({ message: "Infocards found: ", infoCards });
+    res.json(infoCards);
+    // res.status(200).json({ message: "Infocards found: ", infoCardsArray });
   } catch (error) {
     res.status(500).json({ message: "An error occurred", error: error.message });
   }
