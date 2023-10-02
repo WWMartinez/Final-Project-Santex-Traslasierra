@@ -22,7 +22,6 @@ export class InfoCardsCrudAddEditComponent implements OnInit {
               private toastr: ToastrService,
               private aRouter: ActivatedRoute) {
               this.formInfoCards = this.fb.group({
-                order: ['', Validators.required],
                 category: ['', Validators.required],
                 title: ['', Validators.required],
                 description: ['', Validators.required],
@@ -44,7 +43,6 @@ export class InfoCardsCrudAddEditComponent implements OnInit {
     this._infoCardService.getInfoCard(id).subscribe((data: InfoCard) => {
       //this.loading = false;
       this.formInfoCards.setValue({
-        order: data.order,
         category: data.category,
         title: data.title,
         description: data.description,
@@ -55,7 +53,6 @@ export class InfoCardsCrudAddEditComponent implements OnInit {
 
   addInfoCard() {
     const infoCard: InfoCard = {
-      order: this.formInfoCards.value.order,
       category: this.formInfoCards.value.category,
       title: this.formInfoCards.value.title,
       description: this.formInfoCards.value.description,
