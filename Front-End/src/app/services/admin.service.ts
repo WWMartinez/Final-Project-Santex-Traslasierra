@@ -13,7 +13,7 @@ export class AdminService {
 
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'api/admins';
+    this.myApiUrl = 'admin';
    }
 
    signIn(admin: Admin): Observable<any> {

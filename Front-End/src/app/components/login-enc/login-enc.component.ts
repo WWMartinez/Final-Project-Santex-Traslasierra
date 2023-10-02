@@ -16,7 +16,6 @@ export class LoginEncComponent implements OnInit {
   password: string = '';
   loading: boolean = false;
 
-
   constructor(private toastr: ToastrService,
     private _encuestadorService: EncuestadorService,
     private router: Router,
@@ -30,26 +29,25 @@ export class LoginEncComponent implements OnInit {
     if (this.username == '' || this.password == '') {
       this.toastr.error('Todos los campos son obligatorios', 'Error');
       return;
-  }
-
-  // Creamos el Objeto
-  const encuestador: Encuestador = {
-    username: this.username,
-    password: this.password
-  }
-
-  this.loading = true;
-  this._encuestadorService.login(encuestador).subscribe({
-    next: (token) => {
-      // Mala practica que el nombre sea token, que sea distinto
-      localStorage.setItem('token', token);
-      this.router.navigate(['/encrud']);
-    },
-    error: (e: HttpErrorResponse) => {
-      this._errorService.msjError(e);
-      this.loading = false;
     }
-  })
+
+    // Creamos el Objeto
+    const encuestador: Encuestador = {
+      username: this.username,
+      password: this.password
+    }
+
+    this.loading = true;
+    this._encuestadorService.login(encuestador).subscribe({
+      next: (token) => {
+        // Mala practica que el nombre sea token, que sea distinto
+        localStorage.setItem('token', token);
+        this.router.navigate(['/encrud']);
+      },
+      error: (e: HttpErrorResponse) => {
+        this._errorService.msjError(e);
+        this.loading = false;
+      }
+    })
   }
-  
 }

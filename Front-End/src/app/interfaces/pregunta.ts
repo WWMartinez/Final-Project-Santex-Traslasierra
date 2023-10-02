@@ -1,6 +1,5 @@
 export interface Pregunta {
     id?: number;
-    type: string;
-    description: string;
+    category: string;
     question: string;
 }

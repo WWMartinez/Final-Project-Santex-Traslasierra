@@ -12,13 +12,21 @@ export class HomeComponent {
 
   constructor (private httpClient: HttpClient) {}
   
-  // get al Back(route), obtenemos un res.data y guardamos la variable data infoCards(array)
+  // get al Back(route), obtenemos un res.data y guardamos data en la variable infoCards(array)
   ngOnInit(): void{
     this.httpClient.get<InfoCard[]>('http://localhost:3308/infocard').subscribe(data => {
       this.infoCards = data;
+      console.log(data);
     });
   }
-
-
-
+  //   ngOnInit(): void {
+  //   this.httpClient.get<any>('http://localhost:3308/infocard').subscribe(response => {
+  //     if (Array.isArray(response.data)) {
+  //       this.infoCards = response.data;
+  //       console.log(this.infoCards);
+  //     } else {
+  //       console.error('Respuesta del servidor no es un array.');
+  //     }
+  //   });
+  // }
 }

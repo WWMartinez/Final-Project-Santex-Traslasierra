@@ -27,6 +27,8 @@ import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edi
 import { ProgressBarComponent } from './shared/progress-bar/progress-bar.component';
 import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
 import { InfoCardsComponent } from './components/info-cards/info-cards.component';
+import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-crud.component';
+import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +47,8 @@ import { InfoCardsComponent } from './components/info-cards/info-cards.component
     ProgressBarComponent,
     BarChartComponent,
     InfoCardsComponent,
+    InfoCardsCrudComponent,
+    InfoCardsCrudAddEditComponent,
   ],
   imports: [
     BrowserModule,

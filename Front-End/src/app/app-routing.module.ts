@@ -11,6 +11,8 @@ import { LoginEncComponent } from './components/login-enc/login-enc.component';
 import { SignInEncComponent } from './components/sign-in-enc/sign-in-enc.component';
 import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.component';
 import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
+import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-crud.component';
+import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
 
 
 const routes: Routes = [
@@ -22,9 +24,11 @@ const routes: Routes = [
   { path: 'signInEnc', component: SignInEncComponent },
   { path: 'formulario', component: EncuestaComponent },
   { path: 'encrud', component: EncuestaCrudComponent },
-  { path: 'add', component: EncuestaCrudAddEditComponent },
+  { path: 'addencuesta', component: EncuestaCrudAddEditComponent },
   { path: 'edit/:id', component: EncuestaCrudAddEditComponent },
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'infocard', component: InfoCardsCrudComponent },
+  { path: 'addinfocard', component: InfoCardsCrudAddEditComponent },
   // Esto siempre último
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];

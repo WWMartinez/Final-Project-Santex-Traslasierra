@@ -1,6 +1,8 @@
 const { infoCardService } = require("../services");
 const cloudinary = require("../utils/cloudinary");
 
+// TODO: Agregar permisos para cada accion. 
+// CREATE INFOCARD
 const createInfoCard = async (req, res ) => {
   const { title, image, description, category, order } = req.body
   try {
@@ -28,28 +30,18 @@ const getIdInfoCard = async (req, res) => {
   }
 };
 
-// GET INFOCARDs
-// TODO: Agregar validaciones: Title y Description son campos obligatorios. Description deberia tener un 100 caracteres max, etc etc
-const findInfoCards = async (req, res) => {
-  const { title, category, order } = req.query;
+// GET ALL INFOCARDs
+const findInfoCards = async (_req, res) => {
   try {
-    let infoCards;
-    if (Object.keys(req.query).length !== 0) {
-      infoCards = await userService.findInfoCards({
-        ...(title && { title }),
-        ...(category && { category }),
-        ...(order && { order }),
-      }); // Esto sólo va a agregar los campos si vinieron en la query
-    } else {
-      infoCards = await infoCardService.findInfoCards();
-    }
-    res.status(200).json(infoCards);
+    const infoCards = await infoCardService.findInfoCards();
+    res.json(infoCards);
+    // res.status(200).json({ message: "Infocards found: ", infoCardsArray });
   } catch (error) {
     res.status(500).json({ message: "An error occurred", error: error.message });
   }
 };
 
-// UPDATE INFO CARD BY ID
+// UPDATE INFOCARD BY ID
 const putInfoCard = async (req, res) => {
   const infoCardId = req.params.infoCardId;
   const { title, image, description, category, order } = req.body;

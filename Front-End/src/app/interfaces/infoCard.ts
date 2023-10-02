@@ -1,6 +1,8 @@
 export interface InfoCard {
-  title: string,
+  id?: number;
   image: string,
+  title: string,
   description: string,
+  category: string,
   order: number
 };

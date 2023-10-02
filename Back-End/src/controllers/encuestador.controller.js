@@ -15,14 +15,12 @@ const newEncuestador = async (req, res) => {
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-
   try {
       // Guardamos el Encuestador en la base de datos
       await encuestadorModel.create({
           username: username,
           password: hashedPassword
       })
-
       res.json({
           msg: 'Admin creado existosamente!'
       })
@@ -31,7 +29,7 @@ const newEncuestador = async (req, res) => {
           msg: 'Error al crear el Encuestador'
       })
   }
-}
+};
 
 const loginEncuestador = async (req, res) => {
   const { username, password } = req.body;
@@ -50,11 +48,10 @@ const loginEncuestador = async (req, res) => {
       });
   };
   // Generamos Token
-  const token = jwt.sign({
-      username: username,
-  }, process.env.SECRET_KEY || 'contraseña123');
-  console.log(token);
-  res.json(token);
+  const token = jwt.sign({ username: username, }, 
+    process.env.SECRET_KEY || 'contraseña123');
+    console.log(token);
+    res.json(token);
 };
 
 module.exports = {

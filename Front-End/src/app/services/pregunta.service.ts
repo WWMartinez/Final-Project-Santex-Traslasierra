@@ -13,7 +13,7 @@ export class PreguntaService {
 
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'api/preguntas/';
+    this.myApiUrl = 'pregunta/';
    }
 
    getListPreguntas(): Observable<Pregunta[]> {
