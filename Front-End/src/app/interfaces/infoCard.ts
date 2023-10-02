@@ -4,5 +4,4 @@ export interface InfoCard {
   title: string,
   description: string,
   category: string,
-  order: number
 };

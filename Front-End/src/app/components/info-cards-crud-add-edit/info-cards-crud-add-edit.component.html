@@ -2,14 +2,9 @@
 <div class="row mt-4">
     <div class="col-lg-4 offset-lg-4">
         <div class="card text-bg-dark mb-3" style="max-width: 25rem;">
-          <div class="card-header text-center">{{ operacion }}Agregar Carta Informativa</div>
+          <div class="card-header text-center">{{ operacion }} Carta Informativa</div>
             <div class="card-body">
                 <form [formGroup]="formInfoCards" (ngSubmit)="addInfoCard()">  
-                      <!-- TODO RESTRINGIR a solo numeros -->
-                    <input formControlName="order" type="text" class="form-control mt-3" placeholder="Posicion">
-                    <span *ngIf="formInfoCards.get('type')?.hasError('required') && formInfoCards.get('order')?.touched">
-                        La <strong>Posicion</strong> es requerida
-                    </span>
                     <!-- TODO DROPDOWN con opciones -->
                     <input formControlName="category" type="text" class="form-control mt-3" placeholder="Categoria">
                     <span *ngIf="formInfoCards.get('category')?.hasError('required') && formInfoCards.get('category')?.touched">
@@ -20,11 +15,13 @@
                     <span *ngIf="formInfoCards.get('title')?.hasError('required') && formInfoCards.get('title')?.touched">
                         El <strong>Titulo</strong> es requerido
                     </span>
+
                     <!-- TODO permitir MIN-MAX de caracteres -->
                     <input formControlName="description" type="text" class="form-control mt-3" placeholder="Descripción">
                     <span *ngIf="formInfoCards.get('description')?.hasError('required') && formInfoCards.get('description')?.touched">
                         La <strong>Descripción</strong> es requerida
                     </span>
+
                     <!-- TODO ENLAZAR con cloudinary -->
                     <input formControlName="image" type="text" class="form-control mt-3" placeholder="Imagen">
                     <!-- <span *ngIf="formInfoCards.get('image')?.hasError('required') && formInfoCards.get('image')?.touched">

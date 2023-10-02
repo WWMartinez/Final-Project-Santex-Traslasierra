@@ -4,14 +4,13 @@ const cloudinary = require("../utils/cloudinary");
 // TODO: Agregar permisos para cada accion. 
 // CREATE INFOCARD
 const createInfoCard = async (req, res ) => {
-  const { title, image, description, category, order } = req.body
+  const { title, image, description, category } = req.body
   try {
     const newInfoCard = await infoCardService.createInfoCard({
       title,
       image,
       description,
-      category,
-      order
+      category
     });
     res.status(201).json({ message: 'InfoCard successfully created', newInfoCard });
   } catch (error) {
@@ -44,14 +43,13 @@ const findInfoCards = async (_req, res) => {
 // UPDATE INFOCARD BY ID
 const putInfoCard = async (req, res) => {
   const infoCardId = req.params.infoCardId;
-  const { title, image, description, category, order } = req.body;
+  const { title, image, description, category } = req.body;
   try {
     const newInfoCard = await infoCardService.putInfoCard(infoCardId, {
       title,
       image,
       description,
-      category,
-      order
+      category
     });
     res.status(200).json({ message: "InfoCard successfully updated", newInfoCard });
   } catch (error) {
