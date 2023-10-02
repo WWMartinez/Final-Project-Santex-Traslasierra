@@ -22,8 +22,7 @@ export class EncuestaCrudAddEditComponent implements OnInit {
               private toastr: ToastrService,
               private aRouter: ActivatedRoute) {
               this.formPreguntas = this.fb.group({
-                type: ['', Validators.required],
-                description: ['', Validators.required],
+                category: ['', Validators.required],
                 question: ['', Validators.required],
               })
               this.id = Number(aRouter.snapshot.paramMap.get('id'));
@@ -42,8 +41,7 @@ export class EncuestaCrudAddEditComponent implements OnInit {
     this._preguntaService.getPregunta(id).subscribe((data: Pregunta) => {
       //this.loading = false;
       this.formPreguntas.setValue({
-        type: data.type,
-        description: data.description,
+        category: data.category,
         question: data.question
       })
     })
@@ -51,8 +49,7 @@ export class EncuestaCrudAddEditComponent implements OnInit {
 
   addPregunta() {
     const pregunta: Pregunta = {
-      type: this.formPreguntas.value.type,
-      description: this.formPreguntas.value.description,
+      category: this.formPreguntas.value.category,
       question: this.formPreguntas.value.question
     }
     //this.loading = true;

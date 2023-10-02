@@ -13,9 +13,9 @@ app.use(express.json());
 app.get('/')
 app.use('/admin', adminRoute);
 app.use('/encuestador', encuestadorRoute);
-app.use('/pregunta', preguntaRoute);
 app.use('/infocard', infoCardRoute);
-app.use('/encuesta', encuestaRoute);
+app.use('/pregunta', preguntaRoute);
 app.use('/respuesta', respuestaRoute);
+app.use('/encuesta', encuestaRoute);
 
 module.exports = app;
