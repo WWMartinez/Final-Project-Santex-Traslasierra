@@ -21,7 +21,7 @@
               <td>{{ pregunta.category }}</td>
               <td>{{ pregunta.question }}</td>
               <td>
-                  <button routerLink="/preguntaedit/{{ pregunta.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
+                  <button routerLink="/encuestaedit/{{ pregunta.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
                   <button (click)="deletePregunta(pregunta.id!)" type="button" class="btn btn-danger btn-sm ms-2">Borrar</button>
               </td>
           </tr>
