@@ -8,7 +8,7 @@ const Pregunta = sequelize.define("Pregunta", {
     primaryKey: true,
     autoIncrement: true,
   },
-    category: {
+  category: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -21,19 +21,21 @@ const Pregunta = sequelize.define("Pregunta", {
     allowNull: false,
     defaultValue: false,
   },
-    // encuestaId: {
+  // encuestaId: {
   //   type: DataTypes.STRING,
   //   foreignKey: true,
   //   allowNull: false,
   // }
 });
-// TODO esto? o crear una nueva tabla PreguntaEncuesta?
+
 // Associations DB table
 // CASCADE: if Pregunta deleted then Respuesta deleted too.
 Pregunta.hasMany(Respuesta, {
   foreignKey: 'preguntaId',
   onDelete: 'CASCADE',
 });
-Respuesta.belongsTo(Pregunta);
+Respuesta.belongsTo(Pregunta, {
+  foreignKey: 'preguntaId'
+});
 
 module.exports = Pregunta;
