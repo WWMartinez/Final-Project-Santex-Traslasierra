@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize =require('../config/configDB');
+const Pregunta = require("./pregunta.model");
 
 const Encuesta = sequelize.define('Encuesta', {
   id: {
@@ -14,7 +15,12 @@ const Encuesta = sequelize.define('Encuesta', {
   visible: {
     type: DataTypes.BOOLEAN,
     allowNull: false
-  },
+  }
 });
+// Associations DB table
+// Encuesta.hasMany(Pregunta, {
+//   foreignKey: 'encuestaId',
+//   onDelete: 'CASCADE',
+// });
 
 module.exports = Encuesta;
