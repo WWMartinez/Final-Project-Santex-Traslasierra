@@ -4,7 +4,7 @@ const { deletePregunta, getPregunta, getPreguntas, postPregunta, updatePregunta 
 const { createInfoCard, getIdInfoCard, findInfoCards, putInfoCard, deleteInfoCard } = require('./infoCard.controller');
 const { createEncuesta, getIdEncuesta, findEncuestas, putEncuesta, deleteEncuesta } = require('./encuesta.controller');
 const { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta } = require('./respuesta.controller');
-
+const { createUser, getIdUser, findUsers, putUser, deleteUser } = require('./user.controller');
 
 module.exports = {
   adminController: { loginAdmin, newAdmin },
@@ -12,5 +12,6 @@ module.exports = {
   preguntaController: { deletePregunta, getPregunta, getPreguntas, postPregunta, updatePregunta },
   infoCardController: { createInfoCard, getIdInfoCard, findInfoCards, putInfoCard, deleteInfoCard },
   encuestaController: { createEncuesta, getIdEncuesta, findEncuestas, putEncuesta, deleteEncuesta },
-  respuestaController: { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta }
+  respuestaController: { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta },
+  userController: { createUser, getIdUser, findUsers, putUser, deleteUser },
 };
