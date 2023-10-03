@@ -31,29 +31,30 @@ const getIdRespuesta = async (req, res) => {
 // TODO: Agregar validaciones: Title y Description son campos obligatorios. Description deberia tener un 100 caracteres max, etc etc
 const findRespuestas = async (_req, res) => {
   try {
-    const respuestas = await RespuestaService.findRespuestas();
+    const respuestas = await respuestaService.findRespuestas();
     res.status(200).json({ message: "Respuestas found: ", respuestas });
   } catch (error) {
     res.status(500).json({ message: "An error occurred", error: error.message });
   }
 };
 
+// TODO FIND RESPUESTAS ASSOCIATED TO PREGUNTA
 // GET RESPUESTA ASSOCIATED TO PREGUNTA
-const getResOfPre = async (req, res) => {
-  const respuestaId = req.params.respuestaId;
-  const respuesta = await Respuesta.findAll({ where: { preguntaId: respuestaId } })
-  res.json(respuesta);
-  // try {
-  //   const newRespuesta = await respuestaService.putRespuesta(respuestaId, {
-  //     title,
-  //     preguntaId,
-  //     value,
-  //   });
-  //   res.status(200).json({ message: "Respuesta successfully updated", newRespuesta });
-  // } catch (error) {
-  //   res.status(500).json({ message: "An error occurred updating Respuesta", error: error.message });
-  // }
-};
+// const getResOfPre = async (req, res) => {
+//   const respuestaId = req.params.respuestaId;
+//   const respuesta = await Respuesta.findAll({ where: { preguntaId: respuestaId } })
+//   res.json(respuesta);
+//   try {
+//     const newRespuesta = await respuestaService.putRespuesta(respuestaId, {
+//       title,
+//       preguntaId,
+//       value,
+//     });
+//     res.status(200).json({ message: "Respuesta successfully updated", newRespuesta });
+//   } catch (error) {
+//     res.status(500).json({ message: "An error occurred updating Respuesta", error: error.message });
+//   }
+// };
 
 // UPDATE RESPUESTA BY ID
 const putRespuesta = async (req, res) => {
@@ -82,4 +83,4 @@ const deleteRespuesta = async (req, res) => {
   }
 };
 
-module.exports = { createRespuesta, getIdRespuesta, findRespuestas, getResOfPre, putRespuesta, deleteRespuesta };
+module.exports = { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta };

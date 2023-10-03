@@ -8,7 +8,7 @@ const Pregunta = sequelize.define("Pregunta", {
     primaryKey: true,
     autoIncrement: true,
   },
-    category: {
+  category: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -16,38 +16,26 @@ const Pregunta = sequelize.define("Pregunta", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  visible: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
   // encuestaId: {
   //   type: DataTypes.STRING,
   //   foreignKey: true,
   //   allowNull: false,
-  // },
-  // visible: {
-  //   type: DataTypes.BOOLEAN,
-  //   allowNull: false,
-  //   defaultValue: false,
-  // },
+  // }
 });
-// TODO esto? o crear una nueva tabla PreguntaEncuesta?
 
 // Associations DB table
 // CASCADE: if Pregunta deleted then Respuesta deleted too.
-// Pregunta.associate = (models) => {
-//     Pregunta.hasMany(models.Respuesta, {
-//         foreignKey: "preguntaId",
-//         onDelete: 'CASCADE',
-//     })
-// };
-
-// Pregunta.hasMany(Respuesta, {
-//   foreignKey: "preguntaId",
-//   onDelete: "CASCADE",
-// });
-
-// const preguntaEncuestaColumn = "encuestaId";
-// Pregunta.belongsTo(Encuesta, {
-//   foreignKey: preguntaEncuestaColumn,
-//   onDelete: "CASCADE",
-// });
-// Encuesta.hasMany(Pregunta, { foreignKey: preguntaEncuestaColumn });
+Pregunta.hasMany(Respuesta, {
+  foreignKey: 'preguntaId',
+  onDelete: 'CASCADE',
+});
+Respuesta.belongsTo(Pregunta, {
+  foreignKey: 'preguntaId'
+});
 
 module.exports = Pregunta;

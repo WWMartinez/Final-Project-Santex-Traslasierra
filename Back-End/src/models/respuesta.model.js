@@ -1,6 +1,5 @@
-const { DataTypes, Sequelize } = require("sequelize");
+const { DataTypes } = require("sequelize");
 const sequelize = require("../config/configDB");
-const Pregunta = require("./pregunta.model");
 
 const Respuesta = sequelize.define("Respuesta", {
   id: {
@@ -9,29 +8,16 @@ const Respuesta = sequelize.define("Respuesta", {
     autoIncrement: true,
   },
   preguntaId: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     foreignKey: true,
     allowNull: false,
   },
   value: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
+  }
 });
-
+// TODO asociar Respuesta con Pregunta? 
 // Associations DB
-Respuesta.associate = (models) => {
-  Respuesta.belongsTo(models.Pregunta, {
-      foreignKey: "preguntaId",
-      onDelete: 'CASCADE',
-  })
-};
-
-// const respuestaPreguntaColumn = "preguntaId";
-// Respuesta.belongsTo(Pregunta, {
-//   foreignKey: respuestaPreguntaColumn,
-//   onDelete: "CASCADE",
-// });
-// Pregunta.hasMany(Respuesta, { foreignKey: respuestaPreguntaColumn });
 
 module.exports = Respuesta;

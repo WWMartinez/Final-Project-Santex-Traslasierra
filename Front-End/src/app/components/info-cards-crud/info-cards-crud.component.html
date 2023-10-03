@@ -3,14 +3,13 @@
 <div class="container">
   <div class="title">
       <h1>Lista de Cartas Informativas</h1>
-      <button type="button" class="btn btn-success" routerLink="/addinfocard">Agregar Carta Informativa</button>        
+      <button type="button" class="btn btn-success" routerLink="/infocardadd">Agregar Carta Informativa</button>        
   </div>
 
   <table *ngIf="listInfoCards.length > 0" class ="table table-dark">
       <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Posicion</th>
             <th scope="col">Categoria</th>
             <th scope="col">Titulo</th>
             <th scope="col">Descripción</th>
@@ -21,13 +20,12 @@
       <tbody>
         <tr *ngFor="let infoCard of listInfoCards" class="table-active">
             <th scope="row">{{ infoCard.id }}</th>
-            <td>{{ infoCard.order }}</td>
             <td>{{ infoCard.category }}</td>
             <td>{{ infoCard.title }}</td>
             <td>{{ infoCard.description }}</td>
             <td>{{ infoCard.image }}</td>
             <td>
-                <button routerLink="/edit/{{ infoCard.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
+                <button routerLink="/infocardedit/{{ infoCard.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
                 <button (click)="deleteInfoCard(infoCard.id!)" type="button" class="btn btn-danger btn-sm ms-2">Borrar</button>
             </td>
         </tr>
