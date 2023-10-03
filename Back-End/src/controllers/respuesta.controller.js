@@ -3,10 +3,9 @@ const Respuesta = require("../models/respuesta.model");
 
 // CREATE RESPUESTA
 const createRespuesta = async (req, res ) => {
-  const { title, preguntaId, value } = req.body
+  const { preguntaId, value } = req.body
   try {
     const newRespuesta = await respuestaService.createRespuesta({
-      title,
       preguntaId,
       value
     });
@@ -46,7 +45,6 @@ const findRespuestas = async (_req, res) => {
 //   res.json(respuesta);
 //   try {
 //     const newRespuesta = await respuestaService.putRespuesta(respuestaId, {
-//       title,
 //       preguntaId,
 //       value,
 //     });
@@ -59,10 +57,9 @@ const findRespuestas = async (_req, res) => {
 // UPDATE RESPUESTA BY ID
 const putRespuesta = async (req, res) => {
   const respuestaId = req.params.respuestaId;
-  const { title, preguntaId, value } = req.body;
+  const { preguntaId, value } = req.body;
   try {
     const newRespuesta = await respuestaService.putRespuesta(respuestaId, {
-      title,
       preguntaId,
       value,
     });
