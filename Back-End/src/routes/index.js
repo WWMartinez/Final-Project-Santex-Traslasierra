@@ -4,6 +4,7 @@ const infoCardRoute = require("./infoCard.route");
 const preguntaRoute = require("./pregunta.route");
 const respuestaRoute = require("./respuesta.route");
 const encuestaRoute = require("./encuesta.route");
+const userRoute = require("./user.route");
 
 module.exports = {
   adminRoute,
@@ -12,4 +13,5 @@ module.exports = {
   infoCardRoute,
   encuestaRoute,
   respuestaRoute,
+  userRoute,
 };
