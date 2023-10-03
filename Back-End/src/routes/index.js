@@ -5,6 +5,7 @@ const preguntaRoute = require("./pregunta.route");
 const respuestaRoute = require("./respuesta.route");
 const encuestaRoute = require("./encuesta.route");
 const userRoute = require("./user.route");
+const authAdminRoute = require("./authAdmin.route");
 
 module.exports = {
   adminRoute,
@@ -14,4 +15,5 @@ module.exports = {
   encuestaRoute,
   respuestaRoute,
   userRoute,
+  authAdminRoute
 };

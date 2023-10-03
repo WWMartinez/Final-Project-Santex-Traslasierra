@@ -1,9 +1,9 @@
 const UserModel = require('../models/user.model');
-const AdminModel = require('../models/admin.model');
+// const AdminModel = require('../models/admin.model');
 
 const validateUser = async (username) => {
   try {
-    const user = await AdminModel.findOne({ where: { username: username }, });
+    const user = await UserModel.findOne({ where: { username: username }, });
     if (user) {
       return user;
     } else {
@@ -16,6 +16,21 @@ const validateUser = async (username) => {
   }
 };
 
+// VALIDATE ADMIN ORIGINAL
+// const validateUser = async (username) => {
+//   try {
+//     const user = await AdminModel.findOne({ where: { username: username }, });
+//     if (user) {
+//       return user;
+//     } else {
+//       throw Error(
+//         "No se encontro este usuario en la base de datos"
+//       );
+//     }
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
 // CREATE USER
 const createUser = async (userOptions) => {

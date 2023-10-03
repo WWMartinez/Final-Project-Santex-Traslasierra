@@ -3,14 +3,17 @@ const app = express();
 const cors = require('cors');
 // MIDDLEWARES 
 // TODO: aplicar middlewares a las routes ! ! 
-const { validateToken, mdwLogging, authCheck } = require("./middleware");
+const { mdwLogging } = require("./middleware");
 // ROUTES
-const { adminRoute, encuestadorRoute, preguntaRoute, infoCardRoute, encuestaRoute, respuestaRoute, userRoute } = require("./routes");
+const { adminRoute, encuestadorRoute, preguntaRoute, infoCardRoute, encuestaRoute, respuestaRoute, userRoute, authAdminRoute } = require("./routes");
 
 app.use(cors());
 app.use(express.json());
 
-app.get('/')
+app.use(mdwLogging);
+// app.get('/')
+app.use("/login", authAdminRoute);
+
 app.use('/admin', adminRoute);
 app.use('/encuestador', encuestadorRoute);
 app.use('/infocard', infoCardRoute);
