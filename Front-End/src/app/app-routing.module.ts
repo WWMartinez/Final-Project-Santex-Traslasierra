@@ -13,11 +13,18 @@ import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.
 import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
 import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-crud.component';
 import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
+// USER COMPONENTS
+import { LoginUserComponent } from './components/login-user/login-user.component';
+import { SigninUserComponent } from './components/signin-user/signin-user.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
+  // USER PATH
+  { path: 'login', component: LoginUserComponent },
+  { path: 'signin', component: SigninUserComponent },
+  
   { path: 'loginAdm', component: LoginComponent },
   { path: 'loginEnc', component: LoginEncComponent },
   { path: 'signInAdm', component: SignInComponent },

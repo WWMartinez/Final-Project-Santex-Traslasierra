@@ -29,6 +29,9 @@ import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
 import { InfoCardsComponent } from './components/info-cards/info-cards.component';
 import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-crud.component';
 import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
+// USER COMPS
+import { LoginUserComponent } from './components/login-user/login-user.component';
+import { SigninUserComponent } from './components/signin-user/signin-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,8 @@ import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-
     InfoCardsComponent,
     InfoCardsCrudComponent,
     InfoCardsCrudAddEditComponent,
+    LoginUserComponent,
+    SigninUserComponent,
   ],
   imports: [
     BrowserModule,
