@@ -2,6 +2,11 @@
 <div class="container">
   <section class="row">
     <div class="col-md-12 imagen-esquina">
+      <button class="boton-home btn btn btn-success btn-sm fixed-top mx-auto" onclick="window.location.href=''">
+        Volver al Inicio
+      </button>
+        
+      
       <img src="../../../assets/imgs/logoMinaClavero.png" alt="Imagen en la esquina">
       <h1 class="titulo">Formulario de Satisfacción</h1>
       <p class="subtitulo">Municipalidad de Mina Clavero</p>
@@ -31,7 +36,7 @@
 
   <section class="row">
     <div class="col-md-12">
-      <h3>Otra forma de dar respuestas</h3>
+      <div class="titulo-secundario">Otra forma de dar respuestas</div>
       <p></p>
     </div>
   </section>
@@ -43,14 +48,14 @@
         <div class="col-md-8">
           <p class="preguntas">{{ pregunta.question }}</p>
         </div>
-        <div class="col-md-2 form-check-mb-2">
+        <div class="col-md-2 form-check-mb-2 p-2 rounded">
           <label class="radio form-check-label">
-            <input class="form-check-input" type="radio" name="pregunta1" id="pregunta1a" value="SI">SI
+            <input class="custom-radio form-check-input" type="radio" name="pregunta1a" id="pregunta1a" value="SI">SI
           </label>
         </div>
-        <div class="col-md-2 form-check">
-          <label class="radio radio form-check-label">
-            <input class="form-check-input" type="radio" name="pregunta1" id="pregunta1a" value="SI">NO
+        <div class="col-md-2 form-check p-2 rounded">
+          <label class=" radio form-check-label">
+            <input class="custom-radio form-check-input" type="radio" name="preguntab" id="pregunta1b" value="SI">NO
           </label>
         </div>
       </section>

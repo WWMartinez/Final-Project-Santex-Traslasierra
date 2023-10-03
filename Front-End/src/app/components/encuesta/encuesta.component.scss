@@ -1,4 +1,18 @@
 
+// Boton home
+.boton-home{
+    font-size: medium;
+    width: 70px; 
+    height: 50px; 
+    margin-top: 10px;
+}
+
+// Botones custom de las respuestas de si y no
+.custom-radio {
+    width: 20px; /* Ajusta el ancho del botón de radio según tus necesidades */
+    height: 20px;
+    
+}
 // Imagen
 .imagen-esquina img {
     width: 70px; 
@@ -8,7 +22,7 @@
     border: 2px solid #fff; 
 }
 
-// Titulo y Subtitulo
+// Titulos
 .titulo {
     text-align: center;
     font-size: 36px; 
@@ -23,6 +37,24 @@
     text-align: center;
     margin-top: 20px; 
     margin-bottom: 40px;
+}
+.titulo-secundario {
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 10px;
+    position: relative; 
+    text-align: center;
+    margin: 10px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        bottom: 0;
+        left: 0;
+    }
 }
 
 // Preguntas
@@ -42,7 +74,7 @@
     background-color: #ddd; 
 }
 
-// Respuestas
+
 
 // Dropbar
 .select-dropdown {
