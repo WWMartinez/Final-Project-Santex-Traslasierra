@@ -1,5 +1,4 @@
 const { respuestaService } = require("../services");
-const Respuesta = require("../models/respuesta.model");
 
 // CREATE RESPUESTA
 const createRespuesta = async (req, res ) => {
@@ -22,7 +21,7 @@ const getIdRespuesta = async (req, res) => {
     const respuesta = await respuestaService.getIdRespuesta(respuestaId);
     res.status(200).json(respuesta);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred finding Respuesta by ID", error: error.message });
+    res.status(404).json({ message: "An error occurred finding Respuesta by ID", error: error.message });
   }
 };
 

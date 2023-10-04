@@ -25,7 +25,7 @@ const getIdInfoCard = async (req, res) => {
     const infoCard = await infoCardService.getIdInfoCard(infoCardId);
     res.status(200).json(infoCard);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred finding InfoCard by ID", error: error.message });
+    res.status(404).json({ message: "An error occurred finding InfoCard by ID", error: error.message });
   }
 };
 

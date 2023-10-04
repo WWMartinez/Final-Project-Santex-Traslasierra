@@ -31,12 +31,12 @@ const routes: Routes = [
   { path: 'signInEnc', component: SignInEncComponent },
   { path: 'formulario', component: EncuestaComponent },
   { path: 'encrud', component: EncuestaCrudComponent },
-  { path: 'encuestaadd', component: EncuestaCrudAddEditComponent },
-  { path: 'encuestaedit/:id', component: EncuestaCrudAddEditComponent },
+  { path: 'encuesta-add', component: EncuestaCrudAddEditComponent },
+  { path: 'encuesta-edit/:id', component: EncuestaCrudAddEditComponent },
   { path: 'dashboard', component: DashboardComponent},
   { path: 'infocard', component: InfoCardsCrudComponent },
-  { path: 'infocardadd', component: InfoCardsCrudAddEditComponent },
-  { path: 'infocardedit/:id', component: InfoCardsCrudAddEditComponent },
+  { path: 'infocard-add', component: InfoCardsCrudAddEditComponent },
+  { path: 'infocard-edit/:id', component: InfoCardsCrudAddEditComponent },
   // Esto siempre último
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];

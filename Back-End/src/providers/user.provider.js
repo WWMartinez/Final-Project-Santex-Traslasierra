@@ -1,6 +1,7 @@
 const UserModel = require('../models/user.model');
 // const AdminModel = require('../models/admin.model');
 
+// TODO: ERROR CATCH BUT NOT DOING ANYTHING WITH IT. MUST EDIT ERROR MESSAGE.
 const validateUser = async (username) => {
   try {
     const user = await UserModel.findOne({ where: { username: username }, });
@@ -68,6 +69,8 @@ const findUsers = async (options) => {
   }
 };
 
+// TODO: se hace un await del get, pero no se guarda el resultado en ninguna variable
+// TODO: PARA QUE ESTABA ESTO ?
 // UPDATE USER BY ID
 const putUser = async (userId, userOptions) => {
   try {

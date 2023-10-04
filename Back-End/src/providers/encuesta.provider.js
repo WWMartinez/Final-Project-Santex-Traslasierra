@@ -1,5 +1,6 @@
 const EncuestaModel = require('../models/encuesta.model');
 
+// TODO: ERROR CATCH BUT NOT DOING ANYTHING WITH IT. MUST EDIT ERROR MESSAGE.
 // CREATE ENCUESTA
 const createEncuesta = async (encuestaOptions) => {
   try {
@@ -34,6 +35,8 @@ const findEncuestas = async (options) => {
   }
 };
 
+// TODO: se hace un await del get, pero no se guarda el resultado en ninguna variable
+// TODO: PARA QUE ESTABA ESTO ?
 // UPDATE ENCUESTA BY ID
 const putEncuesta = async (encuestaId, encuestaOptions) => {
   try {

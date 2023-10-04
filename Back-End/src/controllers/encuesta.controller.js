@@ -23,7 +23,7 @@ const getIdEncuesta = async (req, res) => {
     const encuesta = await encuestaService.getIdEncuesta(encuestaId);
     res.status(200).json(encuesta);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred finding encuesta by ID", error: error.message });
+    res.status(404).json({ message: "An error occurred finding encuesta by ID", error: error.message });
   }
 };
 
