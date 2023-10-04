@@ -7,7 +7,6 @@ const { createEncuesta, getIdEncuesta, findEncuestas, putEncuesta, deleteEncuest
 const { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta } = require('./respuesta.controller');
 const { createUser, getIdUser, findUsers, putUser, deleteUser } = require('./user.controller');
 
-
 module.exports = {
   authAdminController: { authAdmin },
   adminController: { loginAdmin, newAdmin },

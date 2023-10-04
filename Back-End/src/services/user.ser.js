@@ -1,5 +1,9 @@
 const { userProvider } = require('../providers');
 
+const validateUser = async (user) => {
+  return await userProvider.validateUser(user);
+};
+
 const createUser = async (user) => {
   return await userProvider.createUser(user);
 };
@@ -21,6 +25,7 @@ const deleteUser = async (id) => {
 };
 
 module.exports = { 
+  validateUser,
   createUser,
   getIdUser,
   findUsers,

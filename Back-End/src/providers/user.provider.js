@@ -1,37 +1,18 @@
-const UserModel = require('../models/user.model');
-// const AdminModel = require('../models/admin.model');
+const UserModel = require("../models/user.model");
 
 // TODO: ERROR CATCH BUT NOT DOING ANYTHING WITH IT. MUST EDIT ERROR MESSAGE.
 const validateUser = async (username) => {
   try {
-    const user = await UserModel.findOne({ where: { username: username }, });
+    const user = await UserModel.findOne({ where: { username: username } });
     if (user) {
       return user;
     } else {
-      throw Error(
-        "No se encontro este usuario en la base de datos"
-      );
+      return false;
     }
   } catch (error) {
     throw error;
   }
 };
-
-// VALIDATE ADMIN ORIGINAL
-// const validateUser = async (username) => {
-//   try {
-//     const user = await AdminModel.findOne({ where: { username: username }, });
-//     if (user) {
-//       return user;
-//     } else {
-//       throw Error(
-//         "No se encontro este usuario en la base de datos"
-//       );
-//     }
-//   } catch (error) {
-//     throw error;
-//   }
-// };
 
 // CREATE USER
 const createUser = async (userOptions) => {
@@ -57,7 +38,7 @@ const getIdUser = async (id) => {
   }
 };
 
-// GET ALL USERs 
+// GET ALL USERs
 const findUsers = async (options) => {
   try {
     const users = await UserModel.findAll(options);

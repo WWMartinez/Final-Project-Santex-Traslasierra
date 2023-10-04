@@ -1,25 +1,35 @@
 const express = require("express");
 const app = express();
-const cors = require('cors');
-// MIDDLEWARES 
-// TODO: aplicar middlewares a las routes ! ! 
-const { reqMessage } = require("./middleware");
+const cors = require("cors");
+// MIDDLEWARES
+// TODO: agregar middlewares a las routes ! !
+const { reqMessage, validateToken } = require("./middleware");
 // ROUTES
-const { adminRoute, encuestadorRoute, preguntaRoute, infoCardRoute, encuestaRoute, respuestaRoute, userRoute, authAdminRoute } = require("./routes");
+const {
+  signUpRoute,
+  userRoute,
+  adminRoute,
+  encuestadorRoute,
+  preguntaRoute,
+  respuestaRoute,
+  encuestaRoute,
+  infoCardRoute,
+} = require("./routes");
 
+// USE
 app.use(cors());
 app.use(express.json());
-
 app.use(reqMessage);
 // app.get('/')
-app.use("/login", authAdminRoute);
+app.use("/signup", signUpRoute);
+// app.use("/login");
 
-app.use('/admin', adminRoute);
-app.use('/encuestador', encuestadorRoute);
-app.use('/infocard', infoCardRoute);
-app.use('/pregunta', preguntaRoute);
-app.use('/respuesta', respuestaRoute);
-app.use('/encuesta', encuestaRoute);
-app.use('/user', userRoute);
+app.use("/user", userRoute);
+app.use("/admin", adminRoute);
+app.use("/encuestador", encuestadorRoute);
+app.use("/pregunta", preguntaRoute);
+app.use("/respuesta", respuestaRoute);
+app.use("/encuesta", encuestaRoute);
+app.use("/infocard", infoCardRoute);
 
 module.exports = app;
