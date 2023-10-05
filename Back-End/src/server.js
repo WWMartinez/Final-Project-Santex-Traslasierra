@@ -7,6 +7,7 @@ const { reqMessage, validateToken } = require("./middleware");
 // ROUTES
 const {
   signUpRoute,
+  loginRoute,
   userRoute,
   adminRoute,
   encuestadorRoute,
@@ -22,7 +23,7 @@ app.use(express.json());
 app.use(reqMessage);
 // app.get('/')
 app.use("/signup", signUpRoute);
-// app.use("/login");
+app.use("/login", loginRoute);
 
 app.use("/user", userRoute);
 app.use("/admin", adminRoute);

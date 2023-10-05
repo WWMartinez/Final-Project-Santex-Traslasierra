@@ -1,10 +1,11 @@
 const UserModel = require("../models/user.model");
 
 // TODO: ERROR CATCH BUT NOT DOING ANYTHING WITH IT. MUST EDIT ERROR MESSAGE.
-const validateUser = async (username) => {
+const validateUser = async ( username ) => {
   try {
-    const user = await UserModel.findOne({ where: { username: username } });
+    const user = await UserModel.findOne({ where: { username } });
     if (user) {
+      console.log(user);
       return user;
     } else {
       return false;

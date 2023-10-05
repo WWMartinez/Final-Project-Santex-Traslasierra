@@ -5,8 +5,8 @@ const { userService } = require("../services");
 const createUser = async (req, res) => {
   const { username, password } = req.body;
   // Validamos si User ya existe en DB
-  const dbUser = await userService.validateUser(username);
-  if (dbUser) {
+  const dbUser = await userService.validateUser(username, password);
+  if (dbUser.username) {
     return res
       .status(400)
       .json({ msg: "Ya existe el User con el nombre: " + username });
@@ -21,7 +21,7 @@ const createUser = async (req, res) => {
   } catch (error) {
     res
       .status(404)
-      .json({ message: "Error al crear el User", error: error.message });
+      .json({ message: "Error al crear el Usuario", error: error.message });
   }
 };
 
