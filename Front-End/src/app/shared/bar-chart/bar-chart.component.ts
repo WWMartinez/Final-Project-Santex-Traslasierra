@@ -19,18 +19,15 @@ export class BarChartComponent implements OnInit {
     this.chart = new Chart("MyChart", {
       type: 'pie', //this denotes tha type of chart
 
-      data: {// values on X-Axis
-        labels: ['2022-05-10', '2022-05-11', '2022-05-12','2022-05-13',
-								 '2022-05-14', '2022-05-15', '2022-05-16','2022-05-17', ], 
-	       datasets: [
-          {
-            label: "Sales",
-            data: ['467','576', '572', '79', '92',
-								 '574', '573', '576'],
-            backgroundColor: 'blue',
-          }, 
-        ]
-      },
+      data: {
+        labels: ['Muy buena', 'Buena', 'Regular', 'Mala', 'Muy mala', 'No responde'],
+        datasets: [{
+          label: 'n° de Votos',
+          data: [10, 9, 7, 5, 2, 3],
+          borderWidth: 1,
+          backgroundColor: ['green', 'blue', 'yellow', 'orange', 'red', 'grey'],
+        }]
+       },
       options: {
         aspectRatio:2.5
       }

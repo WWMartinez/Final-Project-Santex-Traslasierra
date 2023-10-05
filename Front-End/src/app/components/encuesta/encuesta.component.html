@@ -1,20 +1,36 @@
-<div class="container">
-  <section class="row">
-    <div class="col-md-12">
-      <h1 class="text-center">Formulario de Satisfacción</h1>
-      <p class="text-center">Municipalidad de Mina Clavero</p>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+      <a class="navbar-brand col-lg-3 me-0" routerLink=""><img src="../../../assets/imgs/logoMinaClavero.png" alt="Logo Mina Clavero" style="height: 43px;"></a>
+      <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+        <li class="nav-item">
+          <button class="button-nabvar" aria-current="page" routerLink="/home">Salir</button>
+        </li>
+      </ul>
     </div>
-  </section>
+  </div>
+</nav>
+<!-- Fin Navbar -->
+
+<!-- Title -->
+  <h1 class="titulo">Formulario de Satisfacción</h1>
+  <p class="subtitulo">Municipalidad de Mina Clavero</p>
+<!-- Fin Title -->
 
   <!--  PREGUNTAS BD MySQL  -->
   <section *ngFor="let pregunta of listPreguntas" class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 ">
       <section class="row">
         <div class="col-md-8">
-          <p>{{ pregunta.question }}</p>
+          <p class="preguntas">{{ pregunta.question }}</p>
         </div>
-        <div class="col-md-4">
-          <select class="form-control">
+        <div class="col-md-4 select-dropdown">
+          <select class="" >
             <option value="5">Muy Buena</option>
             <option value="4">Buena</option>
             <option value="3">Regular</option>
@@ -29,7 +45,7 @@
 
   <section class="row">
     <div class="col-md-12">
-      <h3>Otra forma de dar respuestas</h3>
+      <div class="titulo-secundario">Otra forma de dar respuestas</div>
       <p></p>
     </div>
   </section>
@@ -39,16 +55,16 @@
     <div class="col-md-12">
       <section class="row">
         <div class="col-md-8">
-          <p>{{ pregunta.question }}</p>
+          <p class="preguntas">{{ pregunta.question }}</p>
         </div>
-        <div class="col-md-2">
-          <label class="radio">
-            <input type="radio" name="pregunta1" id="pregunta1a" value="SI">Si
+        <div class="col-md-2 form-check-mb-2 p-2 rounded">
+          <label class="radio form-check-label">
+            <input class="custom-radio form-check-input" type="radio" name="pregunta1a" id="pregunta1a" value="SI">SI
           </label>
         </div>
-        <div class="col-md-2">
-          <label class="radio">
-            <input type="radio" name="pregunta1" id="pregunta1a" value="SI">NO
+        <div class="col-md-2 form-check p-2 rounded">
+          <label class=" radio form-check-label">
+            <input class="custom-radio form-check-input" type="radio" name="preguntab" id="pregunta1b" value="SI">NO
           </label>
         </div>
       </section>
