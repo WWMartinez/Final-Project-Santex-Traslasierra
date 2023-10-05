@@ -1,9 +1,25 @@
 const UserModel = require("../models/user.model");
 
 // TODO: ERROR CATCH BUT NOT DOING ANYTHING WITH IT. MUST EDIT ERROR MESSAGE.
+// VALIDATE USER ON DB
 const validateUser = async ( username ) => {
   try {
     const user = await UserModel.findOne({ where: { username } });
+    if (user) {
+      console.log(user);
+      return user;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+// VALIDATE USER BY ID ON DB
+const validateUserId = async ( userId ) => {
+  try {
+    const user = await UserModel.findOne({ where: { id: userId } });
     if (user) {
       console.log(user);
       return user;
@@ -78,6 +94,7 @@ const deleteUser = async (userId) => {
 
 module.exports = {
   validateUser,
+  validateUserId,
   createUser,
   getIdUser,
   findUsers,

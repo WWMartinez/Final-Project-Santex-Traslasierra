@@ -55,14 +55,34 @@ const putInfoCard = async (infoCardId, infoCardOptions) => {
 
 // DELETE INFOCARD
 const deleteInfoCard = async (infoCardId) => {
+  const infoCard = await InfoCardModel.findOne({ id: { infoCardId } });
+  if (infoCard) {
+
+  }
   try {
-    return infoCardModel.destroy({ where: { id: infoCardId } });
+    return InfoCardModel.destroy({ where: { id: infoCardId } });
+  } catch (error) {
+    throw error;
+  }
+};
+
+// VALIDACION SI EXISTE INFOCARD EN DB
+const validateInfoCard = async (infoCardId) => {
+  try {
+    const infoCard = await InfoCardModel.findOne({ where: { id: infoCardId } });
+    if (infoCard) {
+      console.log(infoCard);
+      return infoCard;
+    } else {
+      return false;
+    }
   } catch (error) {
     throw error;
   }
 };
 
 module.exports = {
+  validateInfoCard,
   createInfoCard,
   getIdInfoCard,
   findInfoCards,

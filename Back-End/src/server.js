@@ -5,7 +5,7 @@ const cors = require("cors");
 // MIDDLEWARES
 // TODO: agregar middlewares a las routes ! !
 const { reqMessage } = require("./middleware");
-const authCheck = require("./middleware/authCheck.middleware");
+// const authCheck = require("./middleware/authCheck.middleware");
 
 // ROUTES
 const {
@@ -28,12 +28,12 @@ app.use(reqMessage);
 app.use("/signup", signUpRoute);
 app.use("/login", loginRoute);
 
-app.use("/user", authCheck, userRoute);
-app.use("/admin", authCheck, adminRoute);
-app.use("/encuestador", authCheck, encuestadorRoute);
-app.use("/pregunta", authCheck, preguntaRoute);
-app.use("/respuesta", authCheck, respuestaRoute);
-app.use("/encuesta", authCheck, encuestaRoute);
-app.use("/infocard", authCheck, infoCardRoute);
+app.use("/user", userRoute);
+app.use("/admin", adminRoute);
+app.use("/encuestador", encuestadorRoute);
+app.use("/pregunta", preguntaRoute);
+app.use("/respuesta", respuestaRoute);
+app.use("/encuesta", encuestaRoute);
+app.use("/infocard", infoCardRoute);
 
 module.exports = app;

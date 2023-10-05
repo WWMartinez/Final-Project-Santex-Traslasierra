@@ -4,6 +4,10 @@ const validateUser = async (user) => {
   return await userProvider.validateUser(user);
 };
 
+const validateUserId = async (id) => {
+  return await userProvider.validateUserId(id);
+};
+
 const createUser = async (user) => {
   return await userProvider.createUser(user);
 };
@@ -26,6 +30,7 @@ const deleteUser = async (id) => {
 
 module.exports = { 
   validateUser,
+  validateUserId,
   createUser,
   getIdUser,
   findUsers,

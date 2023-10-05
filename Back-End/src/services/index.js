@@ -1,11 +1,11 @@
-const { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards } = require('./infoCard.ser');
+const { validateInfoCard, createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards } = require('./infoCard.ser');
 const { createEncuesta, getIdEncuesta, putEncuesta, deleteEncuesta, findEncuestas } = require('./encuesta.ser');
 const { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta } = require('./respuesta.ser');
-const { validateUser, createUser, getIdUser, findUsers, putUser, deleteUser } = require('./user.ser');
+const { validateUserId, validateUser, createUser, getIdUser, findUsers, putUser, deleteUser } = require('./user.ser');
 
 module.exports = {
-  infoCardService: { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards },
+  infoCardService: { validateInfoCard, createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards },
   encuestaService: { createEncuesta, getIdEncuesta, putEncuesta, deleteEncuesta, findEncuestas },
   respuestaService: { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta },
-  userService: { validateUser, createUser, getIdUser, findUsers, putUser, deleteUser },
+  userService: { validateUserId, validateUser, createUser, getIdUser, findUsers, putUser, deleteUser },
 };

@@ -1,5 +1,9 @@
 const { infoCardProvider } = require('../providers');
 
+const validateInfoCard = async (id) => {
+  return await infoCardProvider.validateInfoCard(id);
+};
+
 const createInfoCard = async (infoCard) => {
   return await infoCardProvider.createInfoCard(infoCard);
 };
@@ -21,6 +25,7 @@ const deleteInfoCard = async (id) => {
 };
 
 module.exports = { 
+  validateInfoCard,
   createInfoCard,
   getIdInfoCard,
   findInfoCards,

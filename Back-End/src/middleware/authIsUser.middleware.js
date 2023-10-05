@@ -11,7 +11,7 @@ const authIsUser = (req, res, next) => {
         console.log(err);
         return next(err);
       }
-      if (req.isAuthenticated() && req.user.role === "USER") {
+      if (user.role === "USER" || user.role === "ADMIN") {
         req.user = user;
         return next();
       }
