@@ -1,7 +1,9 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { userService } = require("../services");
-const jwtStrategy = require("../middleware/jwtStrategy.middleware");
+
+
+const secret = require("../middleware/jwtStrategy.middleware");
 
 // USER LOGIN VALIDATIONS & CREDENTIALS ASSIGNED
 const loginUser = async (req, res) => {
@@ -33,7 +35,7 @@ const loginUser = async (req, res) => {
     // FIRMAMOS TOKEN CON LA ESTRATEGIA DEFINIDA EN jwtStrategy
     const token = jwt.sign(
       { username: username, role: role },
-      jwtStrategy
+      secret
     );
     res.json({ token, role });
   } catch (error) {

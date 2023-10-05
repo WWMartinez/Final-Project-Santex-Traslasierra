@@ -49,15 +49,15 @@ const deleteUser = async (req, res) => {
   const userId = req.params.userId;
   try {
     const dbUser = await userService.validateUserId(userId);
-  if (!dbUser) {
-    return res
-    .status(400)
-    .json({ message: "No user found with this ID: " + userId });
-  } else {
-    const user = userService.deleteUser(userId);
-    res.status(200).json({ message: "User successfully deleted", user });
-  } 
-  }catch (error) {
+    if (!dbUser) {
+      return res
+        .status(400)
+        .json({ message: "No user found with this ID: " + userId });
+    } else {
+      const user = userService.deleteUser(userId);
+      res.status(200).json({ message: "User successfully deleted", user });
+    }
+  } catch (error) {
     res.status(500).json({
       message: "An error occurred deleting User",
       error: error.message,
