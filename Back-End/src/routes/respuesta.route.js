@@ -10,7 +10,7 @@ router.get('/', findRespuestas);
 // route de FindRespuestas associated to pregunta
 // router.get('/:respuestaId', getResOfPre);
 
-router.put('/:respuestaId',authIsAdmin, putRespuesta);
-router.delete('/:respuestaId',authIsAdmin, deleteRespuesta);
+router.put('/:respuestaId', putRespuesta);
+router.delete('/:respuestaId', deleteRespuesta);
 
 module.exports = router;

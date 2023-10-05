@@ -3,10 +3,10 @@ const router = Router();
 const { authIsAdmin } = require('../middleware');
 const { createEncuesta, getIdEncuesta, findEncuestas, putEncuesta, deleteEncuesta } = require("../controllers/encuesta.controller");
 
-router.post('/', authIsAdmin, createEncuesta);
+router.post('/', createEncuesta);
 router.get('/:encuestaId', getIdEncuesta);
 router.get('/', findEncuestas);
-router.put('/:encuestaId', authIsAdmin, putEncuesta);
-router.delete('/:encuestaId', authIsAdmin, deleteEncuesta);
+router.put('/:encuestaId', putEncuesta);
+router.delete('/:encuestaId', deleteEncuesta);
 
 module.exports = router;
