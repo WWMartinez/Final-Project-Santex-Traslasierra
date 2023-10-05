@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { userService } = require("../services");
+const jwtStrategy = require("../middleware/jwtStrategy.middleware");
 
 // USER LOGIN VALIDATIONS & CREDENTIALS ASSIGNED
 const loginUser = async (req, res) => {
@@ -29,13 +30,12 @@ const loginUser = async (req, res) => {
     } else if (username === "encuestador") {
       role = "ENCUESTADOR";
     }
-    // FIRMAMOS TOKEN
+    // FIRMAMOS TOKEN CON LA ESTRATEGIA DEFINIDA EN jwtStrategy
     const token = jwt.sign(
       { username: username, role: role },
-      process.env.SECRET_KEY || "secret"
+      jwtStrategy
     );
-    console.log("User role is:", role);
-    res.json({ token });
+    res.json({ token, role });
   } catch (error) {
     res
       .status(400)

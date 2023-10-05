@@ -15,7 +15,7 @@ const authIsUser = (req, res, next) => {
         req.user = user;
         return next();
       }
-      res.status(401).json({ error: "Not authorized" });
+      res.status(401).json({ error: "Not authorized user" });
     }
   )(req, res, next);
 };
