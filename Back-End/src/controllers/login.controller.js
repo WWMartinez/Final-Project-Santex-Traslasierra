@@ -1,17 +1,12 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-// const { userProvider } = require("../providers");
-// const { userService } = require("../services");
-const { userModel } = require("../models");
+const { userService } = require("../services");
 
-
-// USER LOGIN VALIDATIONS OF CREDENTIALS
+// USER LOGIN VALIDATIONS & CREDENTIALS ASSIGNED
 const loginUser = async (req, res) => {
   const { username, password } = req.body;
   try {
-    const dbUser = await userModel.findOne({ where: { username: username } });
-    console.log("ACA HAY USER: ",dbUser)
-    // const dbUser = await userService.validateUser(username);
+    const dbUser = await userService.validateUser(username);
     if (!dbUser) {
       return res
         .status(400)
@@ -19,7 +14,6 @@ const loginUser = async (req, res) => {
     }
 
     const dbPass = dbUser.password;
-    console.log("ACA HASH", dbPass);
     // Validamos password
     const passwordValid = await bcrypt.compare(password, dbPass);
     if (!passwordValid) {

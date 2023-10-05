@@ -5,8 +5,8 @@ const { userService } = require("../services");
 const createUser = async (req, res) => {
   const { username, password } = req.body;
   // Validamos si User ya existe en DB
-  const dbUser = await userService.validateUser(username, password);
-  if (dbUser.username) {
+  const dbUser = await userService.validateUser(username);
+  if (dbUser) {
     return res
       .status(400)
       .json({ msg: "Ya existe el User con el nombre: " + username });
