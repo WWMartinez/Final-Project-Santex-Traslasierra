@@ -1,8 +1,6 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { userService } = require("../services");
-
-
 const secret = require("../middleware/jwtStrategy.middleware");
 
 // USER LOGIN VALIDATIONS & CREDENTIALS ASSIGNED
@@ -26,13 +24,13 @@ const loginUser = async (req, res) => {
     }
 
     // ROLES
-    let role = "USER"; // Rol predeterminado SI NO es "admin" ni "encuestador"
+    let role = "USER"; // Rol predeterminado, SINO es "admin" ni "encuestador"
     if (username === "admin") {
       role = "ADMIN";
     } else if (username === "encuestador") {
       role = "ENCUESTADOR";
     }
-    // FIRMAMOS TOKEN CON LA ESTRATEGIA DEFINIDA EN jwtStrategy
+    // FIRMAMOS TOKEN
     const token = jwt.sign(
       { username: username, role: role },
       secret
