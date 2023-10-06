@@ -55,10 +55,6 @@ const putInfoCard = async (infoCardId, infoCardOptions) => {
 
 // DELETE INFOCARD
 const deleteInfoCard = async (infoCardId) => {
-  const infoCard = await InfoCardModel.findOne({ id: { infoCardId } });
-  if (infoCard) {
-
-  }
   try {
     return InfoCardModel.destroy({ where: { id: infoCardId } });
   } catch (error) {

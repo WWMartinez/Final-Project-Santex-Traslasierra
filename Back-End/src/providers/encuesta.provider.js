@@ -60,7 +60,23 @@ const deleteEncuesta = async (encuestaId) => {
   }
 };
 
+// VALIDACION SI EXISTE ENCUESTA EN DB
+const validateEncuesta = async (encuestaId) => {
+  try {
+    const encuesta = await EncuestaModel.findOne({ where: { id: encuestaId } });
+    if (encuesta) {
+      console.log(encuesta);
+      return encuesta;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
+  validateEncuesta,
   createEncuesta,
   getIdEncuesta,
   findEncuestas,

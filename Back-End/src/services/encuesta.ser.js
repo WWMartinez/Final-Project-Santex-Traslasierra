@@ -1,5 +1,9 @@
 const { encuestaProvider } = require('../providers');
 
+const validateEncuesta = async (id) => {
+  return await encuestaProvider.validateEncuesta(id);
+};
+
 const createEncuesta = async (encuesta) => {
   return await encuestaProvider.createEncuesta(encuesta);
 };
@@ -20,7 +24,9 @@ const deleteEncuesta = async (id) => {
   return await encuestaProvider.deleteEncuesta(id);
 };
 
-module.exports = { 
+
+module.exports = {
+  validateEncuesta,
   createEncuesta,
   getIdEncuesta,
   findEncuestas,

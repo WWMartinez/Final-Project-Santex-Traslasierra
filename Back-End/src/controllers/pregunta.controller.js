@@ -1,78 +1,106 @@
-const { infoCardService } = require("../services");
-const cloudinary = require("../utils/cloudinary");
+const { preguntaService } = require("../services");
 
-// TODO: Agregar permisos para cada accion. 
-// CREATE INFOCARD
-const createInfoCard = async (req, res ) => {
-  const { title, image, description, category } = req.body
+// TODO: Agregar permisos para cada accion.
+// CREATE PREGUNTA
+const createPregunta = async (req, res) => {
+  const { category, question, visible } = req.body;
   try {
-    const newInfoCard = await infoCardService.createInfoCard({
-      title,
-      image,
-      description,
-      category
+    const newPregunta = await preguntaService.createPregunta({
+      category,
+      question,
+      visible,
     });
-    res.status(201).json({ message: 'InfoCard successfully created', newInfoCard });
+    res
+      .status(201)
+      .json({ message: "Pregunta successfully created", newPregunta });
   } catch (error) {
-    res.status(500).json({ message: 'Error creating InfoCard', error: error.message });
+    res
+      .status(500)
+      .json({ message: "Error creating Pregunta", error: error.message });
   }
 };
 
-// GET INFOCARD BY ID
-const getIdInfoCard = async (req, res) => {
-  const infoCardId = req.params.infoCardId;
+// GET PREGUNTA BY ID
+const getIdPregunta = async (req, res) => {
+  const preguntaId = req.params.preguntaId;
   try {
-    const infoCard = await infoCardService.getIdInfoCard(infoCardId);
-    res.status(200).json(infoCard);
+    const pregunta = await preguntaService.getIdPregunta(preguntaId);
+    res.status(200).json(pregunta);
   } catch (error) {
-    res.status(404).json({ message: "An error occurred finding InfoCard by ID", error: error.message });
+    res
+      .status(404)
+      .json({
+        message: "An error occurred finding Pregunta by ID",
+        error: error.message,
+      });
   }
 };
 
-// GET ALL INFOCARDs
-const findInfoCards = async (_req, res) => {
+// GET ALL PREGUNTAs
+const findPreguntas = async (_req, res) => {
   try {
-    const infoCards = await infoCardService.findInfoCards();
-    res.json(infoCards);
-    // res.status(200).json({ message: "Infocards found: ", infoCardsArray });
+    const preguntas = await preguntaService.findPreguntas();
+    res.json(preguntas);
+    // res.status(200).json({ message: "Infocards found: ", preguntasArray });
   } catch (error) {
-    res.status(500).json({ message: "An error occurred", error: error.message });
+    res
+      .status(500)
+      .json({ message: "An error occurred", error: error.message });
   }
 };
 
-// UPDATE INFOCARD BY ID
-const putInfoCard = async (req, res) => {
-  const infoCardId = req.params.infoCardId;
-  const { title, image, description, category } = req.body;
+// UPDATE PREGUNTA BY ID
+const putPregunta = async (req, res) => {
+  const preguntaId = req.params.preguntaId;
+  const { category, question, visible } = req.body;
   try {
-    const newInfoCard = await infoCardService.putInfoCard(infoCardId, {
-      title,
-      image,
-      description,
-      category
+    const newPregunta = await preguntaService.putPregunta(preguntaId, {
+      category,
+      question,
+      visible,
     });
-    res.status(200).json({ message: "InfoCard successfully updated", newInfoCard });
+    res
+      .status(200)
+      .json({ message: "Pregunta successfully updated", newPregunta });
   } catch (error) {
-    res.status(500).json({ message: "An error occurred updating InfoCard", error: error.message });
+    res
+      .status(500)
+      .json({
+        message: "An error occurred updating Pregunta",
+        error: error.message,
+      });
   }
 };
 
-// DELETE INFOCARD
-const deleteInfoCard = async (req, res) => {
-  const infoCardId = req.params.infoCardId;
+// DELETE PREGUNTA
+const deletePregunta = async (req, res) => {
+  const preguntaId = req.params.preguntaId;
   try {
-  const dbInfoCard = await infoCardService.validateInfoCard(infoCardId);
-  if (!dbInfoCard) {
-    return res
-      .status(400)
-      .json({ message: "No infoCard found with this ID: " + infoCardId });
-  } else {
-    const infoCard = infoCardService.deleteInfoCard(infoCardId);
-    res.status(200).json({ message: 'infoCard successfully deleted', infoCard });
-  }
+    const dbPregunta = await preguntaService.validatePregunta(preguntaId);
+    if (!dbPregunta) {
+      return res
+        .status(400)
+        .json({ message: "No pregunta found with this ID: " + preguntaId });
+    } else {
+      const pregunta = preguntaService.deletePregunta(preguntaId);
+      res
+        .status(200)
+        .json({ message: "Pregunta successfully deleted", pregunta });
+    }
   } catch (error) {
-    res.status(500).json({ message: "An error occurred deleting InfoCard", error: error.message });
+    res
+      .status(500)
+      .json({
+        message: "An error occurred deleting Pregunta",
+        error: error.message,
+      });
   }
 };
 
-module.exports = { createInfoCard, getIdInfoCard, findInfoCards, putInfoCard, deleteInfoCard };
+module.exports = {
+  createPregunta,
+  getIdPregunta,
+  findPreguntas,
+  putPregunta,
+  deletePregunta,
+};

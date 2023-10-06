@@ -54,7 +54,7 @@ const putRespuesta = async (respuestaId, respuestaOptions) => {
 // DELETE RESPUESTA
 const deleteRespuesta = async (respuestaId) => {
   try {
-    return respuestaModel.destroy({ where: { id: respuestaId } });
+    return RespuestaModel.destroy({ where: { id: respuestaId } });
   } catch (error) {
     throw error;
   }
