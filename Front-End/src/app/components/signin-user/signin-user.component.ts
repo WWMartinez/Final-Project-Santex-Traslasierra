@@ -50,7 +50,7 @@ export class SigninUserComponent implements OnInit {
     };
 
     this.loading = true;
-    this._userService.signIn(user).subscribe({
+    this._userService.signUp(user).subscribe({
       next: (v) => {
         this.loading = false;
         this.toastr.success(

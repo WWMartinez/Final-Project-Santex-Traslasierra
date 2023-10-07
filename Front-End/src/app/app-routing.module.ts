@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   // USER PATH
   { path: 'login', component: LoginUserComponent },
-  { path: 'signin', component: SigninUserComponent },
+  { path: 'signup', component: SigninUserComponent },
   
   { path: 'loginAdm', component: LoginComponent },
   { path: 'loginEnc', component: LoginEncComponent },
