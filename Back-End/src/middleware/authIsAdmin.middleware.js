@@ -1,7 +1,12 @@
 const passport = require("passport");
 
 const authIsAdmin = (req, res, next) => {
-  return passport.authenticate("jwt",{ session: false, }, (err, user) => {
+  return passport.authenticate(
+    "jwt",
+    {
+      session: false,
+    },
+    (err, user) => {
       if (err) {
         console.log(err);
         return next(err);
@@ -10,11 +15,9 @@ const authIsAdmin = (req, res, next) => {
         req.user = user;
         return next();
       }
-      res.status(401).json({ error: "Not Admin, not auth" });
+      res.status(401).json({ error: "Not admin credentials" });
     }
   )(req, res, next);
 };
 
-module.exports = {
-  authIsAdmin,
-};
+module.exports = authIsAdmin;

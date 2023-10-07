@@ -3,7 +3,7 @@
 <div class="container">
     <div class="title">
         <h1>Lista de Preguntas</h1>
-        <button type="button" class="btn btn-success" routerLink="/encuestaadd">Agregar Pregunta</button>        
+        <button type="button" class="btn btn-success" routerLink="/encuesta-add">Agregar Pregunta</button>        
     </div>
 
     <table *ngIf="listPreguntas.length > 0" class ="table table-dark">
@@ -21,7 +21,7 @@
               <td>{{ pregunta.category }}</td>
               <td>{{ pregunta.question }}</td>
               <td>
-                  <button routerLink="/encuestaedit/{{ pregunta.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
+                  <button routerLink="/encuesta-edit/{{ pregunta.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
                   <button (click)="deletePregunta(pregunta.id!)" type="button" class="btn btn-danger btn-sm ms-2">Borrar</button>
               </td>
           </tr>
