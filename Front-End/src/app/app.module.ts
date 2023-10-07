@@ -31,7 +31,7 @@ import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-
 import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
 // USER COMPS
 import { LoginUserComponent } from './components/login-user/login-user.component';
-import { SigninUserComponent } from './components/signin-user/signin-user.component';
+import { SignupUserComponent } from './components/signup-user/signup-user.component';
 // HEADER INTERCEPTOR COPY TOKEN
 import { HeadereditInterceptor } from './headeredit.interceptor';
 @NgModule({
@@ -55,7 +55,7 @@ import { HeadereditInterceptor } from './headeredit.interceptor';
     InfoCardsCrudComponent,
     InfoCardsCrudAddEditComponent,
     LoginUserComponent,
-    SigninUserComponent,
+    SignupUserComponent,
   ],
   imports: [
     BrowserModule,

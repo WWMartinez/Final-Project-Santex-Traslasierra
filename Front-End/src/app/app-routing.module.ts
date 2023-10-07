@@ -15,7 +15,7 @@ import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-
 import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
 // USER COMPONENTS
 import { LoginUserComponent } from './components/login-user/login-user.component';
-import { SigninUserComponent } from './components/signin-user/signin-user.component';
+import { SignupUserComponent } from './components/signup-user/signup-user.component';
 
 
 const routes: Routes = [
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   // USER PATH
   { path: 'login', component: LoginUserComponent },
-  { path: 'signup', component: SigninUserComponent },
+  { path: 'signup', component: SignupUserComponent },
   
   { path: 'loginAdm', component: LoginComponent },
   { path: 'loginEnc', component: LoginEncComponent },

@@ -7,11 +7,11 @@ import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-signin-user',
-  templateUrl: './signin-user.component.html',
-  styleUrls: ['./signin-user.component.scss'],
+  selector: 'app-signup-user',
+  templateUrl: './signup-user.component.html',
+  styleUrls: ['./signup-user.component.scss'],
 })
-export class SigninUserComponent implements OnInit {
+export class SignupUserComponent implements OnInit {
   username: string = '';
   password: string = '';
   confirmPassword: string = '';
