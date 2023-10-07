@@ -87,5 +87,46 @@
     cursor: pointer;
     }
 }
+// Cuestionario Turista
 
-
+.info form{
+    position: relative;
+}
+.info form input, form textarea{
+    width: 100%;
+    padding: 14px;
+    background: khaki;
+    color: black;
+    border: solid;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.info textarea{
+    resize: none;
+    height: 240px;
+}
+.info .submit{
+    display: inline-block;
+    font-size: 16px;
+    background: khaki;
+    color: black;
+    width: 160px;
+    transition: all .45s ease;
+}
+.info .submit:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.choise form ol{
+    width: 100%;
+    padding: 14px;
+    background: khaki;
+    color: black;
+    border: solid;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
