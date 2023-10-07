@@ -39,10 +39,12 @@ export class LoginUserComponent implements OnInit {
 
     this.loading = true;
 
+    // TODO: si role: USER then .navigate(['/home']);
+    // TODO: si role: ADMIN then .navigate(['/dashboard']);
     this._userService.login(user).subscribe((res: any) => {
       console.log('RESPONSE: ', res);
       localStorage.setItem('token', res.token);
-      this.router.navigate(['/encrud']);
+      this.router.navigate(['/home']);
     });
 
     // this._userService.login(user).subscribe({

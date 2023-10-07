@@ -10,15 +10,16 @@ export class DashboardComponent {
 
   constructor(private _userService: UserService){}
 
-  ngOnInit(): void {
-    this.loadCustomer();
-  }
+  // ngOnInit(): void {
+  //   this.loadCustomer();
+  // }
 
-  //TODO: NOSE PARA QUE SIRVE ESTA FUNCION, getUser() declarada en userService
-  loadCustomer() {
-    this._userService.getUser().subscribe((res: any) => {
-    })
-  }
+  //TODO: funciones para llamar a routes en back y obtener info para completar dashboard
+  //TODO: ej: getUsers() obtenemos cuantas cuentas users se crearon en la DB
+  // loadCustomer() {
+  //   this._userService.getUser().subscribe((res: any) => {
+  //   })
+  // }
 
 
 }

@@ -6,7 +6,7 @@ const { createPregunta, getIdPregunta, findPreguntas, putPregunta, deletePregunt
 router.post('/', createPregunta);
 router.get('/:preguntaId', getIdPregunta);
 router.get('/', findPreguntas);
-router.put('/:preguntaId', putPregunta);
-router.delete('/:preguntaId', deletePregunta);
+router.put('/:preguntaId', authIsAdmin, putPregunta);
+router.delete('/:preguntaId', authIsAdmin, deletePregunta);
 
 module.exports = router;

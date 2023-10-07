@@ -33,6 +33,6 @@ app.use("/encuestador", authIsUser, encuestadorRoute);
 app.use("/pregunta", authIsUser, preguntaRoute);
 app.use("/respuesta", authIsUser, respuestaRoute);
 app.use("/encuesta", authIsUser, encuestaRoute);
-app.use("/infocard", authIsUser, infoCardRoute);
+app.use("/infocard", infoCardRoute);
 
 module.exports = app;

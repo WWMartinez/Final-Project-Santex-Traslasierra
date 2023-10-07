@@ -3,7 +3,7 @@ const router = Router();
 const { authIsAdmin } = require('../middleware');
 const { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards } = require("../controllers/infoCard.controller");
 
-router.post('/', createInfoCard);
+router.post('/', authIsAdmin, createInfoCard);
 router.get('/:infoCardId', getIdInfoCard);
 router.get('/', findInfoCards);
 router.put('/:infoCardId', authIsAdmin, putInfoCard);
