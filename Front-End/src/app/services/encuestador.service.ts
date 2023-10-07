@@ -14,7 +14,7 @@ export class EncuestadorService {
 
     constructor(private http: HttpClient) {
         this.myAppUrl = environment.endpoint;
-        this.myApiUrl = 'encuestador';
+        this.myApiUrl = '/encuestador';
     }
 
     signIn(encuestador: Encuestador): Observable<any> {

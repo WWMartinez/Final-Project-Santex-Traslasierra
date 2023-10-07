@@ -39,15 +39,22 @@ export class LoginUserComponent implements OnInit {
 
     this.loading = true;
 
-    this._userService.login(user).subscribe({
-      next: (token) => {
-        localStorage.setItem('token', token);
-        this.router.navigate(['/dashboard']);
-      },
-      error: (e: HttpErrorResponse) => {
-        this._errorService.msjError(e);
-        this.loading = false;
-      },
+    this._userService.login(user).subscribe((res: any) => {
+      console.log('RESPONSE: ', res);
+      localStorage.setItem('token', res.token);
+      this.router.navigate(['/encrud']);
     });
-  }
+
+    // this._userService.login(user).subscribe({
+    //   next: (token) => {
+    //     localStorage.setItem('token', token);
+    //     this.router.navigate(['/dashboard']);
+    //   },
+    //   error: (e: HttpErrorResponse) => {
+    //     this._errorService.msjError(e);
+    //     this.loading = false;
+    //   },
+    // });
+  
+  } // login() close 
 }

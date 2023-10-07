@@ -14,7 +14,7 @@ export class InfoCardService {
 
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'infocard/';
+    this.myApiUrl = '/infocard/';
    }
 
    getInfoCard(id: number): Observable<InfoCard> {

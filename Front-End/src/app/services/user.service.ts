@@ -10,18 +10,25 @@ import { User } from '../interfaces/user';
 
 export class UserService {
     private myAppUrl: string;
-    private myApiUrl: string;
+    // private myApiUrl: string;
 
     constructor(private http: HttpClient) {
-        this.myAppUrl = environment.endpoint;
-        this.myApiUrl = 'user';
+        this.myAppUrl = environment.endpoint; // = http://localhost:3308/
+        // TODO: PORQUE AGREGAMOS USER A LA URL?? URL FINAL: http://localhost:3308/user/login'
+        // this.myApiUrl = 'user';
     }
 
     signIn(user: User): Observable<any> {
-        return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, user);
+        return this.http.post(`${this.myAppUrl}/user`, user);
     }
 
     login(user: User): Observable<string> {
-        return this.http.post<string>(`${this.myAppUrl}${this.myApiUrl}/login`, user);
+        // TODO: PORQUE AGREGAMOS USER A LA URL?? URL FINAL: http://localhost:3308/login'
+        return this.http.post<string>(`${this.myAppUrl}/login`, user);
     }
+
+    getUser(): Observable<string> {
+        return this.http.get<string>(`${this.myAppUrl}/dashboard`);
+    }
+
 }
