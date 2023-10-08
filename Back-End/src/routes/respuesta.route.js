@@ -1,6 +1,8 @@
 const { Router } =require('express');
 const router = Router();
+const { authIsAdmin } = require('../middleware');
 const { createRespuesta, getIdRespuesta, findRespuestas, putRespuesta, deleteRespuesta } = require('../controllers/respuesta.controller');
+
 
 router.post('/', createRespuesta);
 router.get('/:respuestaId', getIdRespuesta);

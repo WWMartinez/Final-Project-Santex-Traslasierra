@@ -1,12 +1,10 @@
 const { respuestaService } = require("../services");
-const Respuesta = require("../models/respuesta.model");
 
 // CREATE RESPUESTA
 const createRespuesta = async (req, res ) => {
-  const { title, preguntaId, value } = req.body
+  const { preguntaId, value } = req.body
   try {
     const newRespuesta = await respuestaService.createRespuesta({
-      title,
       preguntaId,
       value
     });
@@ -23,7 +21,7 @@ const getIdRespuesta = async (req, res) => {
     const respuesta = await respuestaService.getIdRespuesta(respuestaId);
     res.status(200).json(respuesta);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred finding Respuesta by ID", error: error.message });
+    res.status(404).json({ message: "An error occurred finding Respuesta by ID", error: error.message });
   }
 };
 
@@ -46,7 +44,6 @@ const findRespuestas = async (_req, res) => {
 //   res.json(respuesta);
 //   try {
 //     const newRespuesta = await respuestaService.putRespuesta(respuestaId, {
-//       title,
 //       preguntaId,
 //       value,
 //     });
@@ -59,10 +56,9 @@ const findRespuestas = async (_req, res) => {
 // UPDATE RESPUESTA BY ID
 const putRespuesta = async (req, res) => {
   const respuestaId = req.params.respuestaId;
-  const { title, preguntaId, value } = req.body;
+  const { preguntaId, value } = req.body;
   try {
     const newRespuesta = await respuestaService.putRespuesta(respuestaId, {
-      title,
       preguntaId,
       value,
     });

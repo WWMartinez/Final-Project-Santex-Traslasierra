@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 // Modulos
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr'
+import { ToastrModule } from 'ngx-toastr';
 
 // Componentes de la App
 import { LoginComponent } from './components/login/login.component';
@@ -29,6 +29,11 @@ import { BarChartComponent } from './shared/bar-chart/bar-chart.component';
 import { InfoCardsComponent } from './components/info-cards/info-cards.component';
 import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-crud.component';
 import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
+// USER COMPS
+import { LoginUserComponent } from './components/login-user/login-user.component';
+import { SignupUserComponent } from './components/signup-user/signup-user.component';
+// HEADER INTERCEPTOR COPY TOKEN
+import { HeadereditInterceptor } from './headeredit.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +54,8 @@ import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-
     InfoCardsComponent,
     InfoCardsCrudComponent,
     InfoCardsCrudAddEditComponent,
+    LoginUserComponent,
+    SignupUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +68,15 @@ import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-    })
+    }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeadereditInterceptor, // name of interceptor
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

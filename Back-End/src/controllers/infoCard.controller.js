@@ -25,7 +25,7 @@ const getIdInfoCard = async (req, res) => {
     const infoCard = await infoCardService.getIdInfoCard(infoCardId);
     res.status(200).json(infoCard);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred finding InfoCard by ID", error: error.message });
+    res.status(404).json({ message: "An error occurred finding InfoCard by ID", error: error.message });
   }
 };
 
@@ -61,8 +61,15 @@ const putInfoCard = async (req, res) => {
 const deleteInfoCard = async (req, res) => {
   const infoCardId = req.params.infoCardId;
   try {
+  const dbInfoCard = await infoCardService.validateInfoCard(infoCardId);
+  if (!dbInfoCard) {
+    return res
+      .status(400)
+      .json({ message: "No infoCard found with this ID: " + infoCardId });
+  } else {
     const infoCard = infoCardService.deleteInfoCard(infoCardId);
-    res.status(200).json({ message: 'infoCard successfully deleted', infoCard });
+    res.status(200).json({ message: 'InfoCard successfully deleted', infoCard });
+  }
   } catch (error) {
     res.status(500).json({ message: "An error occurred deleting InfoCard", error: error.message });
   }

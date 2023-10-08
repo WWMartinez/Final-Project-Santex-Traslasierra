@@ -2,13 +2,11 @@ const { encuestaService } = require("../services");
 
 // CREATE ENCUESTA
 const createEncuesta = async (req, res ) => {
-  const { title, description, category, order } = req.body
+  const { title, visible } = req.body
   try {
     const newEncuesta = await encuestaService.createEncuesta({
       title,
-      description,
-      category,
-      order
+      visible
     });
     res.status(201).json({ message: 'Encuesta successfully created', newEncuesta });
   } catch (error) {
@@ -23,7 +21,7 @@ const getIdEncuesta = async (req, res) => {
     const encuesta = await encuestaService.getIdEncuesta(encuestaId);
     res.status(200).json(encuesta);
   } catch (error) {
-    res.status(500).json({ message: "An error occurred finding encuesta by ID", error: error.message });
+    res.status(404).json({ message: "An error occurred finding encuesta by ID", error: error.message });
   }
 };
 
@@ -41,13 +39,11 @@ const findEncuestas = async (_req, res) => {
 // UPDATE ENCUESTA BY ID
 const putEncuesta = async (req, res) => {
   const encuestaId = req.params.encuestaId;
-  const { title, description, category, order } = req.body;
+  const { title, visible } = req.body;
   try {
     const newEncuesta = await encuestaService.putEncuesta(encuestaId, {
       title,
-      description,
-      category,
-      order
+      visible
     });
     res.status(200).json({ message: "encuesta successfully updated", newEncuesta });
   } catch (error) {
@@ -59,10 +55,17 @@ const putEncuesta = async (req, res) => {
 const deleteEncuesta = async (req, res) => {
   const encuestaId = req.params.encuestaId;
   try {
+  const dbEncuesta = await encuestaService.validateEncuesta(encuestaId);
+  if (!dbEncuesta) {
+    return res
+      .status(400)
+      .json({ message: "No encuesta found with this ID: " + encuestaId });
+  } else {
     const encuesta = encuestaService.deleteEncuesta(encuestaId);
     res.status(200).json({ message: 'Encuesta successfully deleted', encuesta });
+  }
   } catch (error) {
-    res.status(500).json({ message: "An error occurred deleting encuesta", error: error.message });
+    res.status(500).json({ message: "An error occurred deleting Encuesta", error: error.message });
   }
 };
 

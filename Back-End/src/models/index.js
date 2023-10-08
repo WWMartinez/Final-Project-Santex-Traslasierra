@@ -1,7 +1,8 @@
-const adminModel =require('./admin.model');
-const infoCardModel =require('./infoCard.model');
-const preguntaModel =require('./pregunta.model');
-const respuestaModel =require('./respuesta.model');
-const encuestadorModel =require('./encuestador.model');
+const adminModel = require('./admin.model');
+const infoCardModel = require('./infoCard.model');
+const preguntaModel = require('./pregunta.model');
+const respuestaModel = require('./respuesta.model');
+const encuestadorModel = require('./encuestador.model');
+const userModel = require('./user.model');
 
-module.exports = { adminModel, infoCardModel, preguntaModel, encuestadorModel, respuestaModel };
+module.exports = { adminModel, infoCardModel, preguntaModel, encuestadorModel, respuestaModel, userModel };

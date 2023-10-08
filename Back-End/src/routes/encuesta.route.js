@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const router = Router();
+const { authIsAdmin } = require('../middleware');
 const { createEncuesta, getIdEncuesta, findEncuestas, putEncuesta, deleteEncuesta } = require("../controllers/encuesta.controller");
 
 router.post('/', createEncuesta);
