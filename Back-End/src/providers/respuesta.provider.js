@@ -1,4 +1,4 @@
-const RespuestaModel = require('../models/respuesta.model');
+const RespuestaModel = require('../models/answer.model');
 
 // TODO: ERROR CATCH BUT NOT DOING ANYTHING WITH IT. MUST EDIT ERROR MESSAGE.
 // CREATE RESPUESTA
