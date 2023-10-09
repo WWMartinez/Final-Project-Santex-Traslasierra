@@ -5,7 +5,7 @@
 
 ## PASO 2
 `npm run build`
-( ejecuta la compilacion de typescript en la carpeta "dist" )
+( ejecuta la aplicacion escuchando por cambios )
 
 ## PASO 3
 `npm run dev`

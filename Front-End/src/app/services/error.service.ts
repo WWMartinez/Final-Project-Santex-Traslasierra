@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ErrorService {
 
   constructor(private toastr: ToastrService) { }

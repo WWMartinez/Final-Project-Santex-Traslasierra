@@ -10,7 +10,7 @@ import { PreguntaService } from 'src/app/services/pregunta.service';
   templateUrl: './encuesta-crud-add-edit.component.html',
   styleUrls: ['./encuesta-crud-add-edit.component.scss']
 })
-export class EncuestaCrudAddEditComponent implements OnInit {
+export class SurveyCrudAddEditComponent implements OnInit {
   formPreguntas: FormGroup;
   //loading: boolean = false;
   id: number;
@@ -22,8 +22,7 @@ export class EncuestaCrudAddEditComponent implements OnInit {
               private toastr: ToastrService,
               private aRouter: ActivatedRoute) {
               this.formPreguntas = this.fb.group({
-                type: ['', Validators.required],
-                description: ['', Validators.required],
+                category: ['', Validators.required],
                 question: ['', Validators.required],
               })
               this.id = Number(aRouter.snapshot.paramMap.get('id'));
@@ -42,8 +41,7 @@ export class EncuestaCrudAddEditComponent implements OnInit {
     this._preguntaService.getPregunta(id).subscribe((data: Pregunta) => {
       //this.loading = false;
       this.formPreguntas.setValue({
-        type: data.type,
-        description: data.description,
+        category: data.category,
         question: data.question
       })
     })
@@ -51,8 +49,7 @@ export class EncuestaCrudAddEditComponent implements OnInit {
 
   addPregunta() {
     const pregunta: Pregunta = {
-      type: this.formPreguntas.value.type,
-      description: this.formPreguntas.value.description,
+      category: this.formPreguntas.value.category,
       question: this.formPreguntas.value.question
     }
     //this.loading = true;
@@ -63,16 +60,15 @@ export class EncuestaCrudAddEditComponent implements OnInit {
       this._preguntaService.updatePregunta(this.id, pregunta).subscribe(() => {
         this.toastr.info('La pregunta fue actualizada con exito!', 'Pregunta Actualizada');
         //this.loading = false;
-        this.router.navigate(['/encrud']);
+        this.router.navigate(['/survey']);
       })
     } else {
       // Es agregar
       this._preguntaService.savePregunta(pregunta).subscribe(() => {
         this.toastr.success('La pregunta fue creada con exito!', 'Pregunta Creada');
         //this.loading = false;
-        this.router.navigate(['/encrud']);
+        this.router.navigate(['/survey']);
       })
     }
   }
-
 }
