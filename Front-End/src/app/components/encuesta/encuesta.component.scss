@@ -1,9 +1,35 @@
+.button-nabvar {
+    background-color:white;
+    color: black;
+    border-radius: 10em;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 1em 2em;
+    letter-spacing: 1.5px;
+    margin: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+}
+
+.button-nabvar:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(255, 0, 0);
+    
+};
+
+.button-nabvar:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+};
+
 
 // Boton home
 .boton-home{
     font-size: medium;
     width: 70px; 
-    height: 50px; 
+    height: 45px; 
     margin-top: 10px;
 }
 
@@ -11,13 +37,11 @@
 .custom-radio {
     width: 20px; /* Ajusta el ancho del botón de radio según tus necesidades */
     height: 20px;
-    
 }
 // Imagen
 .imagen-esquina img {
     width: 70px; 
     height: auto;
-    
     border-radius: 50%; 
     border: 2px solid #fff; 
 }
@@ -58,23 +82,10 @@
 }
 
 // Preguntas
-
 .preguntas{
     font-size: 18px;
     margin-bottom: 20px;
-    color: #333; 
-    background-color: #f0f0f0; 
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
-    
 }
-
-.preguntas:hover {
-    background-color: #ddd; 
-}
-
-
 
 // Dropbar
 .select-dropdown {
@@ -87,5 +98,3 @@
     cursor: pointer;
     }
 }
-
-

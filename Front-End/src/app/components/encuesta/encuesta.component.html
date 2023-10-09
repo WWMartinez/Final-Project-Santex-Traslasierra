@@ -1,17 +1,26 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="container">
-  <section class="row">
-    <div class="col-md-12 imagen-esquina">
-      <button class="boton-home btn btn btn-success btn-sm fixed-top mx-auto" onclick="window.location.href=''">
-        Volver al Inicio
-      </button>
-        
-      <a href="/home" ><img src="../../../assets/imgs/logoMinaClavero.png" alt=""></a>
-      <!-- <img src="../../../assets/imgs/logoMinaClavero.png" alt="Imagen en la esquina"> -->
-      <h1 class="titulo">Formulario de Satisfacción</h1>
-      <p class="subtitulo">Municipalidad de Mina Clavero</p>
+    <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+      <a class="navbar-brand col-lg-3 me-0" routerLink=""><img src="../../../assets/imgs/logoMinaClavero.png" alt="Logo Mina Clavero" style="height: 43px;"></a>
+      <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+        <li class="nav-item">
+          <button class="button-nabvar" aria-current="page" routerLink="/home">Salir</button>
+        </li>
+      </ul>
     </div>
-  </section>
+  </div>
+</nav>
+<!-- Fin Navbar -->
+
+<!-- Title -->
+  <h1 class="titulo">Formulario de Satisfacción</h1>
+  <p class="subtitulo">Municipalidad de Mina Clavero</p>
+<!-- Fin Title -->
 
   <!--  PREGUNTAS BD MySQL  -->
   <section *ngFor="let pregunta of listPreguntas" class="row">
