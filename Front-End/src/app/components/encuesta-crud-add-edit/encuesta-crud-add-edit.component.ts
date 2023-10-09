@@ -10,7 +10,7 @@ import { PreguntaService } from 'src/app/services/pregunta.service';
   templateUrl: './encuesta-crud-add-edit.component.html',
   styleUrls: ['./encuesta-crud-add-edit.component.scss']
 })
-export class EncuestaCrudAddEditComponent implements OnInit {
+export class SurveyCrudAddEditComponent implements OnInit {
   formPreguntas: FormGroup;
   //loading: boolean = false;
   id: number;
@@ -60,14 +60,14 @@ export class EncuestaCrudAddEditComponent implements OnInit {
       this._preguntaService.updatePregunta(this.id, pregunta).subscribe(() => {
         this.toastr.info('La pregunta fue actualizada con exito!', 'Pregunta Actualizada');
         //this.loading = false;
-        this.router.navigate(['/encrud']);
+        this.router.navigate(['/survey']);
       })
     } else {
       // Es agregar
       this._preguntaService.savePregunta(pregunta).subscribe(() => {
         this.toastr.success('La pregunta fue creada con exito!', 'Pregunta Creada');
         //this.loading = false;
-        this.router.navigate(['/encrud']);
+        this.router.navigate(['/survey']);
       })
     }
   }

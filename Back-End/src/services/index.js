@@ -7,13 +7,13 @@ const {
   findInfoCards,
 } = require("./infoCard.ser");
 const {
-  validateEncuesta,
-  createEncuesta,
-  getIdEncuesta,
-  putEncuesta,
-  deleteEncuesta,
-  findEncuestas,
-} = require("./encuesta.ser");
+  validateSurvey,
+  createSurvey,
+  getSurveyId,
+  updateSurvey,
+  deleteSurvey,
+  findSurveys,
+} = require("./survey.ser");
 const {
   createRespuesta,
   getIdRespuesta,
@@ -56,13 +56,13 @@ module.exports = {
     putPregunta,
     deletePregunta,
   },
-  encuestaService: {
-    validateEncuesta,
-    createEncuesta,
-    getIdEncuesta,
-    putEncuesta,
-    deleteEncuesta,
-    findEncuestas,
+  surveyService: {
+    validateSurvey,
+    createSurvey,
+    getSurveyId,
+    updateSurvey,
+    deleteSurvey,
+    findSurveys,
   },
   respuestaService: {
     createRespuesta,

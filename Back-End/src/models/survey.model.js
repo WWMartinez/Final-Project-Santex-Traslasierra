@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize =require('../config/configDB');
 const Pregunta = require("./pregunta.model");
 
-const Encuesta = sequelize.define('Encuesta', {
+const Survey = sequelize.define('Survey', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -23,4 +23,4 @@ const Encuesta = sequelize.define('Encuesta', {
 //   onDelete: 'CASCADE',
 // });
 
-module.exports = Encuesta;
+module.exports = Survey;
