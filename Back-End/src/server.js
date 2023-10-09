@@ -11,11 +11,9 @@ const {
   signUpRoute,
   loginRoute,
   userRoute,
-  adminRoute,
-  encuestadorRoute,
   preguntaRoute,
   respuestaRoute,
-  encuestaRoute,
+  surveyRoute,
   infoCardRoute,
 } = require("./routes");
 
@@ -28,11 +26,9 @@ app.use("/signup", signUpRoute);
 app.use("/login", loginRoute);
 
 app.use("/user", authIsUser, userRoute);
-app.use("/admin", adminRoute);
-app.use("/encuestador", authIsUser, encuestadorRoute);
 app.use("/pregunta", authIsUser, preguntaRoute);
 app.use("/respuesta", authIsUser, respuestaRoute);
-app.use("/encuesta", authIsUser, encuestaRoute);
+app.use("/survey", authIsUser, surveyRoute);
 app.use("/infocard", infoCardRoute);
 
 module.exports = app;

@@ -2,37 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Components
-import { LoginComponent } from './components/login/login.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { EncuestaComponent } from './components/encuesta/encuesta.component';
-import { LoginEncComponent } from './components/login-enc/login-enc.component';
-import { SignInEncComponent } from './components/sign-in-enc/sign-in-enc.component';
-import { EncuestaCrudComponent } from './components/encuesta-crud/encuesta-crud.component';
-import { EncuestaCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
+import { SurveyComponent } from './components/encuesta/encuesta.component';
+import { SurveyCrudComponent } from './components/encuesta-crud/encuesta-crud.component';
+import { SurveyCrudAddEditComponent } from './components/encuesta-crud-add-edit/encuesta-crud-add-edit.component';
 import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-crud.component';
 import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
-// USER COMPONENTS
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import { SignupUserComponent } from './components/signup-user/signup-user.component';
-
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
-  // USER PATH
   { path: 'login', component: LoginUserComponent },
   { path: 'signup', component: SignupUserComponent },
-  
-  { path: 'loginAdm', component: LoginComponent },
-  { path: 'loginEnc', component: LoginEncComponent },
-  { path: 'signInAdm', component: SignInComponent },
-  { path: 'signInEnc', component: SignInEncComponent },
-  { path: 'formulario', component: EncuestaComponent },
-  { path: 'encrud', component: EncuestaCrudComponent },
-  { path: 'encuesta-add', component: EncuestaCrudAddEditComponent },
-  { path: 'encuesta-edit/:id', component: EncuestaCrudAddEditComponent },
+  { path: 'formulario', component: SurveyComponent },
+  { path: 'survey', component: SurveyCrudComponent },
+  { path: 'survey-add', component: SurveyCrudAddEditComponent },
+  { path: 'survey-edit/:id', component: SurveyCrudAddEditComponent },
   { path: 'dashboard', component: DashboardComponent},
   { path: 'infocard', component: InfoCardsCrudComponent },
   { path: 'infocard-add', component: InfoCardsCrudAddEditComponent },

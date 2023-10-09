@@ -8,10 +8,8 @@ import {
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class HeadereditInterceptor implements HttpInterceptor {
+export class HeaderInterceptor implements HttpInterceptor {
   constructor() {}
-
-
   // INTERCEPTAMOS EL REQ, LO EDITAMOS Y LE AGREGAMOS EL TOKEN.
   intercept(
     request: HttpRequest<unknown>,
