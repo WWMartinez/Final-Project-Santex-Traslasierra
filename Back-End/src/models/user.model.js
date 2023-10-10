@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/configDB");
-const Respuesta = require("./answer.model");
+const Survey = require("./survey.model");
 
 const User = sequelize.define("User", {
   id: {
@@ -13,19 +13,24 @@ const User = sequelize.define("User", {
     unique: true,
     allowNull: false,
   },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+    validate: {
+      isEmail: true,
+    },
+  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
   },
 });
 
-// RESPUESTA ASSOCIATION
-User.hasMany(Respuesta, {
+// ASSOCIATION
+User.hasMany(Survey, {
   foreignKey: { allowNull: false, field: "userId" },
   onDelete: "CASCADE",
 });
-
-// ENCUESTA ASSOCIATION
-
 
 module.exports = User;
