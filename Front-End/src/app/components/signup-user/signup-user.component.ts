@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignupUserComponent implements OnInit {
   username: string = '';
+  email: string = '';
   password: string = '';
   confirmPassword: string = '';
   loading: boolean = false;
@@ -30,6 +31,7 @@ export class SignupUserComponent implements OnInit {
     // Validamos que el User ingrese valores en todos los campos
     if (
       this.username == '' ||
+      this.email == '' ||
       this.password == '' ||
       this.confirmPassword == ''
     ) {
@@ -46,6 +48,7 @@ export class SignupUserComponent implements OnInit {
     // Creamos el Objeto
     const user: User = {
       username: this.username,
+      email: this.email,
       password: this.password,
     };
 

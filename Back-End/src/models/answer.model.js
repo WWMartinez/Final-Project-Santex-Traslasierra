@@ -7,17 +7,13 @@ const Respuesta = sequelize.define("Respuesta", {
     primaryKey: true,
     autoIncrement: true,
   },
-  preguntaId: {
-    type: DataTypes.INTEGER,
-    foreignKey: true,
-    allowNull: false,
-  },
   value: {
     type: DataTypes.STRING,
     allowNull: false,
-  }
+  },
 });
-// TODO asociar Respuesta con Pregunta? 
+
 // Associations DB
+
 
 module.exports = Respuesta;

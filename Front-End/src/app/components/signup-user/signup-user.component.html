@@ -7,9 +7,18 @@
         type="text"
         [(ngModel)]="username"
         class="form-control"
-        placeholder="Ingrese usuario"
+        placeholder="Ingrese el Usuario"
       />
       <label>Usuario</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        [(ngModel)]="email"
+        class="form-control"
+        placeholder="Ingrese email"
+      />
+      <label>Email</label>
     </div>
     <div class="form-floating mb-3">
       <input
@@ -19,22 +28,27 @@
         placeholder="Ingrese la contraseña"
       />
       <label>Contraseña</label>
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          [(ngModel)]="confirmPassword"
+          class="form-control"
+          placeholder="Ingrese la contraseña de nuevo"
+        />
+        <label>Repetir Contraseña</label>
+      </div>
+
+      <div class="d-grid gap-2 mb-3">
+        <button
+          type="button"
+          (click)="addUser()"
+          class="btn btn-primary btn-lg"
+        >
+          Aceptar
+        </button>
+      </div>
+      <a routerLink="/login">Volver</a>
     </div>
-    <div class="form-floating mb-3">
-      <input
-        type="password"
-        [(ngModel)]="confirmPassword"
-        class="form-control"
-        placeholder="Ingrese la contraseña de nuevo"
-      />
-      <label>Repetir Contraseña</label>
-    </div>
-    <div class="d-grid gap-2 mb-3">
-      <button type="button" (click)="addUser()" class="btn btn-primary btn-lg">
-        Aceptar
-      </button>
-    </div>
-    <a routerLink="/login">Volver</a>
+    <app-spinner *ngIf="loading"></app-spinner>
   </div>
-  <app-spinner *ngIf="loading"></app-spinner>
 </div>
