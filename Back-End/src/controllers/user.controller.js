@@ -2,10 +2,10 @@ const { userService } = require("../services");
 
 // TODO: Agregar permisos para cada accion. (en ROUTEs)
 // GET USER BY ID
-const getIdUser = async (req, res) => {
+const getUserId = async (req, res) => {
   const userId = req.params.userId;
   try {
-    const user = await userService.getIdUser(userId);
+    const user = await userService.getUserId(userId);
     res.status(200).json(user);
   } catch (error) {
     res.status(404).json({
@@ -28,12 +28,13 @@ const findUsers = async (_req, res) => {
 };
 
 // UPDATE USER BY ID
-const putUser = async (req, res) => {
+const updateUser = async (req, res) => {
   const userId = req.params.userId;
-  const { username } = req.body;
+  const { username, email } = req.body;
   try {
-    const newUser = await userService.putUser(userId, {
+    const newUser = await userService.updateUser(userId, {
       username,
+      email,
     });
     res.status(200).json({ message: "User successfully updated", newUser });
   } catch (error) {
@@ -65,4 +66,4 @@ const deleteUser = async (req, res) => {
   }
 };
 
-module.exports = { getIdUser, findUsers, putUser, deleteUser };
+module.exports = { getUserId, findUsers, updateUser, deleteUser };

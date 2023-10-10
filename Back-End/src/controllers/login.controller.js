@@ -5,13 +5,13 @@ const secret = require("../middleware/jwtStrategy.middleware");
 
 // USER LOGIN VALIDATIONS & CREDENTIALS ASSIGNED
 const loginUser = async (req, res) => {
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
   try {
-    const dbUser = await userService.validateUser(username);
+    const dbUser = await userService.validateUser(email);
     if (!dbUser) {
       return res
         .status(400)
-        .json({ msg: "No existe el Usuario con el nombre: " + username });
+        .json({ msg: "No existe el Usuario con el email: " + email });
     }
 
     const dbPass = dbUser.password;
@@ -20,7 +20,7 @@ const loginUser = async (req, res) => {
     if (!passwordValid) {
       return res
         .status(400)
-        .json({ message: "Usuario o contraseña incorrectos" });
+        .json({ message: "Los datos ingresados son incorrectos" });
     }
 
     // ROLES

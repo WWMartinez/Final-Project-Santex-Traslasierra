@@ -2,9 +2,9 @@ const UserModel = require("../models/user.model");
 
 // TODO: ERROR CATCH BUT NOT DOING ANYTHING WITH IT. MUST EDIT ERROR MESSAGE.
 // VALIDATE USER ON DB
-const validateUser = async ( username ) => {
+const validateUser = async ( email ) => {
   try {
-    const user = await UserModel.findOne({ where: { username } });
+    const user = await UserModel.findOne({ where: { email } });
     if (user) {
       console.log(user);
       return user;
@@ -42,7 +42,7 @@ const createUser = async (userOptions) => {
 };
 
 // GET USER BY ID
-const getIdUser = async (id) => {
+const getUserId = async (id) => {
   try {
     const user = await UserModel.findByPk(id, { include: [{ all: true }] });
     if (user) {
@@ -70,9 +70,9 @@ const findUsers = async (options) => {
 // TODO: se hace un await del get, pero no se guarda el resultado en ninguna variable
 // TODO: PARA QUE ESTABA ESTO ?
 // UPDATE USER BY ID
-const putUser = async (userId, userOptions) => {
+const updateUser = async (userId, userOptions) => {
   try {
-    await getIdUser(userId);
+    await getUserId(userId);
     const [numRowsUpdated] = await UserModel.update(userOptions, {
       where: { id: userId },
     });
@@ -96,8 +96,8 @@ module.exports = {
   validateUser,
   validateUserId,
   createUser,
-  getIdUser,
+  getUserId,
   findUsers,
-  putUser,
+  updateUser,
   deleteUser,
 };

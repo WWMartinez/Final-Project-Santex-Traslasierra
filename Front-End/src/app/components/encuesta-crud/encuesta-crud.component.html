@@ -10,7 +10,6 @@
         <thead>
           <tr>
               <th scope="col">#</th>
-              <th scope="col">Categoria</th>
               <th scope="col">Pregunta</th>
               <th scope="col"></th>
           </tr>
@@ -18,10 +17,9 @@
         <tbody>
           <tr *ngFor="let pregunta of listPreguntas" class="table-active">
               <th scope="row">{{ pregunta.id }}</th>
-              <td>{{ pregunta.category }}</td>
               <td>{{ pregunta.question }}</td>
               <td>
-                  <button routerLink="/encuesta-edit/{{ pregunta.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
+                  <button routerLink="/survey-edit/{{ pregunta.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
                   <button (click)="deletePregunta(pregunta.id!)" type="button" class="btn btn-danger btn-sm ms-2">Borrar</button>
               </td>
           </tr>

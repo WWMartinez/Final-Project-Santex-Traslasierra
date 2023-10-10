@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -13,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginUserComponent implements OnInit {
   username: string = '';
+  email: string = '';
   password: string = '';
   loading: boolean = false;
 
@@ -27,13 +27,14 @@ export class LoginUserComponent implements OnInit {
 
   login() {
     // Validamos que el usuario ingrese los datos necesarios
-    if (this.username == '' || this.password == '') {
+    if (this.email == '' || this.password == '') {
       this.toastr.error('Todos los campos son obligatorios', 'Error');
       return;
     }
     // Creamos el Objeto
     const user: User = {
       username: this.username,
+      email: this.email,
       password: this.password,
     };
 
@@ -46,17 +47,6 @@ export class LoginUserComponent implements OnInit {
       localStorage.setItem('token', res.token);
       this.router.navigate(['/home']);
     });
-
-    // this._userService.login(user).subscribe({
-    //   next: (token) => {
-    //     localStorage.setItem('token', token);
-    //     this.router.navigate(['/dashboard']);
-    //   },
-    //   error: (e: HttpErrorResponse) => {
-    //     this._errorService.msjError(e);
-    //     this.loading = false;
-    //   },
-    // });
-  
   } // login() close 
+  
 }
