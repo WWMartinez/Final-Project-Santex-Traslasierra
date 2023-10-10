@@ -1,19 +1,19 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/configDB");
-const Category = require("./category.model");
+const Survey = require("./survey.model");
 
-const Pregunta = sequelize.define("Pregunta", {
+const Category = sequelize.define("Category", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  question: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
 });
 
-// PREGUNTA ASSOCIATION
+// Category.belongsTo(Survey);
 
-module.exports = Pregunta;
+module.exports = Category;
