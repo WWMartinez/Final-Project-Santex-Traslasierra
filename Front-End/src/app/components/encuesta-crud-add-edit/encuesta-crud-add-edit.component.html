@@ -6,10 +6,10 @@
             <div class="card-body">
                 <form [formGroup]="formPreguntas" (ngSubmit)="addPregunta()">    
                    
-                    <input formControlName="category" type="text" class="form-control mt-3" placeholder="Categoria">
+                    <!-- <input formControlName="category" type="text" class="form-control mt-3" placeholder="Categoria">
                     <span *ngIf="formPreguntas.get('category')?.hasError('required') && formPreguntas.get('category')?.touched">
                         La <strong>Categoria</strong> es requerida
-                    </span>
+                    </span> -->
 
                     <input formControlName="question" type="text" class="form-control mt-3" placeholder="Pregunta">
                     <span *ngIf="formPreguntas.get('question')?.hasError('required') && formPreguntas.get('question')?.touched">

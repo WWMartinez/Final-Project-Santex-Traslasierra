@@ -25,9 +25,9 @@ const {
   validateUserId,
   validateUser,
   createUser,
-  getIdUser,
+  getUserId,
   findUsers,
-  putUser,
+  updateUser,
   deleteUser,
 } = require("./user.ser");
 const {
@@ -75,9 +75,9 @@ module.exports = {
     validateUserId,
     validateUser,
     createUser,
-    getIdUser,
+    getUserId,
     findUsers,
-    putUser,
+    updateUser,
     deleteUser,
   },
 };

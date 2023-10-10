@@ -3,10 +3,9 @@ const { preguntaService } = require("../services");
 // TODO: Agregar permisos para cada accion.
 // CREATE PREGUNTA
 const createPregunta = async (req, res) => {
-  const { category, question, visible } = req.body;
+  const { question, visible } = req.body;
   try {
     const newPregunta = await preguntaService.createPregunta({
-      category,
       question,
       visible,
     });
@@ -52,10 +51,9 @@ const findPreguntas = async (_req, res) => {
 // UPDATE PREGUNTA BY ID
 const putPregunta = async (req, res) => {
   const preguntaId = req.params.preguntaId;
-  const { category, question, visible } = req.body;
+  const { question, visible } = req.body;
   try {
     const newPregunta = await preguntaService.putPregunta(preguntaId, {
-      category,
       question,
       visible,
     });
