@@ -28,6 +28,7 @@ import { LoginUserComponent } from './components/login-user/login-user.component
 import { SignupUserComponent } from './components/signup-user/signup-user.component';
 // HEADER INTERCEPTOR COPY TOKEN
 import { HeaderInterceptor } from './headeredit.interceptor';
+import { NavbarSecComponent } from './components/navbar-sec/navbar-sec.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import { HeaderInterceptor } from './headeredit.interceptor';
     InfoCardsCrudAddEditComponent,
     LoginUserComponent,
     SignupUserComponent,
+    NavbarSecComponent,
   ],
   imports: [
     BrowserModule,
