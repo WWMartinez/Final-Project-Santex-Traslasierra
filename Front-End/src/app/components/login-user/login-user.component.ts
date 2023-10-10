@@ -31,6 +31,7 @@ export class LoginUserComponent implements OnInit {
       this.toastr.error('Todos los campos son obligatorios', 'Error');
       return;
     }
+    
     // Creamos el Objeto
     const user: User = {
       username: this.username,
