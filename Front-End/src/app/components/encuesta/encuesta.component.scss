@@ -33,11 +33,42 @@
     margin-top: 10px;
 }
 
-// Botones custom de las respuestas de si y no
-.custom-radio {
-    width: 20px; /* Ajusta el ancho del botón de radio según tus necesidades */
-    height: 20px;
+.button-nabvar {
+    background-color:white;
+    color: black;
+    border-radius: 10em;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 1em 2em;
+    letter-spacing: 1.5px;
+    margin: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
 }
+
+.button-nabvar:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(255, 0, 0);
+    
+};
+
+.button-nabvar:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+};
+
+
+// Boton home
+.boton-home{
+    font-size: medium;
+    width: 70px; 
+    height: 45px; 
+    margin-top: 10px;
+}
+
+
 // Imagen
 .imagen-esquina img {
     width: 70px; 
@@ -46,98 +77,122 @@
     border: 2px solid #fff; 
 }
 
-// Titulos
-.titulo {
-    text-align: center;
-    font-size: 36px; 
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
-    margin: 0; 
+//nuevo formulario
+
+.formulario {
+    --color-white: #f3f3f3;
+    --color-darkblue: #1b1b32;
+    --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+    --color-green: #37af65;
 }
 
-.subtitulo {
-    font-size: 20px; 
-    color: #555; 
-    text-align: center;
-    margin-top: 20px; 
-    margin-bottom: 40px;
-}
-.titulo-secundario {
-    font-size: 24px; 
-    font-weight: bold; 
-    margin-bottom: 10px;
-    position: relative; 
-    text-align: center;
-    margin: 10px;
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        background-color: #ccc;
-        bottom: 0;
-        left: 0;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-white);
 }
 
-// Preguntas
-.preguntas{
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-// Dropbar
-.select-dropdown {
-    select {
+.formulario::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+    z-index: -1;
+    background: var(--color-darkblue);
+    background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7) ), url("../../../assets/imgs/RioCentro3.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#title {
+    text-align: center;
+    font-size: 2.0rem;
+    margin-top: 3.125rem;
+}
+
+#description {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 40%);
+    font-size: 1.155rem;
+}
+
+#survey-form {
+    background-color:rgba(27, 27, 50, 0.8);
+    padding: 2.5rem;
+    border-radius: 0.25rem;
+    width: 720px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#survey-form div {
+    margin-bottom: 1.25rem;
+}
+
+.main-input input {
+    width: 100%;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    margin-top: 8px;
+}
+
+.main-input select {
+    width: 100%;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    margin-top: 8px;
+}
+
+.main-input option {color: #495057;}
+
+input[type="radio"] {
+    transform: scale(1.5);
+    margin-bottom: 15px;
+}
+
+.recommend label {margin-left: 8px;}
+
+.recommend p {margin-bottom: 8px;}
+
+#improvement input[type="checkbox"] {
+    margin-bottom: 10px;
+    transform: scale(1.5);
+}
+
+#improvement label {
+    margin-left: 8px;
+}
+
+#improvement p {margin-bottom: 8px;}
+
+textarea {
+    color: #495057;
+    width: 100%;
+    padding: 0.625rem;
+    min-height: 120px;
+    min-width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+}
+
+button {
+    color: #495057;
+    background-color: var(--color-green);
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 0.75rem;
     cursor: pointer;
-    }
-}
-// Cuestionario Turista
-
-.info form{
-    position: relative;
-}
-.info form input, form textarea{
-    width: 100%;
-    padding: 14px;
-    background: khaki;
-    color: black;
-    border: solid;
-    outline: none;
-    font-size: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-.info textarea{
-    resize: none;
-    height: 240px;
-}
-.info .submit{
-    display: inline-block;
-    font-size: 16px;
-    background: khaki;
-    color: black;
-    width: 160px;
-    transition: all .45s ease;
-}
-.info .submit:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-}
-.choise form ol{
-    width: 100%;
-    padding: 14px;
-    background: khaki;
-    color: black;
-    border: solid;
-    outline: none;
-    font-size: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
 }
