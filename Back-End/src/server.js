@@ -15,6 +15,7 @@ const {
   respuestaRoute,
   surveyRoute,
   infoCardRoute,
+  uploadRouter
 } = require("./routes");
 
 // USE
@@ -30,5 +31,6 @@ app.use("/pregunta", authIsUser, preguntaRoute);
 app.use("/respuesta", authIsUser, respuestaRoute);
 app.use("/survey", authIsUser, surveyRoute);
 app.use("/infocard", infoCardRoute);
+app.use("/upload", uploadRouter);
 
 module.exports = app;
