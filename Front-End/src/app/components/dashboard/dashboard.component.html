@@ -1,20 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-        <a class="navbar-brand col-lg-3 me-0" routerLink=""><img src="../../../assets/imgs/logoMinaClavero.png" alt="Logo Mina Clavero" style="height: 43px;"></a>
-        <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-          <li class="nav-item">
-            <button class="button-nabvar" aria-current="page" routerLink="">Salir</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<app-navbar-sec></app-navbar-sec>
 <!-- Fin Navbar -->
 
 <div class="container">
@@ -22,9 +7,67 @@
         <app-bar-chart></app-bar-chart>
     </div>
     <div class="preguntas">
-        <app-encuesta-crud></app-encuesta-crud>
+        <div class="container">
+            <div class="title">
+                <h1>Lista de Preguntas</h1>
+                <button type="button" class="btn btn-success" routerLink="/survey-add">Agregar Pregunta</button>        
+            </div>
+
+            <table *ngIf="listPreguntas.length > 0" class ="table table-dark">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Pregunta</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let pregunta of listPreguntas" class="table-active">
+                    <th scope="row">{{ pregunta.id }}</th>
+                    <td>{{ pregunta.question }}</td>
+                    <td>
+                        <button routerLink="/survey-edit/{{ pregunta.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
+                        <button (click)="deletePregunta(pregunta.id!)" type="button" class="btn btn-danger btn-sm ms-2">Borrar</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h5 *ngIf="listPreguntas.length == 0">No hay Preguntas para mostrar</h5>
+        </div>
     </div>
     <div class="info-card">
-      <app-info-cards-crud></app-info-cards-crud>  
+        <div class="container">
+        <div class="title">
+            <h1>Lista de Cartas Informativas</h1>
+            <button type="button" class="btn btn-success" routerLink="/infocard-add">Agregar Carta Informativa</button>        
+        </div>
+
+        <table *ngIf="listInfoCards.length > 0" class ="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let infoCard of listInfoCards" class="table-active">
+                    <th scope="row">{{ infoCard.id }}</th>
+                    <td>{{ infoCard.category }}</td>
+                    <td>{{ infoCard.title }}</td>
+                    <td>{{ infoCard.description }}</td>
+                    <td>{{ infoCard.imageUrl }}</td>
+                    <td>
+                        <button routerLink="/infocard-edit/{{ infoCard.id }}" type="button" class="btn btn-info btn-sm">Editar</button>
+                        <button (click)="deleteInfoCard(infoCard.id!)" type="button" class="btn btn-danger btn-sm ms-2">Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+            <h5 *ngIf="listInfoCards.length == 0">No hay Carta Informativa para mostrar</h5>
+        </div>  
     </div>
 </div>

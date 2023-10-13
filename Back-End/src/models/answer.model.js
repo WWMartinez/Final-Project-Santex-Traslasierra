@@ -1,5 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/configDB");
+const Pregunta = require("./question.model");
+const Survey = require("./survey.model");
 
 const Respuesta = sequelize.define("Respuesta", {
   id: {
@@ -14,6 +16,8 @@ const Respuesta = sequelize.define("Respuesta", {
 });
 
 // Associations DB
+// Respuesta.belongsTo(Pregunta);
+Respuesta.belongsTo(Survey);
 
 
 module.exports = Respuesta;

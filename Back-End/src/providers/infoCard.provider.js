@@ -12,7 +12,7 @@ const createInfoCard = async (infoCardOptions) => {
 };
 
 // GET INFOCARD BY ID
-const getIdInfoCard = async (id) => {
+const getInfoCardId = async (id) => {
   try {
     const infoCard = await InfoCardModel.findByPk(id, { include: [{ all: true }] });
     if (infoCard) {
@@ -29,8 +29,6 @@ const getIdInfoCard = async (id) => {
 const findInfoCards = async (options) => {
   try {
     const infoCards = await InfoCardModel.findAll(options);
-    // const infoCardsArray = Array.isArray(infoCards) ? infoCards : [infoCards];
-    // console.log(infoCards);
     return infoCards;
   } catch (error) {
     throw error;
@@ -40,9 +38,9 @@ const findInfoCards = async (options) => {
 // TODO: se hace un await del get, pero no se guarda el resultado en ninguna variable
 // TODO: PARA QUE ESTABA ESTO ?
 // UPDATE INFOCARD BY ID
-const putInfoCard = async (infoCardId, infoCardOptions) => {
+const updateInfoCard = async (infoCardId, infoCardOptions) => {
   try {
-    await getIdInfoCard(infoCardId);
+    await getInfoCardId(infoCardId);
     const [numRowsUpdated] = await InfoCardModel.update(infoCardOptions, {
       where: { id: infoCardId },
     });
@@ -80,8 +78,8 @@ const validateInfoCard = async (infoCardId) => {
 module.exports = {
   validateInfoCard,
   createInfoCard,
-  getIdInfoCard,
+  getInfoCardId,
   findInfoCards,
-  putInfoCard,
+  updateInfoCard,
   deleteInfoCard,
 };

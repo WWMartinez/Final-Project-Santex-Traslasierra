@@ -16,184 +16,279 @@
   </div>
 </nav>
 <!-- Fin Navbar -->
+<main class="formulario">
 
-<!-- Title -->
-  <h1 class="titulo">Formulario de Satisfacción</h1>
-  <p class="subtitulo">Municipalidad de Mina Clavero</p>
-<!-- Fin Title -->
+<h1 id="title">Formulario de Satisfacción</h1>
+        <p id="description">Municipalidad de Mina Clavero</p>
+        <form id="survey-form">
+            <div class="main-input">
+                <label for="name" id="name-label">Nombre Apellido</label><br>
+                <input type="text" id="name" required placeholder="Enter your name">
+            </div>
 
-  <!--  PREGUNTAS BD MySQL  -->
-  <section *ngFor="let pregunta of listPreguntas" class="row">
-    <div class="col-md-12 ">
-      <section class="row">
-        <div class="col-md-8">
-          <p class="preguntas">{{ pregunta.question }}</p>
-        </div>
-        <div class="col-md-4 select-dropdown">
-          <select class="" >
-            <option value="5">Muy Buena</option>
-            <option value="4">Buena</option>
-            <option value="3">Regular</option>
-            <option value="2">Mala</option>
-            <option value="1">Muy Mala</option>
-            <option value="0">No Responde</option>
-          </select>
-        </div>
-      </section>
-    </div>
-  </section>
+            <div class="main-input">
+                <label for="email" id="email-label">Email</label><br>
+                <input type="email" id="email" required placeholder="Enter your Email">
+            </div>
 
-  <section class="row">
-    <div class="col-md-12">
-      <div class="titulo-secundario">Otra forma de dar respuestas</div>
-      <p></p>
-    </div>
-  </section>
-  
-  <!--  Otra forma de dar respuestas  -->
-  <section *ngFor="let pregunta of listPreguntas" class="row">
-    <div class="col-md-12">
-      <section class="row">
-        <div class="col-md-8">
-          <p class="preguntas">{{ pregunta.question }}</p>
-        </div>
-        <div class="col-md-2 form-check-mb-2 p-2 rounded">
-          <label class="radio form-check-label">
-            <input class="custom-radio form-check-input" type="radio" name="pregunta1a" id="pregunta1a" value="SI">SI
-          </label>
-        </div>
-        <div class="col-md-2 form-check p-2 rounded">
-          <label class=" radio form-check-label">
-            <input class="custom-radio form-check-input" type="radio" name="preguntab" id="pregunta1b" value="SI">NO
-          </label>
-        </div>
-      </section>
-    </div>
-  </section>
-  <!--Cuestionario Turista -->
-  <section >
-    <div class="info">
-      <form>
-          <input  placeholder="Nombre y Apellido" required>
-          <input  placeholder="Edad" required>
-          <input  placeholder="Ciudad de procedencia" required>
-          <textarea name="" id="" cols="35" rows="10" placeholder="Motivo de su visita a Mina Clavero" required></textarea>
-          <div class="choise">
-            <form>
-                <p><strong>¿Ud. vino a Mina Clavero?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta1" id="p11"> Solo </li>
-                    <li><input type="radio" name="pregunta1" id="p12"> Con su Pareja</li>
-                    <li><input type="radio" name="pregunta1" id="p13"> Con su Familia</li>
-                    <li><input type="radio" name="pregunta1" id="p14"> En una Excursión</li>
-                </ol>
-                <p><strong>¿A través de qué medio conoció el destino Mina Clavero? </strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta2" id="p21"> Televisión</li>
-                    <li><input type="radio" name="pregunta2" id="p23"> Pagina Web</li>
-                    <li><input type="radio" name="pregunta2" id="p22"> Redes Sociales</li>
-                    <li><input type="radio" name="pregunta2" id="p24"> Medios Graficos</li>
-                </ol>
-                <p><strong>¿Por qué eligió Mina Clavero para pasar sus vacaciones?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta3" id="p31"> Porque ya conocía y le gustó el lugar</li>
-                    <li><input type="radio" name="pregunta3" id="p33"> Porque se lo recomendaron</li>
-                    <li><input type="radio" name="pregunta3" id="p32"> Porque es un lugar tranquilo para la familia</li>
-                    <li><input type="radio" name="pregunta3" id="p34"> Por sus paisajes</li>
-                </ol>
-                <p><strong>En cuanto a Hospedaje: ¿Ud. llegó a Mina Clavero?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta4" id="p41"> Con Reserva</li>
-                    <li><input type="radio" name="pregunta4" id="p42"> Sin Reserva</li>
-                    <li><input type="text" name="pregunta4" id="p43"> A través de que medio hizo la reserva?</li>
-                </ol>
-                <p><strong>¿Qué tipo de Hospedaje ha tomado?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta5" id="p55"> Hotel</li>
-                    <li><input type="radio" name="pregunta5" id="p51"> Cabaña</li>
-                    <li><input type="radio" name="pregunta5" id="p52"> Hostería</li>
-                    <li><input type="radio" name="pregunta5" id="p53"> Camping</li>
-                </ol>
-                <p><strong>¿Cómo es el servicio en el hospedaje que ha contratado? </strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta6" id="p61"> Excelente</li>
-                    <li><input type="radio" name="pregunta6" id="p62"> Muy Bueno</li>
-                    <li><input type="radio" name="pregunta6" id="p66"> Regular</li>
-                    <li><input type="radio" name="pregunta6" id="p64"> Malo</li>
-                </ol>
-                <p><strong>¿Recibió material informativo de la Secretaría de Turismo en el hospedaje donde se alojó?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta7" id="p71"> Si </li>
-                    <li><input type="radio" name="pregunta7" id="p77"> No</li>
-                    <li><input type="text" name="pregunta7" id="p73"> Cual?</li>
-                </ol>
-                <p><strong>¿Ud. pidió información en las oficinas de Turismo de Mina Clavero?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta8" id="p88"> Si </li>
-                    <li><input type="radio" name="pregunta8" id="p82"> No </li>
-                    <li><input type="text" name="pregunta8" id="p83"> ¿Cual?</li>
-                </ol>
-                <p><strong>¿Qué tipo de Información solicitó en las Oficinas de Turismo de Mina Clavero?</strong> (Puede marcar más de una opción)</p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta9" id="p91"> Hospedaje</li>
-                    <li><input type="radio" name="pregunta9" id="p92"> Gastronomía</li>
-                    <li><input type="radio" name="pregunta9" id="p93"> Servicios</li>
-                    <li><input type="radio" name="pregunta9" id="p99"> Paseos</li>
-                    <li><input type="radio" name="pregunta9" id="p99"> Rutas</li>
-                    <li><input type="radio" name="pregunta9" id="p99"> Turismo Aventura</li>
-                    <li><input type="radio" name="pregunta9" id="p99"> Eventos</li>
-                    <li><input type="text" name="pregunta9" id="p99"> Otros:¿Cuales?</li>
-                </ol>
-                <p><strong>¿A través de que medio solicito informacion en las Oficinas de Turismo de Mina Clavero?</strong> (Puede marcar mas de una opción.)</p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta10" id="p01"> Personalmente</li>
-                    <li><input type="radio" name="pregunta10" id="p02"> Vía mail</li>
-                    <li><input type="radio" name="pregunta10" id="p03"> Via Facebook</li>
-                    <li><input type="radio" name="pregunta10" id="p04"> Via telefonica</li>
-                    <li><input type="text" name="pregunta10" id="p04"> Otros:¿Cual?</li>
-                </ol>
-                <p><strong>¿Que tipo de material se le entregó en la Oficina de Turismo?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta10" id="p01"> Folleto</li>
-                    <li><input type="radio" name="pregunta10" id="p02"> Revisa</li>
-                    <li><input type="radio" name="pregunta10" id="p03"> Planos</li>
-                    <li><input type="radio" name="pregunta10" id="p04"> Calcomanías</li>
-                    <li><input type="radio" name="pregunta10" id="p04"> Guía de Servicios</li>
-                </ol>
-                <p><strong>¿Como evalúa el tipo de informacion brindada por las Oficinas de Turismo de Mina Clavero?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta10" id="p01"> Excelente</li>
-                    <li><input type="radio" name="pregunta10" id="p02"> Muy Buena</li>
-                    <li><input type="radio" name="pregunta10" id="p03"> Buena</li>
-                    <li><input type="radio" name="pregunta10" id="p04"> Regular</li>
-                </ol>
-                <p><strong>Aparte de la información solicitada, se le brindó algún otro tipo de información de su interés?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta10" id="p01"> Si</li>
-                    <li><input type="radio" name="pregunta10" id="p02"> No</li>
-                </ol>
-                <p><strong>¿Que información se le brindo?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta10" id="p01"> Espectáculos en Mina Clavero</li>
-                    <li><input type="radio" name="pregunta10" id="p02"> Espectáculos en locaclidades cercanas</li>
-                    <li><input type="radio" name="pregunta10" id="p03"> Actividades deportivas</li>
-                    <li><input type="radio" name="pregunta10" id="p04"> Turismo Aventura</li>
-                    <li><input type="radio" name="pregunta10" id="p03"> Paseos</li>
-                    <li><input type="text" name="pregunta10" id="p04"> Otros:¿Cuales?</li>
-                </ol>
-                <p><Strong>Considera a Mina Clavero como un destino completo en cuanto a su oferta y servicios?</Strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta10" id="p01"> Si</li>
-                    <li><input type="radio" name="pregunta10" id="p02"> No</li>
-                    <li><input type="text" name="pregunta10" id="p03"> ¿Porque?</li>
-                </ol>
-                <p><strong>¿Recomendaría Mina Clavero como destino turístico?</strong></p>
-                <ol type="A" class="pregunta">
-                    <li><input type="radio" name="pregunta10" id="p01"> Si</li>
-                    <li><input type="radio" name="pregunta10" id="p02"> No</li>
-                    <li><input type="text" name="pregunta10" id="p03"> ¿Porque?</li>
-                </ol>
-            </form>
-            <p><strong>¡Muchas Gracias por su colaboración!</strong></p>
-            <input type="submit" value="Enviar" class="submit" required>
-        </div>
+            <div class="main-input">
+                <label for="city" id="city-label">Ciudad de procedencia</label><br>
+                <input type="city" id="city" required placeholder="Ciudad">
+            </div>
+
+            <div class="main-input">
+                <p>Motivo de su visita a Mina Clavero?</p>
+                <select id="dropdown">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="student">Promoción de Estudios</option>
+                    <option value="full-time-job">Vacaciones de Trabajo</option>
+                    <option value="full-time-learner">Vacaciones Culturales</option>
+                    <option value="prefer-not-to-say">Descanso</option>
+                    <option value="other">Otros</option>
+                </select>
+            </div>
+
+            <div class="recommend">
+                <p>¿Ud. vino a Mina Clavero?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Solo</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe"> En Pareja</label>
+                <br>
+                <input type="radio" id="not-sure" name="recommend" value="Not sure">
+                <label for="not-sure">En Familia</label>
+                <br>
+                <input type="radio" id="not-sure" name="recommend" value="Not sure">
+                <label for="not-sure">En Excursión</label>
+                <br>
+            </div>
+
+            <div class="main-input">
+                <p>¿A través de qué medio conoció el destino Mina Clavero?</p>
+                <select name="" id="">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="challenges"> Televisión</option>
+                    <option value="projects">Pagina Web</option>
+                    <option value="community">Redes Sociales</option>
+                    <option value="open-source">Medios Graficos</option>
+                    <option value="open-source">otros</option>
+                </select>
+            </div>
+
+            <div id="improvement">
+                <p>¿Por qué eligió Mina Clavero para pasar sus vacaciones? (select an option)</p>
+                <input type="checkbox" id="front-end" value="front-end">
+                <label for="front-end">Porque ya conocía y le gustó el lugar</label>
+                <br>
+                <input type="checkbox" id="back-end" value="back-end">
+                <label for="back-end">Porque se lo recomendaron</label>
+                <br>
+                <input type="checkbox" id="data-visulization" value="data-visulization">
+                <label for="data-visulization">Porque es un lugar tranquilo para la familia</label>
+                <br>
+                <input type="checkbox" id="challenges" value="challenges">
+                <label for="challenges">Por sus paisajes</label>
+                <br>               
+            </div>
+
+            <div class="recommend">
+                <p>En cuanto a Hospedaje: ¿Ud. llegó a Mina Clavero?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Con Reserva</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">Sin Reserva</label>
+                <br>
+            <div class="main-input">
+                    <label for="city" id="city-label">A traves de que medio hizo la reserva</label><br>
+                    <input type="city" id="city" required placeholder=" ">
+            </div>
+            </div>
+
+            <div class="recommend">
+                <p>¿Qué tipo de Hospedaje ha tomado?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Hotel</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe"> Cabaña</label>
+                <br>
+                <input type="radio" id="not-sure" name="recommend" value="Not sure">
+                <label for="not-sure">Hostería</label>
+                <br>
+                <input type="radio" id="not-sure" name="recommend" value="Not sure">
+                <label for="not-sure">Camping</label>
+                <br>
+            </div>
+            <div id="improvement">
+                <p>¿Cómo es el servicio en el hospedaje que ha contratado? (select an option)</p>
+                <input type="checkbox" id="front-end" value="front-end">
+                <label for="front-end"> Excelente</label>
+                <br>
+                <input type="checkbox" id="back-end" value="back-end">
+                <label for="back-end">Muy Bueno</label>
+                <br>
+                <input type="checkbox" id="data-visulization" value="data-visulization">
+                <label for="data-visulization">Regular</label>
+                <br>
+                <input type="checkbox" id="challenges" value="challenges">
+                <label for="challenges">Malo</label>
+                <br>               
+            </div>
+
+            <div class="recommend">
+                <p>¿Recibió material informativo de la Secretaría de Turismo en el hospedaje donde se alojó?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Si</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">No</label>
+                <br>
+            <div class="main-input">
+                    <label for="city" id="city-label"> Cual?</label><br>
+                    <input type="city" id="city" required placeholder="here">
+            </div>
+            </div>
+
+            <div class="recommend">
+                <p>¿Ud. pidió información en las oficinas de Turismo de Mina Clavero?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Si</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">No</label>
+                <br>
+            <div class="main-input">
+                    <label for="city" id="city-label"> En cual?</label><br>
+                    <input type="city" id="city" required placeholder="here">
+            </div>
+            </div>
+
+            <div class="main-input">
+                <p>¿Qué tipo de Información solicitó en las Oficinas de Turismo de Mina Clavero?</p>
+                <select id="dropdown">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="student">Hospedaje</option>
+                    <option value="full-time-job">Gastronomía</option>
+                    <option value="full-time-learner">Servicios</option>
+                    <option value="prefer-not-to-say">Paseos</option>
+                    <option value="student">Rutas</option>
+                    <option value="full-time-learner">Turismo Aventura</option>
+                    <option value="student">Eventos</option>
+                    <option value="other">Otros</option>
+                </select>
+            </div>
+
+            <div class="main-input">
+                <p>¿A través de que medio solicito informacion en las Oficinas de Turismo de Mina Clavero?</p>
+                <select name="" id="">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="challenges">Personalmente</option>
+                    <option value="projects">Vía mail</option>
+                    <option value="community">Via Facebook</option>
+                    <option value="open-source">Via telefonica</option>
+                    <option value="other">Otros</option>
+                </select>
+            </div>
+
+            <div class="recommend">
+                <p>¿Que tipo de material se le entregó en la Oficina de Turismo?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Folleto</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">Revista</label>
+                <br>
+                <input type="radio" id="not-sure" name="recommend" value="Not sure">
+                <label for="not-sure">Planos</label>
+                <br>
+                <input type="radio" id="not-sure" name="recommend" value="Not sure">
+                <label for="not-sure">Calcomanías</label>
+                <br>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Guía de Servicios</label>
+                <br>
+            </div>
+
+            <div id="improvement">
+                <p>¿Como evalúa el tipo de informacion brindada por las Oficinas de Turismo de Mina Clavero? (select an option)</p>
+                <input type="checkbox" id="front-end" value="front-end">
+                <label for="front-end"> Excelente</label>
+                <br>
+                <input type="checkbox" id="back-end" value="back-end">
+                <label for="back-end">Muy Bueno</label>
+                <br>
+                <input type="checkbox" id="data-visulization" value="data-visulization">
+                <label for="data-visulization">Regular</label>
+                <br>
+                <input type="checkbox" id="challenges" value="challenges">
+                <label for="challenges">Malo</label>
+                <br>               
+            </div>
+
+            <div class="recommend">
+                <p>¿Aparte de la información solicitada, se le brindó algún otro tipo de información de su interés?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Si</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">No</label>
+                <br>
+            </div>
+
+            <div class="main-input">
+                <p>¿Que información se le brindo?</p>
+                <select id="dropdown">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="student">Espectáculos en Mina Clavero</option>
+                    <option value="full-time-job">Espectáculos en localidades cercanas</option>
+                    <option value="full-time-learner">Actividades deportivas</option>
+                    <option value="full-time-learner">Turismo Aventura</option>
+                    <option value="full-time-learnert">Paseos</option>
+                    <option value="other">Otros</option>
+                </select>
+            </div>
+            <!-- <div class="main-input">
+                <label for="city" id="city-label"> Cual?</label><br>
+                <input type="city" id="city" required placeholder="here">
+            </div>    -->
+            <div class="recommend">
+                <p>Considera a Mina Clavero como un destino completo en cuanto a su oferta y servicios?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Si</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">No</label>
+                <br>
+            <div class="main-input">
+                    <label for="city" id="city-label"> Cual?</label><br>
+                    <input type="city" id="city" required placeholder="here">
+            </div>
+            </div>
+            
+            <div class="recommend">
+                <p>¿Recomendaría Mina Clavero como destino turístico?</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Si</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">No</label>
+                <br>
+            <div class="main-input">
+                    <label for="city" id="city-label"> Cual?</label><br>
+                    <input type="city" id="city" required placeholder="here">
+            </div>
+            </div>
+
+            
+
+            <div>
+                <p>Algun comentario o recomendación?</p>
+                <textarea cols="15" rows="5" placeholder="Ingrese su comentario aqui..."></textarea>
+            </div>
+            <p id="description">Gracias por su Colaboración</p>
+
+            <button id="submit" type="submit">Enviar</button>
+        </form>
+      </main>
