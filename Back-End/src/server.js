@@ -3,7 +3,6 @@ const app = express();
 const cors = require("cors");
 
 // MIDDLEWARES
-// TODO: agregar middlewares a las routes ! !
 const { reqMessage, authIsUser } = require("./middleware");
 
 // ROUTES

@@ -8,16 +8,16 @@ const createInfoCard = async (infoCard) => {
   return await infoCardProvider.createInfoCard(infoCard);
 };
 
-const getIdInfoCard = async (id) => {
-  return await infoCardProvider.getIdInfoCard(id);
+const getInfoCardId = async (id) => {
+  return await infoCardProvider.getInfoCardId(id);
 };
 
 const findInfoCards = async (options) => {
   return await infoCardProvider.findInfoCards(options);
 };
 
-const putInfoCard = async (id, infoCard) => {
-  return await infoCardProvider.putInfoCard(id, infoCard);
+const updateInfoCard = async (id, infoCard) => {
+  return await infoCardProvider.updateInfoCard(id, infoCard);
 };
 
 const deleteInfoCard = async (id) => {
@@ -27,8 +27,8 @@ const deleteInfoCard = async (id) => {
 module.exports = { 
   validateInfoCard,
   createInfoCard,
-  getIdInfoCard,
+  getInfoCardId,
   findInfoCards,
-  putInfoCard,
+  updateInfoCard,
   deleteInfoCard,
 };

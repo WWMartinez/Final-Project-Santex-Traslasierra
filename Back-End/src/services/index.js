@@ -1,8 +1,8 @@
 const {
   validateInfoCard,
   createInfoCard,
-  getIdInfoCard,
-  putInfoCard,
+  getInfoCardId,
+  updateInfoCard,
   deleteInfoCard,
   findInfoCards,
 } = require("./infoCard.ser");
@@ -43,8 +43,8 @@ module.exports = {
   infoCardService: {
     validateInfoCard,
     createInfoCard,
-    getIdInfoCard,
-    putInfoCard,
+    getInfoCardId,
+    updateInfoCard,
     deleteInfoCard,
     findInfoCards,
   },

@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const router = Router();
 const { authIsAdmin } = require('../middleware');
-const { createInfoCard, getIdInfoCard, putInfoCard, deleteInfoCard, findInfoCards } = require("../controllers/infoCard.controller");
+const { createInfoCard, getInfoCardId, findInfoCards, updateInfoCard, deleteInfoCard } = require("../controllers/infoCard.controller");
 
-router.post('/', authIsAdmin, createInfoCard);
-router.get('/:infoCardId', getIdInfoCard);
+router.post('/', createInfoCard);
+router.get('/:infoCardId', getInfoCardId);
 router.get('/', findInfoCards);
-router.put('/:infoCardId', authIsAdmin, putInfoCard);
+router.put('/:infoCardId', authIsAdmin, updateInfoCard);
 router.delete('/:infoCardId', authIsAdmin, deleteInfoCard);
 
 module.exports = router;
