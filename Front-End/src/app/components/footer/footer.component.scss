@@ -13,6 +13,7 @@
     letter-spacing: 1px;
     margin-left: 10px;
     background-color: white;
+    
 }
 
 .btn-footer:hover {
@@ -47,8 +48,9 @@
 .footer{
     
     opacity: 1; 
-    background-color: rgba(228, 228, 228, 0.5); 
-    color: white; 
+    background-color: rgba(148, 146, 150, 0.5); 
+    color: white;
+    background:  linear-gradient(135deg,rgb(18, 157, 238) 0%,rgb(90, 93, 240) 100%); 
     text-align: center; 
     // padding: 20px; 
 }
