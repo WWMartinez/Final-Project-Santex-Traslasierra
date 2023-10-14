@@ -12,7 +12,6 @@ import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import { SignupUserComponent } from './components/signup-user/signup-user.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
-import { ButtonChoosefilesComponent } from './components/button-choosefiles/button-choosefiles.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,7 +27,6 @@ const routes: Routes = [
   { path: 'infocard', component: InfoCardsCrudComponent },
   { path: 'infocard-add', component: InfoCardsCrudAddEditComponent },
   { path: 'infocard-edit/:id', component: InfoCardsCrudAddEditComponent },
-  { path: 'infocard-test', component: ButtonChoosefilesComponent },
   // Esto siempre último
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
