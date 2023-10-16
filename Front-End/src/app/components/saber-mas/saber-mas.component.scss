@@ -2,19 +2,23 @@
     display: flex;
     justify-content: center;
   }
+
   .card img {
     max-width: 100%;
     max-height: 100%;
   }
+
   .card {
     margin: 0 0.5em;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border:2px solid;
     border-radius: 10px;
   }
+
   .carousel-inner {
     padding: 1em;
   }
+  
   .carousel-control-prev,
   .carousel-control-next {
     background-color: #000000;
@@ -24,6 +28,7 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
   @media (min-width: 768px) {
     .card img {
       height: 11em;
@@ -39,6 +44,7 @@
   .blockquote-footer{
     color: white;
   }
+
   .text-container {
     background-color: white;
     padding: 20px;
@@ -56,6 +62,12 @@
     margin: 0;
     font-weight: bold;
   }
+
+  .blockquote-footer {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 34px;
+  }
+
   .fondo{
     background-image: linear-gradient(115deg, rgba(18, 26, 51, 0.438) , #023372cc, rgba(71, 71, 170, 0.7) ), url("../../../assets/imgs/RioCentro3.jpeg");
     background-repeat: no-repeat;
