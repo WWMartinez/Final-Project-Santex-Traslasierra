@@ -24,11 +24,32 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
   @media (min-width: 768px) {
     .card img {
       height: 11em;
     }
+    
   }
+  
+  
+  @media (max-width: 576px) {
+    .cards-wrapper {
+      max-width: 100%;
+    }
+    .card {
+      margin: 0 0.25em;
+    }
+    .cards-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+
+
+
 
     /* Texto Principal de la Historia de Mina Clavero */
   .history-text {
