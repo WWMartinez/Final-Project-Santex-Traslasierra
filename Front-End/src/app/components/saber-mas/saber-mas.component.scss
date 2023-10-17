@@ -1,3 +1,11 @@
+.custom-card {
+  width: 100%; 
+  margin: 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: 2px solid;
+  border-radius: 10px;
+}
+
 .cards-wrapper {
   display: flex;
   justify-content: center;
@@ -12,18 +20,6 @@
   margin: 0 0.5em;
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
   border:2px solid;
-  border-radius: 10px;
-}
-
-.carousel-inner {
-  padding: 1em;
-}
-
-.custom-card {
-  width: 100%; 
-  margin: 0.5em;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  border: 2px solid;
   border-radius: 10px;
 }
 
@@ -51,30 +47,8 @@
   .card img {
     height: 11em;
   }
-
   .card img {
     height: 11em; 
-  }
-
-  @media (min-width: 768px) {
-    .card img {
-      height: 11em;
-    }
-  }
-  
-  
-  @media (max-width: 576px) {
-    .cards-wrapper {
-      max-width: 100%;
-    }
-    .card {
-      margin: 0 0.25em;
-    }
-    .cards-wrapper {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
   }
 }
 
@@ -82,11 +56,10 @@
 @media (max-width: 767px) {
   .card img {
     height: 15em;
-    
   }
 }
 
-    /* Texto Principal de la Historia de Mina Clavero */
+/* Texto Principal de la Historia de Mina Clavero */
 .history-text {
   padding: 50px;
   font-size: 32px;
@@ -98,7 +71,7 @@
   font-size: 32px;
 }
   
-.blockquote-footer{
+.blockquote-footer {
   color: white;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-size: 34px;
@@ -122,7 +95,7 @@
   font-weight: bold;
 }
 
-.fondo{
+.fondo {
   background-image: linear-gradient(115deg, rgba(18, 26, 51, 0.438) , #023372cc, rgba(71, 71, 170, 0.7) ), url("../../../assets/imgs/RioCentro3.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
