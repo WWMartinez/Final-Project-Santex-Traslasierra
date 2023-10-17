@@ -5,6 +5,7 @@ const preguntaRoute = require("./pregunta.route");
 const respuestaRoute = require("./respuesta.route");
 const surveyRoute = require("./survey.route");
 const userRoute = require("./user.route");
+const uploadRouter = require("./upload.route");
 
 module.exports = {
   signUpRoute,
@@ -14,4 +15,5 @@ module.exports = {
   surveyRoute,
   respuestaRoute,
   userRoute,
+  uploadRouter
 };
