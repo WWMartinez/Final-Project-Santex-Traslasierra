@@ -48,7 +48,7 @@
 .footer{
     
     opacity: 1; 
-    background-color: rgba(148, 146, 150, 0.5); 
+    background-color: rgba(150, 148, 146, 0.5); 
     color: white;
     background:  linear-gradient(135deg,rgb(18, 157, 238) 0%,rgb(90, 93, 240) 100%); 
     text-align: center; 
@@ -70,9 +70,9 @@
 .form {
     display: flex;
     flex-direction: column;
-    background: #62866a;
-    background: -webkit-linear-gradient(to right, #999c98, #b2b3b0);
-    background: linear-gradient(to right, #a9aaa9, #c5c5c4);
+    background: #0d10d3;
+    background: -webkit-linear-gradient(to right, rgba(23, 62, 121, 0.822), #b2b3b0);
+    background: linear-gradient(to right,  rgba(23, 62, 121, 0.822), #c5c5c4);
     padding: 20px;
     border-radius: 10px;
     max-width: 350px;
@@ -107,9 +107,9 @@
     outline: none;
     line-height: 1.5rem;
     font-size: 0.875rem;
-    color: rgb(48, 46, 46);
+    color: rgb(46, 47, 48);
     padding: 0.5rem 0.875rem;
-    background-color: rgb(255 255 255 / 0.05);
+    background-color: rgba(255, 255, 255, 0.164);
     border: 1px solid rgba(253, 253, 253, 0.363);
     border-radius: 0.375rem;
     flex: 1 1 auto;
@@ -129,7 +129,7 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
     padding: 0.625rem 0.875rem;
-    background-color: rgb(54, 54, 54);
+    background-color: rgba(23, 62, 121, 0.822);
     border-radius: 0.375rem;
     border: none;
     outline: none;
@@ -150,8 +150,8 @@
     font-size: 25px;
     width: 50px;
     height: 50px;
-    line-height: 60px;
-    background: #4b4c4d;
+    line-height: 50px;
+    background:  rgba(23, 62, 121, 0.822);
     color: #f1f1f1;
     border-radius: 50%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);

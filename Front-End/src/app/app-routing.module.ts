@@ -11,15 +11,15 @@ import { InfoCardsCrudComponent } from './components/info-cards-crud/info-cards-
 import { InfoCardsCrudAddEditComponent } from './components/info-cards-crud-add-edit/info-cards-crud-add-edit.component';
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import { SignupUserComponent } from './components/signup-user/signup-user.component';
-import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { SaberMasComponent } from './components/saber-mas/saber-mas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginUserComponent },
   { path: 'signup', component: SignupUserComponent },
-  { path: 'nosotros', component: NosotrosComponent },
-  { path: 'formulario', component: SurveyComponent },
+  { path: 'places', component: SaberMasComponent },
+  { path: 'form', component: SurveyComponent },
   { path: 'survey', component: SurveyCrudComponent },
   { path: 'survey-add', component: SurveyCrudAddEditComponent },
   { path: 'survey-edit/:id', component: SurveyCrudAddEditComponent },
