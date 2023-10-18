@@ -270,8 +270,51 @@
                 <p>Algun comentario o recomendación?</p>
                 <textarea cols="15" rows="5" placeholder="Ingrese su comentario aqui..."></textarea>
             </div>
-            <p id="description">Gracias por su Colaboración</p>
 
+             <p class="text-center textoBd">Preguntas de la Base de Datos</p>
+
+            <!-- Preguntas de la BD -->
+            <section *ngFor="let pregunta of listPreguntas" class="row">
+                <div class="col-md-12 ">
+                <section class="row">
+                    <div class="col-md-8">
+                    <p class="preguntas">{{ pregunta.question }}</p>
+                    </div>
+                    <div class="col-md-4 select-dropdown">
+                        <select>
+                            <option value="Really Good">Muy Buena</option>
+                            <option value="Good">Buena</option>
+                            <option value="Meh">Regular</option>
+                            <option value="Bad">Mala</option>
+                            <option value="So Bad">Muy Mala</option>
+                            <option value="No">No Responde</option>
+                        </select>
+                    </div>
+                </section>
+                </div>
+            </section>
+            <!-- Preguntas BD -->
+
+              <!--  Otra forma de dar respuestas  -->
+            <p class="text-center textoBd">Otra manera de dar respuestas</p>
+
+            <div *ngFor="let pregunta of listPreguntas" class="recommend">
+                <p class="preguntas">{{ pregunta.question }}</p>
+                <input type="radio" id="definitely" name="recommend" value="Definitely">
+                <label for="definitely">Si</label>
+                <br>
+                <input type="radio" id="maybe" name="recommend" value="Maybe">
+                <label for="maybe">No</label>
+                <br>
+                    <div class="main-input">
+                            <label for="city" id="city-label"> Cual?</label><br>
+                            <input type="city" id="city" required placeholder="here">
+                    </div>
+            </div>
+
+            <br>
+
+            <p id="description">Gracias por su Colaboración</p>
             <button id="submit" type="submit">Enviar</button>
         </form>
       </main>

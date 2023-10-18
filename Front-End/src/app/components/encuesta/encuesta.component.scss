@@ -99,6 +99,31 @@ input[type="radio"] {
 
 #improvement p {margin-bottom: 8px;}
 
+// Esto es la BD de Preguntas
+
+.select-dropdown {
+    select {
+    color: black;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+}
+
+option {
+    color: black;
+}
+
+.textoBd {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px;
+    color: #37af65;
+}
+
 textarea {
     color: #495057;
     width: 100%;
