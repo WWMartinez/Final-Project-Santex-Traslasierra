@@ -22,11 +22,13 @@
                         La <strong>Descripción</strong> es requerida
                     </span>
 
-                    <!-- TODO ENLAZAR con cloudinary -->
-                    <input formControlName="image" type="text" class="form-control mt-3" placeholder="Imagen">
-                    <!-- <span *ngIf="formInfoCards.get('image')?.hasError('required') && formInfoCards.get('image')?.touched">
+                    <input formControlName="image" type="file" (change)="onFileChanged($event)" class="form-control mt-3" placeholder="Imagen">
+                    <!-- <app-button-choosefiles></app-button-choosefiles> -->
+
+                    <span *ngIf="formInfoCards.get('image')?.hasError('required') && formInfoCards.get('image')?.touched">
                         La <strong>Imagen</strong> es requerida
-                    </span> -->
+                    </span>
+                    
                     <div class="row mt-3 text-center">
                         <div class="col-lg-6">
                             <button routerLink="/infocard" type="button" class="btn btn-secondary">Volver</button>
